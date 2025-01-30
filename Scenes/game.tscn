@@ -22,13 +22,13 @@ rotation = 1.5708
 scale = Vector2(1.19466, 0.818099)
 polygon = PackedVector2Array(-31, -31, 31, -31, 31, 31, -31, 31)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Asteroid" type="Area2D" parent="."]
 position = Vector2(117, 65)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Asteroid"]
 scale = Vector2(1.85279, 1.85279)
 texture = ExtResource("3_2usfj")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroid"]
 polygon = PackedVector2Array(-6, -28, 6, -28, 20, -20, 28, -5, 28, 5, 20, 20, 5, 28, -6, 28, -20, 20, -28, 5, -28, -5, -20, -20)
