@@ -1,14 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcv5e2y61uvn2"]
+[gd_scene load_steps=6 format=3 uid="uid://dcv5e2y61uvn2"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Game.cs" id="1_g4oc7"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_xithb"]
 [ext_resource type="PackedScene" uid="uid://cwvs4l7btjfqj" path="res://Scenes/asteroid.tscn" id="2_j118a"]
 [ext_resource type="Texture2D" uid="uid://cmgwxciq2etyu" path="res://Sprites/Player/Satellite/satalite.png" id="2_mxcvq"]
+[ext_resource type="Script" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("_timer")]
+[node name="Game" type="Node2D"]
 script = ExtResource("1_g4oc7")
+
+[node name="AsteroidPool" type="Node2D" parent="." node_paths=PackedStringArray("_timer")]
+script = ExtResource("2_srqrm")
 _asteroidScene = ExtResource("2_j118a")
 _timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="AsteroidPool"]
+wait_time = 0.5
+one_shot = true
 
 [node name="Player" type="Area2D" parent="."]
 position = Vector2(315, 178)
@@ -26,8 +34,4 @@ rotation = 1.5708
 scale = Vector2(1.19466, 0.818099)
 polygon = PackedVector2Array(-31, -31, 31, -31, 31, 31, -31, 31)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
+[connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]
