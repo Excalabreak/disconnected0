@@ -30,7 +30,6 @@ public partial class AsteroidPool : Node2D
         {
             Asteroid asteroid = _asteroidScene.Instantiate<Asteroid>() as Asteroid;
             _pooledItems.Add(asteroid);
-            GD.Print("init");
             AddChild(asteroid);
         }
         //test, remove later
@@ -47,7 +46,6 @@ public partial class AsteroidPool : Node2D
         {
             if (!_pooledItems[i].active)
             {
-                GD.Print("Gotten");
                 return _pooledItems[i];
             }
         }
@@ -55,7 +53,6 @@ public partial class AsteroidPool : Node2D
         Asteroid asteroid = _asteroidScene.Instantiate<Asteroid>() as Asteroid;
         _pooledItems.Add(asteroid);
         AddChild(asteroid);
-        GD.Print("Created");
         return asteroid;
 
     }

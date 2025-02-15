@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcv5e2y61uvn2"]
+[gd_scene load_steps=8 format=3 uid="uid://dcv5e2y61uvn2"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Game.cs" id="1_g4oc7"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_xithb"]
 [ext_resource type="PackedScene" uid="uid://cwvs4l7btjfqj" path="res://Scenes/asteroid.tscn" id="2_j118a"]
 [ext_resource type="Texture2D" uid="uid://cmgwxciq2etyu" path="res://Sprites/Player/Satellite/satalite.png" id="2_mxcvq"]
 [ext_resource type="Script" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerMovement.cs" id="6_kojnu"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="7_hke8k"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_g4oc7")
@@ -18,9 +20,11 @@ _timer = NodePath("Timer")
 wait_time = 0.5
 one_shot = true
 
-[node name="Player" type="Area2D" parent="."]
+[node name="Player" type="Area2D" parent="." node_paths=PackedStringArray("_playerMovement", "_screenWarp")]
 position = Vector2(315, 178)
 script = ExtResource("1_xithb")
+_playerMovement = NodePath("PlayerMovement")
+_screenWarp = NodePath("ScreenWarpNode")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -33,5 +37,10 @@ texture = ExtResource("2_mxcvq")
 rotation = 1.5708
 scale = Vector2(1.19466, 0.818099)
 polygon = PackedVector2Array(-31, -31, 31, -31, 31, 31, -31, 31)
+
+[node name="PlayerMovement" type="Node2D" parent="Player"]
+script = ExtResource("6_kojnu")
+
+[node name="ScreenWarpNode" parent="Player" instance=ExtResource("7_hke8k")]
 
 [connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]

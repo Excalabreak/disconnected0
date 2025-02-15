@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/10/2025]
+ * Last Updated: [02/15/2025]
  * [scirpt for the player]
  */
 
@@ -11,7 +11,8 @@ public partial class Asteroid : Area2D, IPoolItem
 {
     [Export] private float _velocityRangeMin = 100f;
     [Export] private float _velocityRangeMax = 150f;
-    [Export] private float _screenWarpBuffer = 50f;
+
+    [Export] private ScreenWarp _screenWarp;
 
     //velocity
     private Vector2 _velocity = Vector2.Zero;
@@ -36,7 +37,7 @@ public partial class Asteroid : Area2D, IPoolItem
     public override void _Process(double delta)
     {
         Move((float)delta);
-        CheckScreenWarp();
+        _screenWarp.CheckScreenWarp(this, _velocity);
     }
 
     /// <summary>
@@ -46,31 +47,6 @@ public partial class Asteroid : Area2D, IPoolItem
     private void Move(float delta)
     {
         Position += _velocity * delta;
-    }
-
-    /// <summary>
-    /// checks if asteroid is offscreen and warps them to the correct location
-    /// </summary>
-    private void CheckScreenWarp()
-    {
-        Vector2 resolution = GetViewport().GetVisibleRect().Size;
-
-        if (Position.X < -_screenWarpBuffer && _velocity.X < 0)
-        {
-            Position = new Vector2(resolution.X + _screenWarpBuffer, Position.Y);
-        }
-        if (Position.Y < -_screenWarpBuffer && _velocity.Y < 0)
-        {
-            Position = new Vector2(Position.X, resolution.Y + _screenWarpBuffer);
-        }
-        if (Position.X > resolution.X + _screenWarpBuffer && _velocity.X > 0)
-        {
-            Position = new Vector2(-_screenWarpBuffer, Position.Y);
-        }
-        if (Position.Y > resolution.Y + _screenWarpBuffer && _velocity.Y > 0)
-        {
-            Position = new Vector2(Position.X, -_screenWarpBuffer);
-        }
     }
 
     /// <summary>

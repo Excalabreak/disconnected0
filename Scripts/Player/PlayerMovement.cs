@@ -3,19 +3,25 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/13/2025]
+ * Last Updated: [02/15/2025]
  * [player Movement]
  */
 
-public partial class PlayerMovement 
+public partial class PlayerMovement : Node2D
 {
+    //rotate speed
+    [Export] private float _rotateSpeed = 5;
+
+    //acceleration
+    [Export] private float _acceleration = 15;
+
     private Vector2 _velocity = Vector2.Zero;
     private float _thrust = 0;
 
-    public void AcceleratePlayer(Area2D player, float delta, float acceleration)
+    public void AcceleratePlayer(Area2D player, float delta)
     {
         _thrust = Input.GetActionStrength("thrust");
-        _velocity += player.Transform.X * _thrust * acceleration;
+        _velocity += player.Transform.X * _thrust * _acceleration;
         _velocity = Lerp(_velocity, Vector2.Zero, 1 * delta);
         player.Position += _velocity * delta;
     }
@@ -24,9 +30,9 @@ public partial class PlayerMovement
     /// player rotates based on input actions
     /// </summary>
     /// <param name="delta">nuber of frames since last called</param>
-    public void RotatePlayer(Area2D player, float delta, float rotateSpeed)
+    public void RotatePlayer(Area2D player, float delta)
     {
-        float rot = Input.GetAxis("left", "right") * rotateSpeed;
+        float rot = Input.GetAxis("left", "right") * _rotateSpeed;
         player.Rotate(rot * delta);
     }
 
@@ -54,5 +60,10 @@ public partial class PlayerMovement
         float retX = Lerp(first.X, second.X, amount);
         float retY = Lerp(first.Y, second.Y, amount);
         return new Vector2(retX, retY);
+    }
+
+    public Vector2 velocity
+    {
+        get { return _velocity; }
     }
 }
