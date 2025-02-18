@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcv5e2y61uvn2"]
+[gd_scene load_steps=10 format=3 uid="uid://dcv5e2y61uvn2"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Game.cs" id="1_g4oc7"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_xithb"]
@@ -7,9 +7,38 @@
 [ext_resource type="Script" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerMovement.cs" id="6_kojnu"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="7_hke8k"]
+[ext_resource type="Script" path="res://Scripts/Health/PlayerResources.cs" id="8_77duu"]
+[ext_resource type="Script" path="res://Scripts/Managers/UIManager.cs" id="9_3j872"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_g4oc7")
+
+[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 327.0
+offset_bottom = 90.0
+script = ExtResource("9_3j872")
+_scrapLabel = NodePath("ScrapLabel")
+_fuelLabel = NodePath("FuelLable")
+
+[node name="ScrapLabel" type="Label" parent="UIManager"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 289.0
+offset_bottom = 56.0
+text = "Scrap:"
+vertical_alignment = 1
+
+[node name="FuelLable" type="Label" parent="UIManager"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 289.0
+offset_bottom = 96.0
+text = "Fuel:"
+vertical_alignment = 1
 
 [node name="AsteroidPool" type="Node2D" parent="." node_paths=PackedStringArray("_timer")]
 script = ExtResource("2_srqrm")
@@ -17,7 +46,6 @@ _asteroidScene = ExtResource("2_j118a")
 _timer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="AsteroidPool"]
-wait_time = 0.5
 one_shot = true
 
 [node name="Player" type="Area2D" parent="." node_paths=PackedStringArray("_playerMovement", "_screenWarp")]
@@ -42,5 +70,8 @@ polygon = PackedVector2Array(-31, -31, 31, -31, 31, 31, -31, 31)
 script = ExtResource("6_kojnu")
 
 [node name="ScreenWarpNode" parent="Player" instance=ExtResource("7_hke8k")]
+
+[node name="PlayerResources" type="Node2D" parent="Player"]
+script = ExtResource("8_77duu")
 
 [connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]
