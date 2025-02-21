@@ -10,6 +10,7 @@ using System;
 public partial class Player : Area2D
 {
     [Export] private PlayerMovement _playerMovement;
+    [Export] private BaseWeapon[] _weapons;
     [Export] private ScreenWarp _screenWarp;
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,5 +20,9 @@ public partial class Player : Area2D
         _playerMovement.RotatePlayer(this, fDelta);
         _playerMovement.AcceleratePlayer(this, fDelta);
         _screenWarp.CheckScreenWarp(this, _playerMovement.velocity);
+        foreach (BaseWeapon weapon in _weapons)
+        {
+            weapon.WeaponCall();
+        }
     }
 }

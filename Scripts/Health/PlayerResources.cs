@@ -81,42 +81,41 @@ public partial class PlayerResources : BaseHealth
     }
 
 	/// <summary>
-	/// Only when the player trys to use scrap
-	/// checks if the amount is available.
-	/// if true: takes out the scrap and returns true
-	/// if false: then does nothing and return false
+	/// uses scrap if possible
 	/// </summary>
 	/// <param name="scrap">amount of scrap use</param>
-	/// <returns>did the player use the scrap</returns>
-	public bool UseScrap(int scrap)
+	public void UseScrap(int scrap)
 	{
 		if (scrap < _currentScrap)
 		{
 			_currentScrap -= scrap;
             UpdateUI();
-            return true;
 		}
-		return false;
 	}
 
     /// <summary>
-    /// Only when the player trys to use fuel
-    /// checks if the amount is available.
-    /// if true: takes out the fuel and returns true
-    /// if false: then does nothing and return false
-    /// </summary>
-    /// <param name="fuel">amount of fuel use</param>
-    /// <returns>did the player use the fuel</returns>
-    public bool UseFuel(float fuel)
+	/// usses fuel if possible
+	/// </summary>
+	/// <param name="fuel">amount of fuel used</param>
+    public void UseFuel(float fuel)
     {
         if (fuel < _currentFuel)
         {
             _currentFuel -= fuel;
             UpdateUI();
-            return true;
         }
-        return false;
     }
+
+	/// <summary>
+	/// checks if a weapon can be used based off of resources
+	/// </summary>
+	/// <param name="scrap">amount of scrap</param>
+	/// <param name="fuel">amount of fuel</param>
+	/// <returns>can the weapon be used</returns>
+	public bool CheckWeaponCost(int scrap, float fuel)
+	{
+		return (scrap < _currentScrap && fuel < _currentFuel);
+	}
 
 	/// <summary>
 	/// temp game over function

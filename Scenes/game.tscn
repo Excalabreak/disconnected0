@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcv5e2y61uvn2"]
+[gd_scene load_steps=11 format=3 uid="uid://dcv5e2y61uvn2"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Game.cs" id="1_g4oc7"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_xithb"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="7_hke8k"]
 [ext_resource type="Script" path="res://Scripts/Health/PlayerResources.cs" id="8_77duu"]
 [ext_resource type="Script" path="res://Scripts/Managers/UIManager.cs" id="9_3j872"]
+[ext_resource type="Script" path="res://Scripts/Player/Weapons/MissileWeapon.cs" id="10_asvks"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_g4oc7")
@@ -48,10 +49,11 @@ _timer = NodePath("Timer")
 [node name="Timer" type="Timer" parent="AsteroidPool"]
 one_shot = true
 
-[node name="Player" type="Area2D" parent="." node_paths=PackedStringArray("_playerMovement", "_screenWarp")]
+[node name="Player" type="Area2D" parent="." node_paths=PackedStringArray("_playerMovement", "_weapons", "_screenWarp")]
 position = Vector2(315, 178)
 script = ExtResource("1_xithb")
 _playerMovement = NodePath("PlayerMovement")
+_weapons = [NodePath("MissileWeapon")]
 _screenWarp = NodePath("ScreenWarpNode")
 metadata/_edit_group_ = true
 
@@ -74,4 +76,16 @@ script = ExtResource("6_kojnu")
 [node name="PlayerResources" type="Node2D" parent="Player"]
 script = ExtResource("8_77duu")
 
+[node name="MissileWeapon" type="Node2D" parent="Player" node_paths=PackedStringArray("_playerResources", "_cooldownTimer")]
+script = ExtResource("10_asvks")
+_playerResources = NodePath("../PlayerResources")
+_scrapCost = 2
+_fuelCost = 1.0
+_cooldown = 1.0
+_cooldownTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Player/MissileWeapon"]
+one_shot = true
+
 [connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]
+[connection signal="timeout" from="Player/MissileWeapon/Timer" to="Player/MissileWeapon" method="OnTimerTimeout"]
