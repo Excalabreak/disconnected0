@@ -3,19 +3,14 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/15/2025]
- * [scirpt for the player]
+ * Last Updated: [02/24/2025]
+ * [scirpt for the asteroid and pooling]
  */
 
 public partial class Asteroid : Area2D, IPoolItem
 {
-    [Export] private float _velocityRangeMin = 100f;
-    [Export] private float _velocityRangeMax = 150f;
-
+    [Export] private AsteroidMovement _asteroidMovement;
     [Export] private ScreenWarp _screenWarp;
-
-    //velocity
-    private Vector2 _velocity = Vector2.Zero;
 
     public bool active { get; set; } = false;
 
@@ -36,17 +31,8 @@ public partial class Asteroid : Area2D, IPoolItem
     /// <param name="delta"></param>
     public override void _Process(double delta)
     {
-        Move((float)delta);
-        _screenWarp.CheckScreenWarp(this, _velocity);
-    }
-
-    /// <summary>
-    /// move asteroid based on velocity
-    /// </summary>
-    /// <param name="delta"></param>
-    private void Move(float delta)
-    {
-        Position += _velocity * delta;
+        _asteroidMovement.Move(this, (float)delta);
+        _screenWarp.CheckScreenWarp(this, _asteroidMovement.velocity);
     }
 
     /// <summary>
@@ -60,11 +46,7 @@ public partial class Asteroid : Area2D, IPoolItem
         Monitorable = true;
         SetProcess(true);
 
-        _velocity = new Vector2(
-            (float)GD.RandRange(-1, 1),
-            (float)GD.RandRange(-1, 1));
-
-        _velocity = _velocity.Normalized() * (float)GD.RandRange(_velocityRangeMin, _velocityRangeMax);
+        _asteroidMovement.SetDirection();
     }
 
     /// <summary>

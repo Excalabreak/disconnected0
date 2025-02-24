@@ -3,8 +3,9 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/15/25]
- * [player script that manages all player scripts]
+ * Last Updated: [02/24/2025]
+ * [player script that manages all player scripts 
+ * and area enter since due to tutorial bs]
  */
 
 public partial class Player : Area2D

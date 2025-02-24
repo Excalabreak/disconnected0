@@ -16,6 +16,7 @@
 script = ExtResource("1_g4oc7")
 
 [node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel")]
+z_index = 10
 layout_mode = 3
 anchors_preset = 0
 offset_right = 327.0
