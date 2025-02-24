@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://crgr68864eahg"]
+
+[ext_resource type="Texture2D" uid="uid://chyp8uacd3p0l" path="res://Sprites/Player/Weapons/missile.png" id="1_7oif4"]
+[ext_resource type="Script" path="res://Scripts/Player/Missile/Missile.cs" id="1_xxboq"]
+[ext_resource type="Texture2D" uid="uid://0pnth5p735fr" path="res://Sprites/Player/Weapons/light.png" id="2_i8dbj"]
+[ext_resource type="Script" path="res://Scripts/Player/Missile/MissileMovement.cs" id="4_tdrsv"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="5_5w2i6"]
+
+[node name="Missile" type="Area2D" node_paths=PackedStringArray("_missileMovement", "_screenWarp")]
+script = ExtResource("1_xxboq")
+_missileMovement = NodePath("MissileMovement")
+_screenWarp = NodePath("ScreenWarpNode")
+metadata/_edit_group_ = true
+
+[node name="MissileSprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_7oif4")
+
+[node name="ArmingLightSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("2_i8dbj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2, -22, -4, -20, -4, 20, 4, 20, 4, -20, 2, -22)
+
+[node name="MissileMovement" type="Node2D" parent="."]
+script = ExtResource("4_tdrsv")
+
+[node name="ScreenWarpNode" parent="." instance=ExtResource("5_5w2i6")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcv5e2y61uvn2"]
+[gd_scene load_steps=12 format=3 uid="uid://dcv5e2y61uvn2"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Game.cs" id="1_g4oc7"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_xithb"]
@@ -9,7 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="7_hke8k"]
 [ext_resource type="Script" path="res://Scripts/Health/PlayerResources.cs" id="8_77duu"]
 [ext_resource type="Script" path="res://Scripts/Managers/UIManager.cs" id="9_3j872"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapons/MissileWeapon.cs" id="10_asvks"]
+[ext_resource type="Script" path="res://Scripts/Player/WeaponDeployment/MissileWeapon.cs" id="10_asvks"]
+[ext_resource type="PackedScene" uid="uid://crgr68864eahg" path="res://Scenes/missile.tscn" id="11_2de5h"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_g4oc7")
@@ -22,6 +23,7 @@ offset_bottom = 90.0
 script = ExtResource("9_3j872")
 _scrapLabel = NodePath("ScrapLabel")
 _fuelLabel = NodePath("FuelLable")
+metadata/_edit_group_ = true
 
 [node name="ScrapLabel" type="Label" parent="UIManager"]
 layout_mode = 0
@@ -50,7 +52,6 @@ _timer = NodePath("Timer")
 one_shot = true
 
 [node name="Player" type="Area2D" parent="." node_paths=PackedStringArray("_playerMovement", "_weapons", "_screenWarp")]
-position = Vector2(315, 178)
 script = ExtResource("1_xithb")
 _playerMovement = NodePath("PlayerMovement")
 _weapons = [NodePath("MissileWeapon")]
@@ -59,14 +60,12 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(1, 0)
-rotation = 1.5708
-scale = Vector2(2.58723, 2.74654)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_mxcvq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
-rotation = 1.5708
 scale = Vector2(1.19466, 0.818099)
-polygon = PackedVector2Array(-31, -31, 31, -31, 31, 31, -31, 31)
+polygon = PackedVector2Array(-30.9712, -28.1138, 32.6453, -28.114, 32.6453, 30.5586, -30.9712, 30.5586)
 
 [node name="PlayerMovement" type="Node2D" parent="Player"]
 script = ExtResource("6_kojnu")
@@ -76,8 +75,10 @@ script = ExtResource("6_kojnu")
 [node name="PlayerResources" type="Node2D" parent="Player"]
 script = ExtResource("8_77duu")
 
-[node name="MissileWeapon" type="Node2D" parent="Player" node_paths=PackedStringArray("_playerResources", "_cooldownTimer")]
+[node name="MissileWeapon" type="Node2D" parent="Player" node_paths=PackedStringArray("_playerPosition", "_playerResources", "_cooldownTimer")]
 script = ExtResource("10_asvks")
+_missileScene = ExtResource("11_2de5h")
+_playerPosition = NodePath("..")
 _playerResources = NodePath("../PlayerResources")
 _scrapCost = 2
 _fuelCost = 1.0

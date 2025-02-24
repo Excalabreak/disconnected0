@@ -4,36 +4,34 @@ using System;
 /*
  * Author: [Lam, Justin]
  * Last Updated: [02/23/2025]
- * [player Movement]
+ * [Movement for missile]
  */
 
-public partial class PlayerMovement : Node2D
+public partial class MissileMovement : Node
 {
     //rotate speed
-    [Export] private float _rotateSpeed = 5;
+    [Export] private float _rotateSpeed = 3;
 
     //acceleration
-    [Export] private float _acceleration = 15;
+    [Export] private float _acceleration = 20;
 
     private Vector2 _velocity = Vector2.Zero;
-    private float _thrust = 0;
 
-    public void AcceleratePlayer(Area2D player, float delta)
+    public void AccelerateMissile(Area2D missile, float delta)
     {
-        _thrust = Input.GetActionStrength("thrust");
-        _velocity -= player.Transform.Y * _thrust * _acceleration;
+        _velocity -= missile.Transform.Y * _acceleration;
         _velocity = Lerp(_velocity, Vector2.Zero, 1 * delta);
-        player.Position += _velocity * delta;
+        missile.Position += _velocity * delta;
     }
 
     /// <summary>
-    /// player rotates based on input actions
+    /// missile rotates based on raycasts
     /// </summary>
     /// <param name="delta">nuber of frames since last called</param>
-    public void RotatePlayer(Area2D player, float delta)
+    public void RotatePlayer(Area2D missile, float delta)
     {
         float rot = Input.GetAxis("left", "right") * _rotateSpeed;
-        player.Rotate(rot * delta);
+        missile.Rotate(rot * delta);
     }
 
     /// <summary>

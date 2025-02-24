@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\Projects\\disconnected0\\disconnected0\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\weapons\\missileweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\weapons\\missileweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\weapons\\baseweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\weapons\\baseweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\weapons\\missileweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\weapons\\missileweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\managers\\asteroidpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\Player.cs",
@@ -46,12 +46,11 @@
               "RelativeToolTip": "Scripts\\Player\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T23:04:07.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T23:04:07.77Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MissileWeapon.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Weapons\\MissileWeapon.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\Weapons\\MissileWeapon.cs",
@@ -64,13 +63,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BaseWeapon.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Weapons\\BaseWeapon.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\Weapons\\BaseWeapon.cs",
               "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Weapons\\BaseWeapon.cs",
               "RelativeToolTip": "Scripts\\Player\\Weapons\\BaseWeapon.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACMAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-21T22:24:38.639Z",
               "EditorCaption": ""
@@ -85,8 +84,7 @@
               "RelativeToolTip": "Scripts\\Managers\\AsteroidPool.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAQwD4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T22:33:29.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T22:33:29.623Z"
             },
             {
               "$type": "Document",
@@ -98,8 +96,7 @@
               "RelativeToolTip": "Scripts\\Health\\PlayerResources.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAwwHQAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T01:30:45.647Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T01:30:45.647Z"
             },
             {
               "$type": "Document",
@@ -111,8 +108,7 @@
               "RelativeToolTip": "Scripts\\Managers\\UIManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T02:18:21.672Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T02:18:21.672Z"
             }
           ]
         }
