@@ -8,7 +8,7 @@ using System;
  * and area enter since due to tutorial bs]
  */
 
-public partial class Player : Area2D
+public partial class Player : Node2D
 {
     [Export] private PlayerMovement _playerMovement;
     [Export] private BaseWeapon[] _weapons;

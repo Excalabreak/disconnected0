@@ -18,7 +18,7 @@ public partial class PlayerMovement : Node2D
     private Vector2 _velocity = Vector2.Zero;
     private float _thrust = 0;
 
-    public void AcceleratePlayer(Area2D player, float delta)
+    public void AcceleratePlayer(Node2D player, float delta)
     {
         _thrust = Input.GetActionStrength("thrust");
         _velocity -= player.Transform.Y * _thrust * _acceleration;
@@ -30,7 +30,7 @@ public partial class PlayerMovement : Node2D
     /// player rotates based on input actions
     /// </summary>
     /// <param name="delta">nuber of frames since last called</param>
-    public void RotatePlayer(Area2D player, float delta)
+    public void RotatePlayer(Node2D player, float delta)
     {
         float rot = Input.GetAxis("left", "right") * _rotateSpeed;
         player.Rotate(rot * delta);

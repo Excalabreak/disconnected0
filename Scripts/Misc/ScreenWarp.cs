@@ -14,7 +14,7 @@ public partial class ScreenWarp : Node
     /// <summary>
     /// checks if asteroid is offscreen and warps them to the correct location
     /// </summary>
-    public void CheckScreenWarp(Area2D entity, Vector2 velocity)
+    public void CheckScreenWarp(Node2D entity, Vector2 velocity)
     {
         Vector2 resolution = GetViewport().GetVisibleRect().Size;
 
