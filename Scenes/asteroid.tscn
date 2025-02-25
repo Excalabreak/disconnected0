@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwvs4l7btjfqj"]
+[gd_scene load_steps=7 format=3 uid="uid://cwvs4l7btjfqj"]
 
 [ext_resource type="Script" path="res://Scripts/Obstacles/Asteroid.cs" id="1_cs4dx"]
 [ext_resource type="Texture2D" uid="uid://bck87ot65nmj7" path="res://Sprites/Obstacles/asteroid.png" id="2_kuqqn"]
+[ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="3_07o03"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="3_tb8m8"]
 [ext_resource type="Script" path="res://Scripts/Obstacles/AsteroidMovement.cs" id="4_8lrw6"]
+[ext_resource type="Script" path="res://Scripts/Health/AsteroidHealth.cs" id="6_m1ydy"]
 
-[node name="Asteroid" type="Area2D" node_paths=PackedStringArray("_asteroidMovement", "_screenWarp")]
+[node name="Asteroid" type="Node2D" node_paths=PackedStringArray("_asteroidMovement", "_hitbox", "_screenWarp")]
 script = ExtResource("1_cs4dx")
 _asteroidMovement = NodePath("AsteroidMovement")
+_hitbox = NodePath("HitboxComponent")
 _screenWarp = NodePath("ScreenWarpNode")
 metadata/_edit_group_ = true
 
@@ -15,10 +18,17 @@ metadata/_edit_group_ = true
 scale = Vector2(1.85279, 1.85279)
 texture = ExtResource("2_kuqqn")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("_healthComponent") instance=ExtResource("3_07o03")]
+_healthComponent = NodePath("../AsteroidHealth")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
 polygon = PackedVector2Array(-6, -28, 6, -28, 20, -20, 28, -5, 28, 5, 20, 20, 5, 28, -6, 28, -20, 20, -28, 5, -28, -5, -20, -20)
 
 [node name="ScreenWarpNode" parent="." instance=ExtResource("3_tb8m8")]
 
 [node name="AsteroidMovement" type="Node2D" parent="."]
 script = ExtResource("4_8lrw6")
+
+[node name="AsteroidHealth" type="Node2D" parent="." node_paths=PackedStringArray("_asteroid")]
+script = ExtResource("6_m1ydy")
+_asteroid = NodePath("..")

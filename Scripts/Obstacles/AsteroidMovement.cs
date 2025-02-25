@@ -32,7 +32,7 @@ public partial class AsteroidMovement : Node
     /// move asteroid based on velocity
     /// </summary>
     /// <param name="delta"></param>
-    public void Move(Area2D asteroid, float delta)
+    public void Move(Node2D asteroid, float delta)
     {
         asteroid.Position += _velocity * delta;
     }

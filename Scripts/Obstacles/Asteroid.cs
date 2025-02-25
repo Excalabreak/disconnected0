@@ -7,9 +7,10 @@ using System;
  * [scirpt for the asteroid and pooling]
  */
 
-public partial class Asteroid : Area2D, IPoolItem
+public partial class Asteroid : Node2D, IPoolItem
 {
     [Export] private AsteroidMovement _asteroidMovement;
+    [Export] private Area2D _hitbox;
     [Export] private ScreenWarp _screenWarp;
 
     public bool active { get; set; } = false;
@@ -20,8 +21,8 @@ public partial class Asteroid : Area2D, IPoolItem
     public override void _Ready()
     {
         Visible = false;
-        Monitoring = false;
-        Monitorable = false;
+        _hitbox.Monitoring = false;
+        _hitbox.Monitorable = false;
         SetProcess(false);
     }
 
@@ -42,8 +43,8 @@ public partial class Asteroid : Area2D, IPoolItem
     {
         active = true;
         Visible = true;
-        Monitoring = true;
-        Monitorable = true;
+        _hitbox.Monitoring = true;
+        _hitbox.Monitorable = true;
         SetProcess(true);
 
         _asteroidMovement.SetDirection();
@@ -54,10 +55,11 @@ public partial class Asteroid : Area2D, IPoolItem
     /// </summary>
     public void ReturnToPool()
     {
+        GD.Print("return");
         active = false;
         Visible = false;
-        SetDeferred(Area2D.PropertyName.Monitoring, false);
-        SetDeferred(Area2D.PropertyName.Monitorable, false);
+        _hitbox.SetDeferred(Area2D.PropertyName.Monitoring, false);
+        _hitbox.SetDeferred(Area2D.PropertyName.Monitorable, false);
         SetProcess(false);
     }
 }
