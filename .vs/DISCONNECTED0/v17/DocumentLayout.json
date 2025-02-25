@@ -74,8 +74,7 @@
               "RelativeToolTip": "Scripts\\Misc\\ExplosionTimer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T22:31:08.818Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T22:31:08.818Z"
             },
             {
               "$type": "Document",
@@ -87,8 +86,7 @@
               "RelativeToolTip": "Scripts\\Player\\Missile\\MissileEngage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T02:41:08.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T02:41:08.031Z"
             },
             {
               "$type": "Document",
@@ -100,8 +98,7 @@
               "RelativeToolTip": "Scripts\\Obstacles\\Asteroid.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T02:32:37.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T02:32:37.798Z"
             },
             {
               "$type": "Document",
@@ -113,8 +110,7 @@
               "RelativeToolTip": "Scripts\\Player\\WeaponDeployment\\MissileWeapon.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T02:27:11.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T02:27:11.643Z"
             },
             {
               "$type": "Document",
@@ -124,7 +120,7 @@
               "RelativeDocumentMoniker": "Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
               "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
               "RelativeToolTip": "Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T02:16:03.145Z",
               "EditorCaption": ""
@@ -139,8 +135,7 @@
               "RelativeToolTip": "Scripts\\Managers\\AsteroidPool.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAowCkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T22:01:50.927Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T22:01:50.927Z"
             },
             {
               "$type": "Document",
@@ -152,8 +147,7 @@
               "RelativeToolTip": "Scripts\\Health\\HitboxComponent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T21:44:01.44Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T21:44:01.44Z"
             },
             {
               "$type": "Document",
