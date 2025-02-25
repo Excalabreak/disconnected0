@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "E:\\Projects\\disconnected0\\disconnected0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\health\\hitboxcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\health\\hitboxcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\missile\\missileengage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\missile\\missileengage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\managers\\asteroidpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\managers\\asteroidpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\missile\\missiletriggerhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\missile\\missiletriggerhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\weapondeployment\\missileweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\weapondeployment\\missileweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\obstacles\\asteroid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\obstacles\\asteroid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\health\\hitboxcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\health\\hitboxcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\missile\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\missile\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\missile\\missilemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\missile\\missilemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\obstacles\\asteroidmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\obstacles\\asteroidmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\misc\\screenwarp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,20 +47,8 @@
       "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\health\\playerresources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\health\\playerresources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\obstacles\\asteroid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\obstacles\\asteroid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\obstacles\\asteroidmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\obstacles\\asteroidmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,8 +58,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MissileEngage.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileEngage.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\Missile\\MissileEngage.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileEngage.cs",
+              "RelativeToolTip": "Scripts\\Player\\Missile\\MissileEngage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T02:41:08.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Asteroid.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Obstacles\\Asteroid.cs",
+              "RelativeDocumentMoniker": "Scripts\\Obstacles\\Asteroid.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Obstacles\\Asteroid.cs",
+              "RelativeToolTip": "Scripts\\Obstacles\\Asteroid.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T02:32:37.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MissileWeapon.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\WeaponDeployment\\MissileWeapon.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\WeaponDeployment\\MissileWeapon.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\WeaponDeployment\\MissileWeapon.cs",
+              "RelativeToolTip": "Scripts\\Player\\WeaponDeployment\\MissileWeapon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T02:27:11.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MissileTriggerHitbox.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
+              "RelativeToolTip": "Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T02:16:03.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HitboxComponent.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\HitboxComponent.cs",
+              "RelativeDocumentMoniker": "Scripts\\Health\\HitboxComponent.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\HitboxComponent.cs",
+              "RelativeToolTip": "Scripts\\Health\\HitboxComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T21:44:01.44Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -52,53 +133,53 @@
               "RelativeDocumentMoniker": "Scripts\\Managers\\AsteroidPool.cs",
               "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Managers\\AsteroidPool.cs",
               "RelativeToolTip": "Scripts\\Managers\\AsteroidPool.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwEEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T22:01:50.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PlayerResources.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\PlayerResources.cs",
-              "RelativeDocumentMoniker": "Scripts\\Health\\PlayerResources.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\PlayerResources.cs",
-              "RelativeToolTip": "Scripts\\Health\\PlayerResources.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "MissileMovement.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileMovement.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\Missile\\MissileMovement.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileMovement.cs",
+              "RelativeToolTip": "Scripts\\Player\\Missile\\MissileMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T21:48:37.961Z",
+              "WhenOpened": "2025-02-25T02:11:03.129Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HitboxComponent.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\HitboxComponent.cs",
-              "RelativeDocumentMoniker": "Scripts\\Health\\HitboxComponent.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\HitboxComponent.cs",
-              "RelativeToolTip": "Scripts\\Health\\HitboxComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAADAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Missile.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\Missile.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\Missile\\Missile.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\Missile.cs",
+              "RelativeToolTip": "Scripts\\Player\\Missile\\Missile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T21:44:01.44Z",
+              "WhenOpened": "2025-02-25T02:10:05.279Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlayerMovement.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\PlayerMovement.cs",
-              "RelativeDocumentMoniker": "Scripts\\Player\\PlayerMovement.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\PlayerMovement.cs",
-              "RelativeToolTip": "Scripts\\Player\\PlayerMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "AsteroidMovement.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Obstacles\\AsteroidMovement.cs",
+              "RelativeDocumentMoniker": "Scripts\\Obstacles\\AsteroidMovement.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Obstacles\\AsteroidMovement.cs",
+              "RelativeToolTip": "Scripts\\Obstacles\\AsteroidMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T21:38:11.503Z",
+              "WhenOpened": "2025-02-24T21:16:11.426Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "ScreenWarp.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Misc\\ScreenWarp.cs",
               "RelativeDocumentMoniker": "Scripts\\Misc\\ScreenWarp.cs",
@@ -106,38 +187,23 @@
               "RelativeToolTip": "Scripts\\Misc\\ScreenWarp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T21:25:28.613Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T21:25:28.613Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AsteroidMovement.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Obstacles\\AsteroidMovement.cs",
-              "RelativeDocumentMoniker": "Scripts\\Obstacles\\AsteroidMovement.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Obstacles\\AsteroidMovement.cs",
-              "RelativeToolTip": "Scripts\\Obstacles\\AsteroidMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\PlayerMovement.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeToolTip": "Scripts\\Player\\PlayerMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T21:16:11.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T21:38:11.503Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Asteroid.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Obstacles\\Asteroid.cs",
-              "RelativeDocumentMoniker": "Scripts\\Obstacles\\Asteroid.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Obstacles\\Asteroid.cs",
-              "RelativeToolTip": "Scripts\\Obstacles\\Asteroid.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T21:15:23.63Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Player.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\Player.cs",
@@ -145,8 +211,7 @@
               "RelativeToolTip": "Scripts\\Player\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T23:04:07.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T23:04:07.77Z"
             }
           ]
         }

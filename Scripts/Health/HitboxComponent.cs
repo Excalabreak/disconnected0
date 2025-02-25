@@ -27,7 +27,7 @@ public partial class HitboxComponent : Area2D
 	/// if signaled that something entered area:
 	/// damage other area if it is a hitbox
 	/// </summary>
-	/// <param name="area"></param>
+	/// <param name="area">other hitbox</param>
 	private void OnAreaEntered(Area2D area)
 	{
 		if (area is HitboxComponent)
