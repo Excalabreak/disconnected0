@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://crgr68864eahg"]
+[gd_scene load_steps=9 format=3 uid="uid://crgr68864eahg"]
 
 [ext_resource type="Texture2D" uid="uid://chyp8uacd3p0l" path="res://Sprites/Player/Weapons/missile.png" id="1_7oif4"]
 [ext_resource type="Script" path="res://Scripts/Player/Missile/Missile.cs" id="1_xxboq"]
 [ext_resource type="Texture2D" uid="uid://0pnth5p735fr" path="res://Sprites/Player/Weapons/light.png" id="2_i8dbj"]
 [ext_resource type="Script" path="res://Scripts/Player/Missile/MissileMovement.cs" id="4_tdrsv"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="5_5w2i6"]
+[ext_resource type="PackedScene" uid="uid://dxbsluyldvjhx" path="res://Scenes/MissileExplosion.tscn" id="6_e2ifk"]
 [ext_resource type="Script" path="res://Scripts/Player/Missile/MissileTriggerHitbox.cs" id="6_myfya"]
 [ext_resource type="Script" path="res://Scripts/Player/Missile/MissileEngage.cs" id="6_tft5k"]
 
@@ -31,6 +32,7 @@ monitoring = false
 monitorable = false
 script = ExtResource("6_myfya")
 _missile = NodePath("..")
+_explosion = ExtResource("6_e2ifk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MissileHitbox"]
 polygon = PackedVector2Array(-2, -22, -4, -20, -4, 20, 4, 20, 4, -20, 2, -22)
@@ -42,7 +44,7 @@ _armingColor = Color(0, 1, 1, 1)
 _armedColor = Color(0, 1, 0, 1)
 _lockedOnColor = Color(1, 0, 0, 1)
 _armingTimer = NodePath("ArmingTimer")
-_armingTime = 1.0
+_armingTime = 0.5
 _selfDestructTimer = NodePath("SelfDestructTimer")
 
 [node name="ArmingLightSprite" type="Sprite2D" parent="MissleEngage"]
