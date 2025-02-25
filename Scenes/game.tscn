@@ -66,6 +66,7 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_mxcvq")
 
 [node name="HitboxComponent" parent="Player" node_paths=PackedStringArray("_healthComponent") instance=ExtResource("7_3ajoa")]
+collision_mask = 14
 _healthComponent = NodePath("../PlayerResources")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/HitboxComponent"]
@@ -79,9 +80,10 @@ script = ExtResource("6_kojnu")
 [node name="PlayerResources" type="Node2D" parent="Player"]
 script = ExtResource("8_77duu")
 
-[node name="MissileWeapon" type="Node2D" parent="Player" node_paths=PackedStringArray("_playerResources", "_cooldownTimer")]
+[node name="MissileWeapon" type="Node2D" parent="Player" node_paths=PackedStringArray("_playerPosition", "_playerResources", "_cooldownTimer")]
 script = ExtResource("10_asvks")
 _missileScene = ExtResource("11_2de5h")
+_playerPosition = NodePath("..")
 _playerResources = NodePath("../PlayerResources")
 _scrapCost = 2
 _fuelCost = 1.0

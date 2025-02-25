@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://crgr68864eahg"]
+[gd_scene load_steps=8 format=3 uid="uid://crgr68864eahg"]
 
 [ext_resource type="Texture2D" uid="uid://chyp8uacd3p0l" path="res://Sprites/Player/Weapons/missile.png" id="1_7oif4"]
 [ext_resource type="Script" path="res://Scripts/Player/Missile/Missile.cs" id="1_xxboq"]
 [ext_resource type="Texture2D" uid="uid://0pnth5p735fr" path="res://Sprites/Player/Weapons/light.png" id="2_i8dbj"]
 [ext_resource type="Script" path="res://Scripts/Player/Missile/MissileMovement.cs" id="4_tdrsv"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="5_5w2i6"]
+[ext_resource type="Script" path="res://Scripts/Player/Missile/MissileTriggerHitbox.cs" id="6_myfya"]
+[ext_resource type="Script" path="res://Scripts/Player/Missile/MissileEngage.cs" id="6_tft5k"]
 
-[node name="Missile" type="Area2D" node_paths=PackedStringArray("_missileMovement", "_screenWarp")]
+[node name="Missile" type="Node2D" node_paths=PackedStringArray("_missileMovement", "_screenWarp")]
 script = ExtResource("1_xxboq")
 _missileMovement = NodePath("MissileMovement")
 _screenWarp = NodePath("ScreenWarpNode")
@@ -16,14 +18,44 @@ metadata/_edit_group_ = true
 scale = Vector2(2, 2)
 texture = ExtResource("1_7oif4")
 
-[node name="ArmingLightSprite" type="Sprite2D" parent="."]
+[node name="MissileMovement" type="Node2D" parent="."]
+script = ExtResource("4_tdrsv")
+_acceleration = 16.0
+
+[node name="ScreenWarpNode" parent="." instance=ExtResource("5_5w2i6")]
+
+[node name="MissileHitbox" type="Area2D" parent="." node_paths=PackedStringArray("_missile")]
+collision_layer = 8
+collision_mask = 15
+monitoring = false
+monitorable = false
+script = ExtResource("6_myfya")
+_missile = NodePath("..")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MissileHitbox"]
+polygon = PackedVector2Array(-2, -22, -4, -20, -4, 20, 4, 20, 4, -20, 2, -22)
+
+[node name="MissleEngage" type="Node2D" parent="." node_paths=PackedStringArray("_armingLightSprite", "_armingTimer", "_selfDestructTimer")]
+script = ExtResource("6_tft5k")
+_armingLightSprite = NodePath("ArmingLightSprite")
+_armingColor = Color(0, 1, 1, 1)
+_armedColor = Color(0, 1, 0, 1)
+_lockedOnColor = Color(1, 0, 0, 1)
+_armingTimer = NodePath("ArmingTimer")
+_armingTime = 1.0
+_selfDestructTimer = NodePath("SelfDestructTimer")
+
+[node name="ArmingLightSprite" type="Sprite2D" parent="MissleEngage"]
 position = Vector2(0, -3)
 texture = ExtResource("2_i8dbj")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-2, -22, -4, -20, -4, 20, 4, 20, 4, -20, 2, -22)
+[node name="ArmingTimer" type="Timer" parent="MissleEngage"]
+one_shot = true
 
-[node name="MissileMovement" type="Node2D" parent="."]
-script = ExtResource("4_tdrsv")
+[node name="SelfDestructTimer" type="Timer" parent="MissleEngage"]
+one_shot = true
 
-[node name="ScreenWarpNode" parent="." instance=ExtResource("5_5w2i6")]
+[connection signal="area_entered" from="MissileHitbox" to="MissileHitbox" method="OnAreaEntered"]
+[connection signal="Armed" from="MissleEngage" to="MissileHitbox" method="OnArmed"]
+[connection signal="timeout" from="MissleEngage/ArmingTimer" to="MissleEngage" method="OnArmingTimerTimeout"]
+[connection signal="timeout" from="MissleEngage/SelfDestructTimer" to="MissleEngage" method="OnSelfDestructTimerTimeout"]

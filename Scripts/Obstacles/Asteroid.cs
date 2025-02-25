@@ -55,7 +55,6 @@ public partial class Asteroid : Node2D, IPoolItem
     /// </summary>
     public void ReturnToPool()
     {
-        GD.Print("return");
         active = false;
         Visible = false;
         _hitbox.SetDeferred(Area2D.PropertyName.Monitoring, false);

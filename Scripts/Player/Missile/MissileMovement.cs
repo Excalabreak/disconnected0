@@ -17,7 +17,7 @@ public partial class MissileMovement : Node
 
     private Vector2 _velocity = Vector2.Zero;
 
-    public void AccelerateMissile(Area2D missile, float delta)
+    public void AccelerateMissile(Node2D missile, float delta)
     {
         _velocity -= missile.Transform.Y * _acceleration;
         _velocity = Lerp(_velocity, Vector2.Zero, 1 * delta);

@@ -7,7 +7,7 @@ using System;
  * [manager for missile]
  */
 
-public partial class Missile : Area2D
+public partial class Missile : Node2D
 {
     [Export] private MissileMovement _missileMovement;
     [Export] private ScreenWarp _screenWarp;

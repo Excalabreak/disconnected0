@@ -33,7 +33,7 @@ public partial class AsteroidPool : Node2D
             AddChild(asteroid);
         }
         //test, remove later
-        StartSpawningAsteroids();
+        //StartSpawningAsteroids();
     }
 
     /// <summary>
