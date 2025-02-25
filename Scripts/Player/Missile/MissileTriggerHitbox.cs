@@ -5,7 +5,7 @@ using System.Reflection;
 /*
  * Author: [Lam, Justin]
  * Last Updated: [02/25/2025]
- * [Hitbox for missile]
+ * [Hitbox for missile buh]
  */
 
 public partial class MissileTriggerHitbox : Area2D
