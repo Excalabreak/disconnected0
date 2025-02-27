@@ -1,33 +1,98 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcv5e2y61uvn2"]
+[gd_scene load_steps=13 format=3 uid="uid://dcv5e2y61uvn2"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Game.cs" id="1_g4oc7"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_xithb"]
 [ext_resource type="PackedScene" uid="uid://cwvs4l7btjfqj" path="res://Scenes/asteroid.tscn" id="2_j118a"]
 [ext_resource type="Texture2D" uid="uid://cmgwxciq2etyu" path="res://Sprites/Player/Satellite/satalite.png" id="2_mxcvq"]
+[ext_resource type="Script" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerMovement.cs" id="6_kojnu"]
+[ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="7_3ajoa"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="7_hke8k"]
+[ext_resource type="Script" path="res://Scripts/Health/PlayerResources.cs" id="8_77duu"]
+[ext_resource type="Script" path="res://Scripts/Managers/UIManager.cs" id="9_3j872"]
+[ext_resource type="Script" path="res://Scripts/Player/WeaponDeployment/MissileWeapon.cs" id="10_asvks"]
+[ext_resource type="PackedScene" uid="uid://crgr68864eahg" path="res://Scenes/missile.tscn" id="11_2de5h"]
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("_timer")]
+[node name="Game" type="Node2D"]
 script = ExtResource("1_g4oc7")
+
+[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel")]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 327.0
+offset_bottom = 90.0
+script = ExtResource("9_3j872")
+_scrapLabel = NodePath("ScrapLabel")
+_fuelLabel = NodePath("FuelLable")
+metadata/_edit_group_ = true
+
+[node name="ScrapLabel" type="Label" parent="UIManager"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 289.0
+offset_bottom = 56.0
+text = "Scrap:"
+vertical_alignment = 1
+
+[node name="FuelLable" type="Label" parent="UIManager"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 289.0
+offset_bottom = 96.0
+text = "Fuel:"
+vertical_alignment = 1
+
+[node name="AsteroidPool" type="Node2D" parent="." node_paths=PackedStringArray("_timer")]
+script = ExtResource("2_srqrm")
 _asteroidScene = ExtResource("2_j118a")
 _timer = NodePath("Timer")
+_testSpawn = true
 
-[node name="Player" type="Area2D" parent="."]
-position = Vector2(315, 178)
+[node name="Timer" type="Timer" parent="AsteroidPool"]
+one_shot = true
+
+[node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("_playerMovement", "_weapons", "_screenWarp")]
 script = ExtResource("1_xithb")
+_playerMovement = NodePath("PlayerMovement")
+_weapons = [NodePath("MissileWeapon")]
+_screenWarp = NodePath("ScreenWarpNode")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(1, 0)
-rotation = 1.5708
-scale = Vector2(2.58723, 2.74654)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_mxcvq")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
-rotation = 1.5708
-scale = Vector2(1.19466, 0.818099)
-polygon = PackedVector2Array(-31, -31, 31, -31, 31, 31, -31, 31)
+[node name="HitboxComponent" parent="Player" node_paths=PackedStringArray("_healthComponent") instance=ExtResource("7_3ajoa")]
+collision_mask = 14
+_healthComponent = NodePath("../PlayerResources")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/HitboxComponent"]
+polygon = PackedVector2Array(39, 25, -36, 25, -36, -22, 39, -22)
+
+[node name="PlayerMovement" type="Node2D" parent="Player"]
+script = ExtResource("6_kojnu")
+
+[node name="ScreenWarpNode" parent="Player" instance=ExtResource("7_hke8k")]
+
+[node name="PlayerResources" type="Node2D" parent="Player"]
+script = ExtResource("8_77duu")
+
+[node name="MissileWeapon" type="Node2D" parent="Player" node_paths=PackedStringArray("_playerPosition", "_playerResources", "_cooldownTimer")]
+script = ExtResource("10_asvks")
+_missileScene = ExtResource("11_2de5h")
+_playerPosition = NodePath("..")
+_playerResources = NodePath("../PlayerResources")
+_scrapCost = 2
+_fuelCost = 1.0
+_cooldown = 1.0
+_cooldownTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Player/MissileWeapon"]
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
+[connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]
+[connection signal="timeout" from="Player/MissileWeapon/Timer" to="Player/MissileWeapon" method="OnTimerTimeout"]

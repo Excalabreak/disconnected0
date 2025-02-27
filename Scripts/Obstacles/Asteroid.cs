@@ -3,26 +3,27 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [1/30/25]
- * [scirpt for the player]
+ * Last Updated: [02/24/2025]
+ * [scirpt for the asteroid and pooling]
  */
 
-public partial class Asteroid : Area2D
+public partial class Asteroid : Node2D, IPoolItem
 {
-    [Export] private float _velocityRange = 150f;
-    [Export] private float _screenWarpBuffer = 50f;
+    [Export] private AsteroidMovement _asteroidMovement;
+    [Export] private Area2D _hitbox;
+    [Export] private ScreenWarp _screenWarp;
 
-    //velocity
-    private Vector2 _velocity = Vector2.Zero;
+    public bool active { get; set; } = false;
 
     /// <summary>
     /// on start, set velocity
     /// </summary>
     public override void _Ready()
     {
-        _velocity = new Vector2(
-            (float)GD.RandRange(-_velocityRange, _velocityRange),
-            (float)GD.RandRange(-_velocityRange, _velocityRange));
+        Visible = false;
+        _hitbox.Monitoring = false;
+        _hitbox.Monitorable = false;
+        SetProcess(false);
     }
 
     /// <summary>
@@ -31,41 +32,33 @@ public partial class Asteroid : Area2D
     /// <param name="delta"></param>
     public override void _Process(double delta)
     {
-        Move((float)delta);
-        CheckScreenWarp();
+        _asteroidMovement.Move(this, (float)delta);
+        _screenWarp.CheckScreenWarp(this, _asteroidMovement.velocity);
     }
 
     /// <summary>
-    /// move asteroid based on velocity
+    /// when spawned for object pooling
     /// </summary>
-    /// <param name="delta"></param>
-    private void Move(float delta)
+    public void SpawnFromPool()
     {
-        Position += _velocity * delta;
+        active = true;
+        Visible = true;
+        _hitbox.Monitoring = true;
+        _hitbox.Monitorable = true;
+        SetProcess(true);
+
+        _asteroidMovement.SetDirection();
     }
 
     /// <summary>
-    /// checks if asteroid is offscreen and warps them to the correct location
+    /// deactivates the object for pooling
     /// </summary>
-    private void CheckScreenWarp()
+    public void ReturnToPool()
     {
-        Vector2 resolution = GetViewport().GetVisibleRect().Size;
-
-        if (Position.X < -_screenWarpBuffer && _velocity.X < 0)
-        {
-            Position = new Vector2(resolution.X + _screenWarpBuffer, Position.Y);
-        }
-        if (Position.Y < -_screenWarpBuffer && _velocity.Y < 0)
-        {
-            Position = new Vector2(Position.X, resolution.Y + _screenWarpBuffer);
-        }
-        if (Position.X > resolution.X + _screenWarpBuffer && _velocity.X > 0)
-        {
-            Position = new Vector2(-_screenWarpBuffer, Position.Y);
-        }
-        if (Position.Y > resolution.Y + _screenWarpBuffer && _velocity.Y > 0)
-        {
-            Position = new Vector2(Position.X, -_screenWarpBuffer);
-        }
+        active = false;
+        Visible = false;
+        _hitbox.SetDeferred(Area2D.PropertyName.Monitoring, false);
+        _hitbox.SetDeferred(Area2D.PropertyName.Monitorable, false);
+        SetProcess(false);
     }
 }
