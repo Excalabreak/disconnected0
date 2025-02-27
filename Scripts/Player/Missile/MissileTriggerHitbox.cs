@@ -4,14 +4,13 @@ using System.Reflection;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/25/2025]
+ * Last Updated: [02/26/2025]
  * [Hitbox for missile buh]
  */
 
 public partial class MissileTriggerHitbox : Area2D
 {
-    [Export] private Missile _missile;
-    [Export] private PackedScene _explosion;
+    [Export] private MissileExplosion _missileExplosion;
     [Export] private int _onHitDamage = 1;
 
     /// <summary>
@@ -27,21 +26,8 @@ public partial class MissileTriggerHitbox : Area2D
             hitbox.Damage(_onHitDamage);
 
             //explosion
-            CallDeferred("AddExplosion");
-
-            _missile.QueueFree();
+            _missileExplosion.CallDeferred("AddExplosion");
         }
-    }
-
-    /// <summary>
-    /// creates explosion
-    /// </summary>
-    private void AddExplosion()
-    {
-        Node2D explosion = _explosion.Instantiate<Node2D>() as Node2D;
-        explosion.GlobalPosition = _missile.GlobalPosition;
-        explosion.GlobalRotation = _missile.GlobalRotation;
-        GetTree().Root.AddChild(explosion);
     }
 
     private void OnArmed()

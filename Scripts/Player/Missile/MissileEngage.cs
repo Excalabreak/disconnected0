@@ -3,13 +3,14 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/24/2025]
+ * Last Updated: [02/26/2025]
  * [class for missile to wait before being able to explode]
  */
 
 public partial class MissileEngage : Node
 {
-	[Export] private Sprite2D _armingLightSprite;
+    [Export] private MissileExplosion _missileExplosion;
+    [Export] private Sprite2D _armingLightSprite;
 	[Export] private Color _armingColor = Color.Color8(0, 1, 1, 1);
     [Export] private Color _armedColor = Color.Color8(0, 1, 0, 1);
 	[Export] private Color _lockedOnColor = Color.Color8(1, 0, 0, 1);
@@ -52,6 +53,14 @@ public partial class MissileEngage : Node
     /// </summary>
     private void OnSelfDestructTimerTimeout()
     {
-        GD.Print("boom");
+        _missileExplosion.CallDeferred("AddExplosion");
+    }
+
+    /// <summary>
+    /// changes the arming light to locked on
+    /// </summary>
+    public void LockedOnLight()
+    {
+        _armingLightSprite.Modulate = _lockedOnColor;
     }
 }
