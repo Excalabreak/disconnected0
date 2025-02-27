@@ -158,6 +158,48 @@ collision_mask = 7
 collide_with_areas = true
 collide_with_bodies = false
 
+[node name="RayCast2D14" type="RayCast2D" parent="MissileDetection"]
+rotation = 0.610865
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D15" type="RayCast2D" parent="MissileDetection"]
+rotation = -0.610865
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D16" type="RayCast2D" parent="MissileDetection"]
+rotation = 0.698132
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D17" type="RayCast2D" parent="MissileDetection"]
+rotation = -0.698132
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D18" type="RayCast2D" parent="MissileDetection"]
+rotation = 0.785398
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D19" type="RayCast2D" parent="MissileDetection"]
+rotation = -0.785398
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
 [node name="MissileExplosion" type="Node2D" parent="." node_paths=PackedStringArray("_missile")]
 script = ExtResource("9_tn7qu")
 _missile = NodePath("..")

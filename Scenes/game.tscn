@@ -49,6 +49,7 @@ vertical_alignment = 1
 script = ExtResource("2_srqrm")
 _asteroidScene = ExtResource("2_j118a")
 _timer = NodePath("Timer")
+_testSpawn = true
 
 [node name="Timer" type="Timer" parent="AsteroidPool"]
 one_shot = true

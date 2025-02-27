@@ -13,6 +13,8 @@ public partial class AsteroidPool : Node2D
     //asteroid spawn variables
     [Export] private PackedScene _asteroidScene;
     [Export] private Timer _timer;
+
+    [Export] private bool _testSpawn = false;
     private bool _isSpawning = false;
 
     //object pooling
@@ -33,7 +35,10 @@ public partial class AsteroidPool : Node2D
             AddChild(asteroid);
         }
         //test, remove later
-        //StartSpawningAsteroids();
+        if (_testSpawn)
+        {
+            StartSpawningAsteroids();
+        }
     }
 
     /// <summary>
