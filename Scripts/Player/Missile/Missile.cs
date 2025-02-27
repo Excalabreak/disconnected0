@@ -16,7 +16,7 @@ public partial class Missile : Node2D
     {
         float fDelta = (float)delta;
         _missileMovement.AccelerateMissile(this, fDelta);
+        _missileMovement.RotateTwoardsTarget(this, fDelta);
         _screenWarp.CheckScreenWarp(this, _missileMovement.velocity);
     }
-
 }

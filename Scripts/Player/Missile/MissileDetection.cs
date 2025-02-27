@@ -46,7 +46,13 @@ public partial class MissileDetection : Node2D
                 {
                     _lockedOn = true;
                     _missileEngage.LockedOnLight();
-                    GD.Print("found something");
+                    _missileMovement.SetTarget(ray.GetCollider() as Node2D);
+
+                    foreach (RayCast2D ray1 in _raycasts)
+                    {
+                        ray1.Enabled = false;
+                    }
+
                     break;
                 }
             }

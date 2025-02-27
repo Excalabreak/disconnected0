@@ -23,7 +23,8 @@ texture = ExtResource("1_7oif4")
 
 [node name="MissileMovement" type="Node2D" parent="."]
 script = ExtResource("4_tdrsv")
-_acceleration = 16.0
+_rotateSpeed = 10.0
+_acceleration = 7.0
 
 [node name="ScreenWarpNode" parent="." instance=ExtResource("5_5w2i6")]
 
@@ -50,7 +51,9 @@ _armingTime = 0.5
 _selfDestructTimer = NodePath("SelfDestructTimer")
 
 [node name="ArmingLightSprite" type="Sprite2D" parent="MissleEngage"]
+z_index = 7
 position = Vector2(0, -3)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_i8dbj")
 
 [node name="ArmingTimer" type="Timer" parent="MissleEngage"]
@@ -108,6 +111,48 @@ collide_with_bodies = false
 
 [node name="RayCast2D7" type="RayCast2D" parent="MissileDetection"]
 rotation = -0.261799
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D8" type="RayCast2D" parent="MissileDetection"]
+rotation = 0.349066
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D9" type="RayCast2D" parent="MissileDetection"]
+rotation = -0.349066
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D10" type="RayCast2D" parent="MissileDetection"]
+rotation = 0.436332
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D11" type="RayCast2D" parent="MissileDetection"]
+rotation = -0.436332
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D12" type="RayCast2D" parent="MissileDetection"]
+rotation = 0.523599
+target_position = Vector2(0, -200)
+collision_mask = 7
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D13" type="RayCast2D" parent="MissileDetection"]
+rotation = -0.523599
 target_position = Vector2(0, -200)
 collision_mask = 7
 collide_with_areas = true

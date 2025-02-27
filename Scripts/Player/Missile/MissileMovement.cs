@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/23/2025]
+ * Last Updated: [02/26/2025]
  * [Movement for missile]
  */
 
@@ -17,6 +17,8 @@ public partial class MissileMovement : Node
 
     private Vector2 _velocity = Vector2.Zero;
 
+    private Node2D _target;
+
     public void AccelerateMissile(Node2D missile, float delta)
     {
         _velocity -= missile.Transform.Y * _acceleration;
@@ -28,10 +30,23 @@ public partial class MissileMovement : Node
     /// missile rotates based on raycasts
     /// </summary>
     /// <param name="delta">nuber of frames since last called</param>
-    public void RotatePlayer(Area2D missile, float delta)
+    public void RotateTwoardsTarget(Node2D missile, float delta)
     {
-        float rot = Input.GetAxis("left", "right") * _rotateSpeed;
-        missile.Rotate(rot * delta);
+        if (_target != null)
+        {
+            Vector2 dir = _target.GlobalPosition - missile.GlobalPosition;
+            float angleTo = missile.Transform.Y.AngleTo(dir);
+            missile.Rotate(-(Mathf.Sign(angleTo) * Mathf.Min(delta * _rotateSpeed, Mathf.Abs(angleTo))));
+        }
+    }
+
+    /// <summary>
+    /// sets target
+    /// </summary>
+    /// <param name="target">what the missile will target</param>
+    public void SetTarget(Node2D target)
+    {
+        _target = target;
     }
 
     /// <summary>
