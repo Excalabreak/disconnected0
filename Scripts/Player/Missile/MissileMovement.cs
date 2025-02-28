@@ -16,8 +16,18 @@ public partial class MissileMovement : Node
     [Export] private float _acceleration = 20;
 
     private Vector2 _velocity = Vector2.Zero;
+    private bool _velocityInitialized = false;
 
     private Node2D _target;
+
+    public void SetInitialVelocity(Vector2 velocity)
+    {
+        if (!_velocityInitialized)
+        {
+            _velocityInitialized = true;
+            _velocity = velocity;
+        }
+    }
 
     public void AccelerateMissile(Node2D missile, float delta)
     {

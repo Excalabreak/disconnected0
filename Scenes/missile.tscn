@@ -24,7 +24,7 @@ texture = ExtResource("1_7oif4")
 [node name="MissileMovement" type="Node2D" parent="."]
 script = ExtResource("4_tdrsv")
 _rotateSpeed = 10.0
-_acceleration = 7.0
+_acceleration = 13.0
 
 [node name="ScreenWarpNode" parent="." instance=ExtResource("5_5w2i6")]
 
