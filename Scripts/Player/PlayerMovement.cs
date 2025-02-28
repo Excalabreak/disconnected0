@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/23/2025]
+ * Last Updated: [02/28/2025]
  * [player Movement]
  */
 
@@ -65,5 +65,10 @@ public partial class PlayerMovement : Node2D
     public Vector2 velocity
     {
         get { return _velocity; }
+    }
+
+    public float thrust
+    {
+        get { return _thrust; }
     }
 }

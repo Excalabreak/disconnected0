@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2f8hde0kykrs"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_e62b1"]
+[ext_resource type="Texture2D" uid="uid://cmgwxciq2etyu" path="res://Sprites/Player/Satellite/satalite.png" id="2_qlb5c"]
+[ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="3_50un7"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerMovement.cs" id="4_8e8hw"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="5_5bktv"]
+[ext_resource type="Script" path="res://Scripts/Health/PlayerResources.cs" id="6_ea8gb"]
+[ext_resource type="Script" path="res://Scripts/Player/WeaponDeployment/MissileWeapon.cs" id="7_6n82x"]
+[ext_resource type="PackedScene" uid="uid://crgr68864eahg" path="res://Scenes/missile.tscn" id="8_3trnf"]
+[ext_resource type="Script" path="res://Scripts/Player/Misc/FireEffect.cs" id="9_jv50c"]
+[ext_resource type="Texture2D" uid="uid://bam1mebgm8oy" path="res://Sprites/Player/Satellite/Fire.png" id="10_iwioi"]
+
+[node name="Player" type="Node2D" node_paths=PackedStringArray("_playerMovement", "_weapons", "_screenWarp", "_fireEffect")]
+script = ExtResource("1_e62b1")
+_playerMovement = NodePath("PlayerMovement")
+_weapons = [NodePath("MissileWeapon")]
+_screenWarp = NodePath("ScreenWarpNode")
+_fireEffect = NodePath("FireEffect")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_qlb5c")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("_healthComponent") instance=ExtResource("3_50un7")]
+collision_mask = 14
+_healthComponent = NodePath("../PlayerResources")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
+z_index = 2
+position = Vector2(-2, 0)
+polygon = PackedVector2Array(39, 25, -35, 25, -35, -22, 39, -22)
+
+[node name="PlayerMovement" type="Node2D" parent="."]
+script = ExtResource("4_8e8hw")
+
+[node name="ScreenWarpNode" parent="." instance=ExtResource("5_5bktv")]
+
+[node name="PlayerResources" type="Node2D" parent="."]
+script = ExtResource("6_ea8gb")
+
+[node name="MissileWeapon" type="Node2D" parent="." node_paths=PackedStringArray("_playerPosition", "_playerResources", "_cooldownTimer")]
+script = ExtResource("7_6n82x")
+_missileScene = ExtResource("8_3trnf")
+_playerPosition = NodePath("..")
+_playerResources = NodePath("../PlayerResources")
+_scrapCost = 2
+_fuelCost = 1.0
+_cooldown = 1.0
+_cooldownTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="MissileWeapon"]
+one_shot = true
+
+[node name="FireEffect" type="Node2D" parent="." node_paths=PackedStringArray("_fireSprite", "_playerMovement")]
+script = ExtResource("9_jv50c")
+_fireSprite = NodePath("Sprite2D")
+_playerMovement = NodePath("../PlayerMovement")
+
+[node name="Sprite2D" type="Sprite2D" parent="FireEffect"]
+visible = false
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("10_iwioi")
+
+[connection signal="timeout" from="MissileWeapon/Timer" to="MissileWeapon" method="OnTimerTimeout"]
