@@ -47,6 +47,7 @@ script = ExtResource("7_6n82x")
 _missileScene = ExtResource("8_3trnf")
 _playerPosition = NodePath("..")
 _playerMovement = NodePath("../PlayerMovement")
+_inputName = "missile"
 _playerResources = NodePath("../PlayerResources")
 _scrapCost = 2
 _fuelCost = 1.0

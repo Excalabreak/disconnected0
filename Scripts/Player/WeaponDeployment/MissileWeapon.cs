@@ -2,20 +2,21 @@ using Godot;
 using System;
 using System.Diagnostics;
 
+/*
+ * Author: [Lam, Justin]
+ * Last Updated: [02/28/2025]
+ * [script for launching a missile]
+ */
+
 public partial class MissileWeapon : BaseWeapon
 {
     [Export] private PackedScene _missileScene;
     [Export] private Node2D _playerPosition;
     [Export] private PlayerMovement _playerMovement;
 
-    public override void WeaponCall()
-    {
-        if (Input.IsActionJustPressed("missile"))
-        {
-            base.WeaponCall();
-        }
-    }
-
+    /// <summary>
+    /// instatiates a missile
+    /// </summary>
     protected override void Weapon()
     {
         base.Weapon();

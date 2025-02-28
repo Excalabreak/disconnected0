@@ -9,6 +9,8 @@ using System;
 
 public partial class BaseWeapon : Node
 {
+    [Export] protected string _inputName;
+
     [Export] protected PlayerResources _playerResources;
 	[Export] protected int _scrapCost;
 	[Export] protected float _fuelCost;
@@ -37,7 +39,7 @@ public partial class BaseWeapon : Node
     {
         //if input (has to be overrided)
         //if can use weapon
-        if (_canUseWeapon && _playerResources.CheckWeaponCost(_scrapCost, _fuelCost))
+        if (Input.IsActionJustPressed(_inputName) && _canUseWeapon && _playerResources.CheckWeaponCost(_scrapCost, _fuelCost))
         {
             _canUseWeapon = false;
             _cooldownTimer.Start();
