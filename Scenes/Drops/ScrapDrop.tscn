@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp8bmh0ukm6c3"]
+
+[ext_resource type="Texture2D" uid="uid://cvfsohst0ud3b" path="res://Sprites/Drops/scrapDrop.png" id="1_ucnxu"]
+[ext_resource type="Script" path="res://Scripts/Health/DropHitbox.cs" id="2_p45r1"]
+
+[node name="ScrapDrop" type="Node2D"]
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ucnxu")
+
+[node name="DropHitbox" type="Area2D" parent="." node_paths=PackedStringArray("_drop")]
+script = ExtResource("2_p45r1")
+_drop = NodePath("..")
+_scrapPickup = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DropHitbox"]
+polygon = PackedVector2Array(-12, 1, 1, -12, 11, -2, -2, 11)
+
+[connection signal="area_entered" from="DropHitbox" to="DropHitbox" method="OnAreaEntered"]
