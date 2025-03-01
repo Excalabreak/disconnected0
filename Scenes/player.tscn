@@ -25,7 +25,7 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_qlb5c")
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("_healthComponent") instance=ExtResource("3_50un7")]
-collision_mask = 14
+collision_mask = 30
 _healthComponent = NodePath("../PlayerResources")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]

@@ -11,6 +11,7 @@ metadata/_edit_group_ = true
 texture = ExtResource("1_ucnxu")
 
 [node name="DropHitbox" type="Area2D" parent="." node_paths=PackedStringArray("_drop")]
+collision_layer = 16
 script = ExtResource("2_p45r1")
 _drop = NodePath("..")
 _scrapPickup = 1
