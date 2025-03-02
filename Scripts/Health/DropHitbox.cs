@@ -1,6 +1,12 @@
 using Godot;
 using System;
 
+/*
+ * Author: [Lam, Justin]
+ * Last Updated: [03/02/2025]
+ * [hitbox for drops]
+ */
+
 public partial class DropHitbox : Area2D
 {
     [Export] private Node2D _drop;
