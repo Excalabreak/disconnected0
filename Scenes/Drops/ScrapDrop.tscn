@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp8bmh0ukm6c3"]
+[gd_scene load_steps=4 format=3 uid="uid://dp8bmh0ukm6c3"]
 
 [ext_resource type="Texture2D" uid="uid://cvfsohst0ud3b" path="res://Sprites/Drops/scrapDrop.png" id="1_ucnxu"]
 [ext_resource type="Script" path="res://Scripts/Health/DropHitbox.cs" id="2_p45r1"]
+[ext_resource type="PackedScene" uid="uid://bxoqlunl6awko" path="res://Scenes/Components/AutoDespawn.tscn" id="3_aaf1p"]
 
 [node name="ScrapDrop" type="Node2D"]
 scale = Vector2(2, 2)
@@ -18,5 +19,8 @@ _scrapPickup = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DropHitbox"]
 polygon = PackedVector2Array(-12, 1, 1, -12, 11, -2, -2, 11)
+
+[node name="AutoDespawn" parent="." node_paths=PackedStringArray("_drop") instance=ExtResource("3_aaf1p")]
+_drop = NodePath("..")
 
 [connection signal="area_entered" from="DropHitbox" to="DropHitbox" method="OnAreaEntered"]
