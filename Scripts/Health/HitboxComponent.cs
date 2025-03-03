@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/24/2025]
+ * Last Updated: [03/01/2025]
  * [component for hitboxes]
  */
 
@@ -36,5 +36,10 @@ public partial class HitboxComponent : Area2D
 
 			hitbox.Damage(_onHitDamage);
 		}
+	}
+
+	public BaseHealth HealthComponent
+	{
+		get { return _healthComponent; }
 	}
 }

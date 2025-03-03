@@ -44,6 +44,7 @@ _timer = NodePath("Timer")
 _testSpawn = true
 
 [node name="Timer" type="Timer" parent="AsteroidPool"]
+wait_time = 5.0
 one_shot = true
 
 [node name="Player" parent="." instance=ExtResource("5_3w5xu")]

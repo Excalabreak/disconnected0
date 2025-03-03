@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/Misc/ExplosionTimer.cs" id="3_oq53j"]
 
 [node name="MissileExplosion" type="Node2D"]
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)

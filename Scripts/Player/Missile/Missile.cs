@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/23/2025]
+ * Last Updated: [02/28/2025]
  * [manager for missile]
  */
 
@@ -18,5 +18,10 @@ public partial class Missile : Node2D
         _missileMovement.AccelerateMissile(this, fDelta);
         _missileMovement.RotateTwoardsTarget(this, fDelta);
         _screenWarp.CheckScreenWarp(this, _missileMovement.velocity);
+    }
+
+    public MissileMovement missileMovement
+    {
+        get { return _missileMovement; }
     }
 }
