@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt1fmnkg41y5u"]
+
+[ext_resource type="Script" path="res://Scripts/Health/EnemyHealth.cs" id="1_uoidj"]
+[ext_resource type="PackedScene" uid="uid://ux6excdmpvk3" path="res://Scenes/Drops/FuelDrop.tscn" id="2_m2h3h"]
+[ext_resource type="PackedScene" uid="uid://dp8bmh0ukm6c3" path="res://Scenes/Drops/ScrapDrop.tscn" id="3_f60x1"]
+
+[node name="EnemyHealth" type="Node2D"]
+script = ExtResource("1_uoidj")
+_scrapDrop = ExtResource("2_m2h3h")
+_fuelDrop = ExtResource("3_f60x1")

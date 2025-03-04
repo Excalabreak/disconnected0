@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://cti3olwf1weap"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/BaseEnemyScript.cs" id="1_xrdmo"]
+[ext_resource type="Texture2D" uid="uid://clh20ldur2ij8" path="res://Sprites/Obstacles/Enemy/grunt.png" id="2_5qhb4"]
+[ext_resource type="PackedScene" uid="uid://bt1fmnkg41y5u" path="res://Scenes/Components/EnemyHealth.tscn" id="3_s0cra"]
+[ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="4_2qgpq"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Grunt/GruntMovement.cs" id="5_wp1ji"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Grunt/GruntAttack.cs" id="6_dst85"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="7_uv4l0"]
+
+[node name="Grunt" type="Node2D" node_paths=PackedStringArray("_screenWarp", "_enemyMovement", "_enemyAttack")]
+script = ExtResource("1_xrdmo")
+_screenWarp = NodePath("ScreenWarpNode")
+_enemyMovement = NodePath("GruntMovement")
+_enemyAttack = NodePath("GruntAttack")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_5qhb4")
+
+[node name="EnemyHealth" parent="." instance=ExtResource("3_s0cra")]
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("_healthComponent") instance=ExtResource("4_2qgpq")]
+collision_layer = 2
+collision_mask = 9
+_healthComponent = NodePath("../EnemyHealth")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
+polygon = PackedVector2Array(-17, 10, 17, 10, 17, 5, 12, 0, 10, 0, 10, -10, 5, -15, -5, -15, -10, -10, -10, 0, -12, 0, -17, 5)
+
+[node name="GruntMovement" type="Node2D" parent="."]
+script = ExtResource("5_wp1ji")
+
+[node name="GruntAttack" type="Node2D" parent="."]
+script = ExtResource("6_dst85")
+
+[node name="ScreenWarpNode" parent="." instance=ExtResource("7_uv4l0")]
+position = Vector2(-16.1363, 10.3633)
