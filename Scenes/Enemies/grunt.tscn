@@ -9,14 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="7_uv4l0"]
 
 [node name="Grunt" type="Node2D" node_paths=PackedStringArray("_screenWarp", "_enemyMovement", "_enemyAttack")]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(3, 3)
 script = ExtResource("1_xrdmo")
 _screenWarp = NodePath("ScreenWarpNode")
 _enemyMovement = NodePath("GruntMovement")
 _enemyAttack = NodePath("GruntAttack")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_5qhb4")
 
 [node name="EnemyHealth" parent="." instance=ExtResource("3_s0cra")]
@@ -27,7 +26,7 @@ collision_mask = 9
 _healthComponent = NodePath("../EnemyHealth")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
-polygon = PackedVector2Array(-17, 10, 17, 10, 17, 5, 12, 0, 10, 0, 10, -10, 5, -15, -5, -15, -10, -10, -10, 0, -12, 0, -17, 5)
+polygon = PackedVector2Array(-7, 4, 7, 4, 7, 2, 5, 0, 4, 0, 4, -4, 2, -6, -2, -6, -4, -4, -4, 0, -5, 0, -7, 2)
 
 [node name="GruntMovement" type="Node2D" parent="." node_paths=PackedStringArray("_timer", "_enemy")]
 script = ExtResource("5_wp1ji")
