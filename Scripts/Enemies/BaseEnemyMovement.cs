@@ -9,7 +9,9 @@ using System;
 
 public abstract partial class BaseEnemyMovement : Node2D
 {
-    [Export] protected Vector2 _velocity;
+    [Export] protected Node2D _enemy;
+
+    protected Vector2 _velocity;
 
     /// <summary>
     /// call movement

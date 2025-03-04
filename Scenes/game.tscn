@@ -52,5 +52,6 @@ one_shot = true
 position = Vector2(514, 207)
 
 [node name="Grunt" parent="." instance=ExtResource("6_fgp1b")]
+position = Vector2(332, 147)
 
 [connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]
