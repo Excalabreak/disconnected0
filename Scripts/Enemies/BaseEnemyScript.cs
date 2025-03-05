@@ -27,10 +27,5 @@ public partial class BaseEnemyScript : Node2D
 		{
 			_enemyMovement.Move(fDelta);
 		}
-
-		if (_enemyAttack != null)
-		{
-			_enemyAttack.Attack();
-		}
     }
 }

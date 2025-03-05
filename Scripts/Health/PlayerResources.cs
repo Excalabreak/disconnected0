@@ -130,6 +130,6 @@ public partial class PlayerResources : BaseHealth
 	/// </summary>
 	private void UpdateUI()
 	{
-		UIManager._instance.SetResourceLabels(_currentScrap, _currentFuel);
+		UIManager.instance.SetResourceLabels(_currentScrap, _currentFuel);
 	}
 }
