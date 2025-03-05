@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/28/2025]
+ * Last Updated: [03/04/2025]
  * [manager for missile]
  */
 
@@ -15,9 +15,16 @@ public partial class Missile : Node2D
     public override void _Process(double delta)
     {
         float fDelta = (float)delta;
-        _missileMovement.AccelerateMissile(this, fDelta);
-        _missileMovement.RotateTwoardsTarget(this, fDelta);
-        _screenWarp.CheckScreenWarp(this, _missileMovement.velocity);
+
+        if (_missileMovement != null)
+        {
+            _missileMovement.AccelerateMissile(this, fDelta);
+            _missileMovement.RotateTwoardsTarget(this, fDelta);
+        }
+        if (_screenWarp != null)
+        {
+            _screenWarp.CheckScreenWarp(this, _missileMovement.velocity);
+        }
     }
 
     public MissileMovement missileMovement

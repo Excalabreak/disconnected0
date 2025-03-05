@@ -9,7 +9,7 @@ using System;
 
 public partial class UIManager : Node
 {
-	public static UIManager _instance;
+	private static UIManager _instance;
 
     [Export] private Label _scrapLabel;
     [Export] private Label _fuelLabel;
@@ -31,5 +31,10 @@ public partial class UIManager : Node
     {
         _scrapLabel.Text = "Scrap: " + scrap;
         _fuelLabel.Text = "Fuel: " + fuel;
+    }
+
+    public static UIManager instance
+    {
+        get { return _instance; }
     }
 }
