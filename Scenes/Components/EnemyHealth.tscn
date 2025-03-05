@@ -6,5 +6,5 @@
 
 [node name="EnemyHealth" type="Node2D"]
 script = ExtResource("1_uoidj")
-_scrapDrop = ExtResource("2_m2h3h")
-_fuelDrop = ExtResource("3_f60x1")
+_scrapDrop = ExtResource("3_f60x1")
+_fuelDrop = ExtResource("2_m2h3h")

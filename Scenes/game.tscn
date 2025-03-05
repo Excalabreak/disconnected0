@@ -43,7 +43,6 @@ vertical_alignment = 1
 script = ExtResource("2_srqrm")
 _asteroidScene = ExtResource("2_j118a")
 _timer = NodePath("Timer")
-_testSpawn = true
 
 [node name="Timer" type="Timer" parent="AsteroidPool"]
 wait_time = 5.0
@@ -53,6 +52,6 @@ one_shot = true
 position = Vector2(514, 207)
 
 [node name="Grunt" parent="." instance=ExtResource("6_fgp1b")]
-position = Vector2(332, 147)
+position = Vector2(293, 76)
 
 [connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]
