@@ -1,22 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbwn3uohdujur"]
+[gd_scene load_steps=15 format=3 uid="uid://cbwn3uohdujur"]
 
+[ext_resource type="Script" path="res://Scripts/Enemies/BaseEnemyScript.cs" id="1_betw5"]
 [ext_resource type="Texture2D" uid="uid://d20fw4wx3qvwo" path="res://Sprites/Obstacles/Enemy/scout.png" id="1_rw3qo"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/StateMachine.cs" id="1_up56p"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Scout/States/ScoutWanderState.cs" id="2_8qfoh"]
 [ext_resource type="Texture2D" uid="uid://0pnth5p735fr" path="res://Sprites/Player/Weapons/light.png" id="2_efkqp"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Scout/States/ScoutScanState.cs" id="3_6dnhe"]
 [ext_resource type="Texture2D" uid="uid://dt1qw5bri6jvd" path="res://Sprites/Obstacles/Enemy/Weapons/scoutSignal.png" id="3_sv3ut"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="4_c3bxf"]
+[ext_resource type="Texture2D" uid="uid://c21w2oeatm5q4" path="res://Sprites/Obstacles/Enemy/Weapons/scoutSignalRange.png" id="5_0wwlt"]
 [ext_resource type="PackedScene" uid="uid://bt1fmnkg41y5u" path="res://Scenes/Components/EnemyHealth.tscn" id="5_f7g64"]
 [ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="6_7wxnr"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Scout/States/ScoutDeployState.cs" id="6_w8f4n"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Scout/ScoutMovement.cs" id="7_mmlnt"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Scout/ScoutAttack.cs" id="10_g1ntj"]
 
-[node name="Scout" type="Node2D"]
+[node name="Scout" type="Node2D" node_paths=PackedStringArray("_screenWarp", "_enemyMovement", "_enemyAttack")]
 scale = Vector2(3, 3)
+script = ExtResource("1_betw5")
+_screenWarp = NodePath("ScreenWarpNode")
+_enemyMovement = NodePath("ScoutMovement")
+_enemyAttack = NodePath("ScoutAttack")
 metadata/_edit_group_ = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("1_up56p")
+initialState = NodePath("WanderState")
 
 [node name="WanderState" type="Node" parent="StateMachine" node_paths=PackedStringArray("_scoutMovement", "_lightSprite", "_wanderTimer")]
 script = ExtResource("2_8qfoh")
@@ -27,21 +36,50 @@ _wanderTimer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="StateMachine/WanderState"]
 
-[node name="ScanningState" type="Node" parent="StateMachine"]
+[node name="ScanningState" type="Node" parent="StateMachine" node_paths=PackedStringArray("_signalSprites", "_scanArea", "_lightSprite", "_scanTimer")]
+script = ExtResource("3_6dnhe")
+_signalSprites = [NodePath("../../SignalSprite"), NodePath("../../SignalRange")]
+_scanArea = NodePath("../../SignalRange/ScanArea")
+_lightSprite = NodePath("../../LightSprite")
+_scoutColor = Color(0, 1, 1, 1)
+_scanTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/ScanningState"]
+wait_time = 3.0
+one_shot = true
 
 [node name="DeployState" type="Node" parent="StateMachine"]
-
-[node name="MainSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_rw3qo")
-
-[node name="LightSprite" type="Sprite2D" parent="."]
-position = Vector2(1.5, -9.5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_efkqp")
+script = ExtResource("6_w8f4n")
 
 [node name="SignalSprite" type="Sprite2D" parent="."]
 visible = false
+z_index = 2
 texture = ExtResource("3_sv3ut")
+
+[node name="SignalRange" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(3.33333, 3.33333)
+texture = ExtResource("5_0wwlt")
+
+[node name="ScanArea" type="Area2D" parent="SignalRange"]
+scale = Vector2(0.1, 0.1)
+collision_layer = 32
+monitoring = false
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SignalRange/ScanArea"]
+polygon = PackedVector2Array(-29, -160, 30, -160, 91, -130, 130, -90, 160, -29, 161, 30, 129, 90, 90, 131, 29, 161, -31, 159, -90, 130, -130, 90, -161, 30, -160, -29, -130, -90, -88, -130)
+
+[node name="MainSprite" type="Sprite2D" parent="."]
+z_index = 5
+texture = ExtResource("1_rw3qo")
+
+[node name="LightSprite" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(1.5, -9.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_efkqp")
 
 [node name="ScreenWarpNode" parent="." instance=ExtResource("4_c3bxf")]
 
@@ -52,15 +90,20 @@ _numOfScrapDrop = 2
 _numOfFuelDrop = 2
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("_healthComponent") instance=ExtResource("6_7wxnr")]
+collision_layer = 2
+collision_mask = 9
 _healthComponent = NodePath("../EnemyHealth")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
 polygon = PackedVector2Array(-7, 4, 7, 4, 7, 2, 10, 2, 11, 0.666667, 6.33333, -4, 5, -3, 2, -6, 0, -6, 0, -9, 2, -9, 2, -10, 0, -10, -1, -9, -1, -6, -2, -6, -4, -4, -5, -3, -6.66667, -4, -11, 0.666667, -10, 2, -7, 2)
 
-[node name="ScoutMovement" type="Node2D" parent="."]
+[node name="ScoutMovement" type="Node2D" parent="." node_paths=PackedStringArray("_enemy")]
 script = ExtResource("7_mmlnt")
+_enemy = NodePath("..")
 
 [node name="ScoutAttack" type="Node2D" parent="."]
 script = ExtResource("10_g1ntj")
 
 [connection signal="timeout" from="StateMachine/WanderState/Timer" to="StateMachine/WanderState" method="OnTimerTimeout"]
+[connection signal="timeout" from="StateMachine/ScanningState/Timer" to="StateMachine/ScanningState" method="OnTimerTimeout"]
+[connection signal="area_entered" from="SignalRange/ScanArea" to="StateMachine/ScanningState" method="OnAreaEntered"]
