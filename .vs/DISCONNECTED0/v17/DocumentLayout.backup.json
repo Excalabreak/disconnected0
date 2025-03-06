@@ -3,16 +3,56 @@
   "WorkspaceRootPath": "E:\\Projects\\disconnected0\\disconnected0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\grunt\\gruntattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\grunt\\gruntattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\scout\\states\\scoutwanderstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\scout\\states\\scoutwanderstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\missile\\missileengage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\missile\\missileengage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\statemachine\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\statemachine\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\obstacles\\asteroidmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\obstacles\\asteroidmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\scout\\scoutmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\scout\\scoutmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\grunt\\gruntmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\grunt\\gruntmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\scout\\scoutattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\scout\\scoutattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\statemachine\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\statemachine\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\scout\\states\\scoutdeploystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\scout\\states\\scoutdeploystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\scout\\states\\scoutscanstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\scout\\states\\scoutscanstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\baseenemyscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\baseenemyscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\health\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\health\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\grunt\\gruntattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\grunt\\gruntattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,24 +86,154 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MissileEngage.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileEngage.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\Missile\\MissileEngage.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileEngage.cs",
+              "RelativeToolTip": "Scripts\\Player\\Missile\\MissileEngage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T00:46:37.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StateMachine.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\StateMachine\\StateMachine.cs",
+              "RelativeDocumentMoniker": "Scripts\\StateMachine\\StateMachine.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\StateMachine\\StateMachine.cs",
+              "RelativeToolTip": "Scripts\\StateMachine\\StateMachine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T00:43:02.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ScoutWanderState.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\States\\ScoutWanderState.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Scout\\States\\ScoutWanderState.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\States\\ScoutWanderState.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Scout\\States\\ScoutWanderState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T00:14:19.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ScoutDeployState.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\States\\ScoutDeployState.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Scout\\States\\ScoutDeployState.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\States\\ScoutDeployState.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Scout\\States\\ScoutDeployState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T00:14:18.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "State.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\StateMachine\\State.cs",
+              "RelativeDocumentMoniker": "Scripts\\StateMachine\\State.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\StateMachine\\State.cs",
+              "RelativeToolTip": "Scripts\\StateMachine\\State.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T23:43:36.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ScoutAttack.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\ScoutAttack.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Scout\\ScoutAttack.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\ScoutAttack.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Scout\\ScoutAttack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T23:05:43.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AsteroidMovement.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Obstacles\\AsteroidMovement.cs",
               "RelativeDocumentMoniker": "Scripts\\Obstacles\\AsteroidMovement.cs",
               "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Obstacles\\AsteroidMovement.cs",
               "RelativeToolTip": "Scripts\\Obstacles\\AsteroidMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-05T06:16:39.003Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
+              "Title": "ScoutScanState.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\States\\ScoutScanState.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Scout\\States\\ScoutScanState.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\States\\ScoutScanState.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Scout\\States\\ScoutScanState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T00:14:18.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GruntMovement.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Grunt\\GruntMovement.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Grunt\\GruntMovement.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Grunt\\GruntMovement.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Grunt\\GruntMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T22:57:54.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ScoutMovement.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\ScoutMovement.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Scout\\ScoutMovement.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\ScoutMovement.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Scout\\ScoutMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T22:55:51.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EnemyHealth.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\EnemyHealth.cs",
+              "RelativeDocumentMoniker": "Scripts\\Health\\EnemyHealth.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\EnemyHealth.cs",
+              "RelativeToolTip": "Scripts\\Health\\EnemyHealth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T22:44:52.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\PlayerMovement.cs",
@@ -71,12 +241,11 @@
               "RelativeToolTip": "Scripts\\Player\\PlayerMovement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T06:02:29.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T06:02:29.495Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "LaserMovement.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\LaserMovement.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemies\\LaserMovement.cs",
@@ -84,25 +253,24 @@
               "RelativeToolTip": "Scripts\\Enemies\\LaserMovement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T06:02:06.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T06:02:06.491Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "BaseEnemyScript.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\BaseEnemyScript.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemies\\BaseEnemyScript.cs",
               "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\BaseEnemyScript.cs",
               "RelativeToolTip": "Scripts\\Enemies\\BaseEnemyScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-05T06:01:28.876Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "PlayerResources.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\PlayerResources.cs",
               "RelativeDocumentMoniker": "Scripts\\Health\\PlayerResources.cs",
@@ -110,12 +278,11 @@
               "RelativeToolTip": "Scripts\\Health\\PlayerResources.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T05:46:28.683Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T05:46:28.683Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "GruntAttack.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Grunt\\GruntAttack.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemies\\Grunt\\GruntAttack.cs",
@@ -128,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "GameManager.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Managers\\GameManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Managers\\GameManager.cs",
@@ -136,12 +303,11 @@
               "RelativeToolTip": "Scripts\\Managers\\GameManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T05:29:11.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T05:29:11.69Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "UIManager.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Managers\\UIManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Managers\\UIManager.cs",
@@ -149,12 +315,11 @@
               "RelativeToolTip": "Scripts\\Managers\\UIManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T05:27:13.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T05:27:13.304Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "Laser.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Laser.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemies\\Laser.cs",
@@ -162,8 +327,7 @@
               "RelativeToolTip": "Scripts\\Enemies\\Laser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T21:45:26.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-04T21:45:26.224Z"
             }
           ]
         }
