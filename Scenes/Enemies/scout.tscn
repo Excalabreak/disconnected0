@@ -1,16 +1,35 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbwn3uohdujur"]
+[gd_scene load_steps=11 format=3 uid="uid://cbwn3uohdujur"]
 
 [ext_resource type="Texture2D" uid="uid://d20fw4wx3qvwo" path="res://Sprites/Obstacles/Enemy/scout.png" id="1_rw3qo"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/StateMachine.cs" id="1_up56p"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Scout/States/ScoutWanderState.cs" id="2_8qfoh"]
 [ext_resource type="Texture2D" uid="uid://0pnth5p735fr" path="res://Sprites/Player/Weapons/light.png" id="2_efkqp"]
 [ext_resource type="Texture2D" uid="uid://dt1qw5bri6jvd" path="res://Sprites/Obstacles/Enemy/Weapons/scoutSignal.png" id="3_sv3ut"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="4_c3bxf"]
 [ext_resource type="PackedScene" uid="uid://bt1fmnkg41y5u" path="res://Scenes/Components/EnemyHealth.tscn" id="5_f7g64"]
 [ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="6_7wxnr"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Scout/ScoutMovement.cs" id="7_mmlnt"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Scout/ScoutAttack.cs" id="10_g1ntj"]
 
 [node name="Scout" type="Node2D"]
 scale = Vector2(3, 3)
 metadata/_edit_group_ = true
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_up56p")
+
+[node name="WanderState" type="Node" parent="StateMachine" node_paths=PackedStringArray("_scoutMovement", "_lightSprite", "_wanderTimer")]
+script = ExtResource("2_8qfoh")
+_scoutMovement = NodePath("../../ScoutMovement")
+_lightSprite = NodePath("../../LightSprite")
+_wanderColor = Color(0, 1, 0, 1)
+_wanderTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/WanderState"]
+
+[node name="ScanningState" type="Node" parent="StateMachine"]
+
+[node name="DeployState" type="Node" parent="StateMachine"]
 
 [node name="MainSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_rw3qo")
@@ -42,3 +61,6 @@ polygon = PackedVector2Array(-7, 4, 7, 4, 7, 2, 10, 2, 11, 0.666667, 6.33333, -4
 script = ExtResource("7_mmlnt")
 
 [node name="ScoutAttack" type="Node2D" parent="."]
+script = ExtResource("10_g1ntj")
+
+[connection signal="timeout" from="StateMachine/WanderState/Timer" to="StateMachine/WanderState" method="OnTimerTimeout"]
