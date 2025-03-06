@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://cwvs4l7btjfqj"]
 
-[ext_resource type="Script" path="res://Scripts/Obstacles/Asteroid.cs" id="1_cs4dx"]
+[ext_resource type="Script" uid="uid://gths23wiffyj" path="res://Scripts/Obstacles/Asteroid.cs" id="1_cs4dx"]
 [ext_resource type="Texture2D" uid="uid://bck87ot65nmj7" path="res://Sprites/Obstacles/asteroid.png" id="2_kuqqn"]
 [ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="3_07o03"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="3_tb8m8"]
-[ext_resource type="Script" path="res://Scripts/Obstacles/AsteroidMovement.cs" id="4_8lrw6"]
-[ext_resource type="Script" path="res://Scripts/Health/AsteroidHealth.cs" id="6_m1ydy"]
+[ext_resource type="Script" uid="uid://utb2tkhtvjvl" path="res://Scripts/Obstacles/AsteroidMovement.cs" id="4_8lrw6"]
+[ext_resource type="Script" uid="uid://dba3hrwn3o33n" path="res://Scripts/Health/AsteroidHealth.cs" id="6_m1ydy"]
 [ext_resource type="PackedScene" uid="uid://dp8bmh0ukm6c3" path="res://Scenes/Drops/ScrapDrop.tscn" id="7_jph5d"]
 [ext_resource type="PackedScene" uid="uid://ux6excdmpvk3" path="res://Scenes/Drops/FuelDrop.tscn" id="8_457e7"]
 

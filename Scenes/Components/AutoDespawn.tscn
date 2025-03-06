@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxoqlunl6awko"]
 
-[ext_resource type="Script" path="res://Scripts/Misc/AutoDespawn.cs" id="1_vghtd"]
+[ext_resource type="Script" uid="uid://cx0d3f0gdl5pf" path="res://Scripts/Misc/AutoDespawn.cs" id="1_vghtd"]
 
 [node name="AutoDespawn" type="Node2D" node_paths=PackedStringArray("_timer")]
 script = ExtResource("1_vghtd")

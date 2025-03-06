@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp8bmh0ukm6c3"]
 
 [ext_resource type="Texture2D" uid="uid://cvfsohst0ud3b" path="res://Sprites/Drops/scrapDrop.png" id="1_ucnxu"]
-[ext_resource type="Script" path="res://Scripts/Health/DropHitbox.cs" id="2_p45r1"]
+[ext_resource type="Script" uid="uid://d4e4lnncjmxd8" path="res://Scripts/Health/DropHitbox.cs" id="2_p45r1"]
 [ext_resource type="PackedScene" uid="uid://bxoqlunl6awko" path="res://Scenes/Components/AutoDespawn.tscn" id="3_aaf1p"]
 
 [node name="ScrapDrop" type="Node2D"]

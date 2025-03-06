@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://csmn7jao5tbu5" path="res://Sprites/Player/Weapons/explosion.png" id="1_c5cd3"]
 [ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="2_lbysl"]
-[ext_resource type="Script" path="res://Scripts/Misc/ExplosionTimer.cs" id="3_oq53j"]
+[ext_resource type="Script" uid="uid://dbbwvnrj2m6u1" path="res://Scripts/Misc/ExplosionTimer.cs" id="3_oq53j"]
 
 [node name="MissileExplosion" type="Node2D"]
 metadata/_edit_group_ = true
