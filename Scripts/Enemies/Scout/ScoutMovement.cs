@@ -9,15 +9,7 @@ using System;
 
 public partial class ScoutMovement : BaseEnemyMovement
 {
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+    [Export] private float _speed = 70f;
 
     /// <summary>
     /// calls to move
@@ -25,6 +17,15 @@ public partial class ScoutMovement : BaseEnemyMovement
     /// <param name="delta"></param>
     public override void Move(float delta)
     {
+        _enemy.Position += _velocity * _speed * delta;
+    }
 
+    /// <summary>
+    /// sets the direction of velocity
+    /// </summary>
+    /// <param name="dir">direction</param>
+    public void SetVelocity(Vector2 dir)
+    {
+        _velocity = dir.Normalized();
     }
 }
