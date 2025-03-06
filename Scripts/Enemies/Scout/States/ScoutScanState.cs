@@ -97,7 +97,6 @@ public partial class ScoutScanState : State
     /// <param name="area"></param>
     private void OnAreaEntered(Area2D area)
     {
-        //switch state to deploy
-        GD.Print("deploy");
+        sm.CallDeferred("TransitionTo", "DeployState");
     }
 }

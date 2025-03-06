@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbwn3uohdujur"]
+[gd_scene load_steps=16 format=3 uid="uid://cbwn3uohdujur"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/BaseEnemyScript.cs" id="1_betw5"]
 [ext_resource type="Texture2D" uid="uid://d20fw4wx3qvwo" path="res://Sprites/Obstacles/Enemy/scout.png" id="1_rw3qo"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c21w2oeatm5q4" path="res://Sprites/Obstacles/Enemy/Weapons/scoutSignalRange.png" id="5_0wwlt"]
 [ext_resource type="PackedScene" uid="uid://bt1fmnkg41y5u" path="res://Scenes/Components/EnemyHealth.tscn" id="5_f7g64"]
 [ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="6_7wxnr"]
+[ext_resource type="PackedScene" uid="uid://cti3olwf1weap" path="res://Scenes/Enemies/grunt.tscn" id="6_ebsnd"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Scout/States/ScoutDeployState.cs" id="6_w8f4n"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Scout/ScoutMovement.cs" id="7_mmlnt"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Scout/ScoutAttack.cs" id="10_g1ntj"]
@@ -48,8 +49,17 @@ _scanTimer = NodePath("Timer")
 wait_time = 3.0
 one_shot = true
 
-[node name="DeployState" type="Node" parent="StateMachine"]
+[node name="DeployState" type="Node" parent="StateMachine" node_paths=PackedStringArray("_lightSprite", "_signalSprite", "_deployTimer")]
 script = ExtResource("6_w8f4n")
+_grunt = ExtResource("6_ebsnd")
+_lightSprite = NodePath("../../LightSprite")
+_deployColor = Color(1, 0, 0, 1)
+_signalSprite = NodePath("../../SignalSprite")
+_deployTimer = NodePath("Timer")
+_gruntSpawnLoc = Vector2(-45, 400)
+
+[node name="Timer" type="Timer" parent="StateMachine/DeployState"]
+one_shot = true
 
 [node name="SignalSprite" type="Sprite2D" parent="."]
 visible = false
@@ -106,4 +116,5 @@ script = ExtResource("10_g1ntj")
 
 [connection signal="timeout" from="StateMachine/WanderState/Timer" to="StateMachine/WanderState" method="OnTimerTimeout"]
 [connection signal="timeout" from="StateMachine/ScanningState/Timer" to="StateMachine/ScanningState" method="OnTimerTimeout"]
+[connection signal="timeout" from="StateMachine/DeployState/Timer" to="StateMachine/DeployState" method="OnTimerTimeout"]
 [connection signal="area_entered" from="SignalRange/ScanArea" to="StateMachine/ScanningState" method="OnAreaEntered"]
