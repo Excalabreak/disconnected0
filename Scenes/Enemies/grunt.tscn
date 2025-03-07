@@ -1,30 +1,29 @@
 [gd_scene load_steps=9 format=3 uid="uid://cti3olwf1weap"]
 
-[ext_resource type="Script" uid="uid://b1n63xweopglt" path="res://Scripts/Enemies/BaseEnemyScript.cs" id="1_xrdmo"]
-[ext_resource type="Texture2D" uid="uid://clh20ldur2ij8" path="res://Sprites/Obstacles/Enemy/grunt.png" id="2_5qhb4"]
-[ext_resource type="PackedScene" uid="uid://bt1fmnkg41y5u" path="res://Scenes/Components/EnemyHealth.tscn" id="3_s0cra"]
-[ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="4_2qgpq"]
-[ext_resource type="Script" uid="uid://j8r8ldmxgngg" path="res://Scripts/Enemies/Grunt/GruntMovement.cs" id="5_wp1ji"]
-[ext_resource type="Script" uid="uid://d32bs8tqt4n5r" path="res://Scripts/Enemies/Grunt/GruntAttack.cs" id="6_dst85"]
-[ext_resource type="PackedScene" uid="uid://dr6ru6td8ojjo" path="res://Scenes/Enemies/laser.tscn" id="7_s00y3"]
-[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="7_uv4l0"]
+[ext_resource type="Script" uid="uid://b1n63xweopglt" path="res://Scripts/Enemies/BaseEnemyScript.cs" id="1_hrtf3"]
+[ext_resource type="Texture2D" uid="uid://clh20ldur2ij8" path="res://Sprites/Obstacles/Enemy/grunt.png" id="2_g1esn"]
+[ext_resource type="PackedScene" uid="uid://bt1fmnkg41y5u" path="res://Scenes/Components/EnemyHealth.tscn" id="3_pskt5"]
+[ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="4_pv7rq"]
+[ext_resource type="Script" uid="uid://j8r8ldmxgngg" path="res://Scripts/Enemies/Grunt/GruntMovement.cs" id="5_cr2mw"]
+[ext_resource type="Script" uid="uid://d32bs8tqt4n5r" path="res://Scripts/Enemies/Grunt/GruntAttack.cs" id="6_xafwa"]
+[ext_resource type="PackedScene" uid="uid://dr6ru6td8ojjo" path="res://Scenes/Enemies/Laser.tscn" id="7_1s67v"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="8_g1qk1"]
 
-[node name="Grunt" type="Node2D" node_paths=PackedStringArray("_screenWarp", "_enemyMovement", "_enemyAttack")]
+[node name="Grunt" type="Node2D" node_paths=PackedStringArray("_screenWarp", "_enemyMovement")]
 scale = Vector2(4, 4)
-script = ExtResource("1_xrdmo")
+script = ExtResource("1_hrtf3")
 _screenWarp = NodePath("ScreenWarpNode")
 _enemyMovement = NodePath("GruntMovement")
-_enemyAttack = NodePath("GruntAttack")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_5qhb4")
+texture = ExtResource("2_g1esn")
 
-[node name="EnemyHealth" parent="." node_paths=PackedStringArray("_enemy") instance=ExtResource("3_s0cra")]
+[node name="EnemyHealth" parent="." node_paths=PackedStringArray("_enemy") instance=ExtResource("3_pskt5")]
 _enemy = NodePath("..")
 _numOfScrapDrop = 1
 _numOfFuelDrop = 2
 
-[node name="HitboxComponent" parent="." node_paths=PackedStringArray("_healthComponent") instance=ExtResource("4_2qgpq")]
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("_healthComponent") instance=ExtResource("4_pv7rq")]
 collision_layer = 2
 collision_mask = 9
 _healthComponent = NodePath("../EnemyHealth")
@@ -33,7 +32,7 @@ _healthComponent = NodePath("../EnemyHealth")
 polygon = PackedVector2Array(-7, 4, 7, 4, 7, 2, 5, 0, 4, 0, 4, -4, 2, -6, -2, -6, -4, -4, -4, 0, -5, 0, -7, 2)
 
 [node name="GruntMovement" type="Node2D" parent="." node_paths=PackedStringArray("_timer", "_enemy")]
-script = ExtResource("5_wp1ji")
+script = ExtResource("5_cr2mw")
 _speed = 80.0
 _timer = NodePath("Timer")
 _changeAltitudeTime = 3.0
@@ -44,9 +43,9 @@ wait_time = 5.0
 one_shot = true
 
 [node name="GruntAttack" type="Node2D" parent="." node_paths=PackedStringArray("_gruntPosition", "_timer")]
-script = ExtResource("6_dst85")
+script = ExtResource("6_xafwa")
 _gruntPosition = NodePath("..")
-_laser = ExtResource("7_s00y3")
+_laser = ExtResource("7_1s67v")
 _timer = NodePath("Timer")
 _laserCooldown = 3.0
 _range = 75.0
@@ -54,7 +53,7 @@ _range = 75.0
 [node name="Timer" type="Timer" parent="GruntAttack"]
 one_shot = true
 
-[node name="ScreenWarpNode" parent="." instance=ExtResource("7_uv4l0")]
+[node name="ScreenWarpNode" parent="." instance=ExtResource("8_g1qk1")]
 position = Vector2(-16.1363, 10.3633)
 
 [connection signal="timeout" from="GruntMovement/Timer" to="GruntMovement" method="OnTimerTimeout"]

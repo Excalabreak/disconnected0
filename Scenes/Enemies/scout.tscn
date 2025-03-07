@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cbwn3uohdujur"]
+[gd_scene load_steps=15 format=3 uid="uid://cbwn3uohdujur"]
 
 [ext_resource type="Script" uid="uid://b1n63xweopglt" path="res://Scripts/Enemies/BaseEnemyScript.cs" id="1_betw5"]
 [ext_resource type="Texture2D" uid="uid://d20fw4wx3qvwo" path="res://Sprites/Obstacles/Enemy/scout.png" id="1_rw3qo"]
@@ -11,17 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://c21w2oeatm5q4" path="res://Sprites/Obstacles/Enemy/Weapons/scoutSignalRange.png" id="5_0wwlt"]
 [ext_resource type="PackedScene" uid="uid://bt1fmnkg41y5u" path="res://Scenes/Components/EnemyHealth.tscn" id="5_f7g64"]
 [ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="6_7wxnr"]
-[ext_resource type="PackedScene" uid="uid://cti3olwf1weap" path="res://Scenes/Enemies/grunt.tscn" id="6_ebsnd"]
+[ext_resource type="PackedScene" uid="uid://cti3olwf1weap" path="res://Scenes/Enemies/Grunt.tscn" id="6_ebsnd"]
 [ext_resource type="Script" uid="uid://cruw336x3a71q" path="res://Scripts/Enemies/Scout/States/ScoutDeployState.cs" id="6_w8f4n"]
 [ext_resource type="Script" uid="uid://b55q6m4wwbb5o" path="res://Scripts/Enemies/Scout/ScoutMovement.cs" id="7_mmlnt"]
-[ext_resource type="Script" uid="uid://cbgmvxej1cdfw" path="res://Scripts/Enemies/Scout/ScoutAttack.cs" id="10_g1ntj"]
 
-[node name="Scout" type="Node2D" node_paths=PackedStringArray("_screenWarp", "_enemyMovement", "_enemyAttack")]
+[node name="Scout" type="Node2D" node_paths=PackedStringArray("_screenWarp", "_enemyMovement")]
 scale = Vector2(3, 3)
 script = ExtResource("1_betw5")
 _screenWarp = NodePath("ScreenWarpNode")
 _enemyMovement = NodePath("ScoutMovement")
-_enemyAttack = NodePath("ScoutAttack")
 metadata/_edit_group_ = true
 
 [node name="StateMachine" type="Node" parent="."]
@@ -110,9 +108,6 @@ polygon = PackedVector2Array(-7, 4, 7, 4, 7, 2, 10, 2, 11, 0.666667, 6.33333, -4
 [node name="ScoutMovement" type="Node2D" parent="." node_paths=PackedStringArray("_enemy")]
 script = ExtResource("7_mmlnt")
 _enemy = NodePath("..")
-
-[node name="ScoutAttack" type="Node2D" parent="."]
-script = ExtResource("10_g1ntj")
 
 [connection signal="timeout" from="StateMachine/WanderState/Timer" to="StateMachine/WanderState" method="OnTimerTimeout"]
 [connection signal="timeout" from="StateMachine/ScanningState/Timer" to="StateMachine/ScanningState" method="OnTimerTimeout"]
