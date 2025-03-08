@@ -54,7 +54,6 @@ _range = 75.0
 one_shot = true
 
 [node name="ScreenWarpNode" parent="." instance=ExtResource("8_g1qk1")]
-position = Vector2(-16.1363, 10.3633)
 
 [connection signal="timeout" from="GruntMovement/Timer" to="GruntMovement" method="OnTimerTimeout"]
 [connection signal="timeout" from="GruntAttack/Timer" to="GruntAttack" method="OnTimerTimeout"]
