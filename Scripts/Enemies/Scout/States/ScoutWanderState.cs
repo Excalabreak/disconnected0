@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [03/05/2025]
+ * Last Updated: [03/09/2025]
  * [State when scout moves in a random direction
  * for a set amount of time]
  */
@@ -38,7 +38,7 @@ public partial class ScoutWanderState : State
         _scoutMovement.SetVelocity(
             new Vector2(
                 (float)GD.RandRange(-1, 1),
-                (float)GD.RandRange(-1, 1)));
+                (float)GD.RandRange(-1, 1)).Normalized());
 
         _lightSprite.Modulate = _wanderColor;
         _wanderTimer.Start();
