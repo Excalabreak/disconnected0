@@ -49,7 +49,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Player" parent="." instance=ExtResource("5_3w5xu")]
-position = Vector2(538, 214)
+position = Vector2(949, 271)
 
 [node name="Bomber" parent="." instance=ExtResource("6_7lihs")]
 position = Vector2(290, 321)
