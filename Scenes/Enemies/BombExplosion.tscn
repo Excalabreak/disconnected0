@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnassmekfchy"]
+
+[ext_resource type="Texture2D" uid="uid://csmn7jao5tbu5" path="res://Sprites/Player/Weapons/explosion.png" id="1_78766"]
+[ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="2_3nmve"]
+[ext_resource type="Script" uid="uid://dbbwvnrj2m6u1" path="res://Scripts/Misc/ExplosionTimer.cs" id="3_h6m70"]
+
+[node name="MissileExplosion" type="Node2D"]
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_78766")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("2_3nmve")]
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
+polygon = PackedVector2Array(6, -32, 24, -24, 32, -6, 32, 6, 24, 24, 6, 32, -6, 32, -24, 24, -32, 6, -32, -6, -24, -24, -6, -32)
+
+[node name="Timer" type="Timer" parent="." node_paths=PackedStringArray("_explosion")]
+wait_time = 0.5
+one_shot = true
+autostart = true
+script = ExtResource("3_h6m70")
+_explosion = NodePath("..")
+
+[connection signal="timeout" from="Timer" to="Timer" method="OnTimeout"]

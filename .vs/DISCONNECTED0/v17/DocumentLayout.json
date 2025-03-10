@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "E:\\Projects\\disconnected0\\disconnected0\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\health\\hitboxcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\health\\hitboxcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\missile\\missiletriggerhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\missile\\missiletriggerhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\bomber\\bomb\\bombhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\bomber\\bomb\\bombhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\missile\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\missile\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\missile\\missileexplosion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\missile\\missileexplosion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BommerAttack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Enemies\\Bomber\\BommerAttack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\health\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\health\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\bomber\\bomberranges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\bomber\\bomberranges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\grunt\\gruntattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\grunt\\gruntattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\bomber\\bombermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +62,111 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MissileExplosion.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileExplosion.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\Missile\\MissileExplosion.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileExplosion.cs",
+              "RelativeToolTip": "Scripts\\Player\\Missile\\MissileExplosion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T19:30:38.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HitboxComponent.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\HitboxComponent.cs",
+              "RelativeDocumentMoniker": "Scripts\\Health\\HitboxComponent.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\HitboxComponent.cs",
+              "RelativeToolTip": "Scripts\\Health\\HitboxComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T19:26:19.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "BombHitbox.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\Bomb\\BombHitbox.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Bomber\\Bomb\\BombHitbox.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\Bomb\\BombHitbox.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Bomber\\Bomb\\BombHitbox.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T19:22:27.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MissileTriggerHitbox.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
+              "RelativeToolTip": "Scripts\\Player\\Missile\\MissileTriggerHitbox.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T19:00:00.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Missile.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\Missile.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\Missile\\Missile.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\Missile.cs",
+              "RelativeToolTip": "Scripts\\Player\\Missile\\Missile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T19:10:18.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EnemyHealth.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\EnemyHealth.cs",
+              "RelativeDocumentMoniker": "Scripts\\Health\\EnemyHealth.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Health\\EnemyHealth.cs",
+              "RelativeToolTip": "Scripts\\Health\\EnemyHealth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T18:51:30.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BommerAttack.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BommerAttack.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Bomber\\BommerAttack.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BommerAttack.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Bomber\\BommerAttack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T18:50:24.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GruntAttack.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Grunt\\GruntAttack.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Grunt\\GruntAttack.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Grunt\\GruntAttack.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Grunt\\GruntAttack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T18:49:33.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "ScoutWanderState.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Scout\\States\\ScoutWanderState.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemies\\Scout\\States\\ScoutWanderState.cs",
@@ -38,12 +174,11 @@
               "RelativeToolTip": "Scripts\\Enemies\\Scout\\States\\ScoutWanderState.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T23:42:18.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T23:42:18.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "BomberRanges.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BomberRanges.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemies\\Bomber\\BomberRanges.cs",
@@ -56,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "BomberEnemyScript.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BomberEnemyScript.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemies\\Bomber\\BomberEnemyScript.cs",
@@ -64,12 +199,11 @@
               "RelativeToolTip": "Scripts\\Enemies\\Bomber\\BomberEnemyScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T21:45:00.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-08T21:45:00.679Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "BomberMovement.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BomberMovement.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemies\\Bomber\\BomberMovement.cs",
@@ -77,8 +211,7 @@
               "RelativeToolTip": "Scripts\\Enemies\\Bomber\\BomberMovement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T21:24:13.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-08T21:24:13.633Z"
             }
           ]
         }

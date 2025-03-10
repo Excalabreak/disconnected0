@@ -35,6 +35,8 @@ monitoring = false
 monitorable = false
 script = ExtResource("6_myfya")
 _missileExplosion = NodePath("../MissileExplosion")
+_onHitDamage = 0
+_onHitDamage = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MissileHitbox"]
 polygon = PackedVector2Array(-2, -22, -4, -20, -4, 20, 4, 20, 4, -20, 2, -22)

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="4_hm0de"]
 [ext_resource type="Script" uid="uid://bjl0hj4obi6qw" path="res://Scripts/Enemies/Bomber/BomberMovement.cs" id="5_cmg82"]
 [ext_resource type="Script" uid="uid://b7eo07tp5bmy8" path="res://Scripts/Enemies/Bomber/BommerAttack.cs" id="6_6330s"]
-[ext_resource type="PackedScene" uid="uid://ux6excdmpvk3" path="res://Scenes/Drops/FuelDrop.tscn" id="7_cmg82"]
+[ext_resource type="PackedScene" uid="uid://cme8mi40fidds" path="res://Scenes/Enemies/Bomb.tscn" id="7_cmg82"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="8_8xx6x"]
 [ext_resource type="Script" uid="uid://cqg27ylepxaia" path="res://Scripts/Enemies/Bomber/BomberRanges.cs" id="9_cmg82"]
 
@@ -38,7 +38,7 @@ polygon = PackedVector2Array(-3, -10, 3, -10, 7, -7, 10, -3, 10, 2.75, 7, 7, 3, 
 script = ExtResource("5_cmg82")
 _bomberEnemyScript = NodePath("..")
 _runSpeed = 200.0
-_deploySpeed = 70.0
+_deploySpeed = 80.0
 _deployTimer = NodePath("Timer")
 _deployDirTime = 2.0
 _enemy = NodePath("..")
