@@ -8,7 +8,7 @@ using System.Reflection;
  * [Hitbox for missile buh]
  */
 
-public partial class MissileTriggerHitbox : Area2D
+public partial class MissileTriggerHitbox : HitboxComponent
 {
     [Export] private MissileExplosion _missileExplosion;
     [Export] private int _onHitDamage = 1;

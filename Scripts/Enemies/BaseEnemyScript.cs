@@ -9,11 +9,11 @@ using System;
 
 public partial class BaseEnemyScript : Node2D
 {
-	[Export] private ScreenWarp _screenWarp;
-	[Export] private BaseEnemyMovement _enemyMovement;
+	[Export] protected ScreenWarp _screenWarp;
+	[Export] protected BaseEnemyMovement _enemyMovement;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
 	{
         float fDelta = (float)delta;
 
