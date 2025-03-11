@@ -9,11 +9,11 @@ public partial class BomberEnemyScript : BaseEnemyScript
 
     public override void _Process(double delta)
     {
-        base._Process(delta);
-
         if (_bomberRanges != null)
         {
             _bomberRanges.CheckState();
         }
+
+        base._Process(delta);
     }
 }

@@ -63,7 +63,7 @@ script = ExtResource("9_cmg82")
 _bomber = NodePath("..")
 _bomberEnemyScript = NodePath("..")
 _disRunSwitch = 700.0
-_disDeploySwitch = 450.0
+_disDeploySwitch = 400.0
 
 [connection signal="timeout" from="BomberMovement/Timer" to="BomberMovement" method="OnTimerTimeout"]
 [connection signal="timeout" from="BommerAttack/Timer" to="BommerAttack" method="OnTimerTimeout"]
