@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnfroiosyc513"]
+
+[ext_resource type="Script" uid="uid://b1n63xweopglt" path="res://Scripts/Enemies/BaseEnemyScript.cs" id="1_0tnp7"]
+[ext_resource type="Texture2D" uid="uid://boi5r5amdtgkq" path="res://Sprites/Obstacles/Enemy/multirol.png" id="1_q8f7q"]
+[ext_resource type="PackedScene" uid="uid://bt1fmnkg41y5u" path="res://Scenes/Components/EnemyHealth.tscn" id="2_foe3x"]
+[ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="3_baol2"]
+[ext_resource type="Script" uid="uid://dony6murchubu" path="res://Scripts/Enemies/Multirole/MultiroleMovement.cs" id="4_foe3x"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="6_obbxh"]
+
+[node name="Multirole" type="Node2D" node_paths=PackedStringArray("_screenWarp", "_enemyMovement")]
+script = ExtResource("1_0tnp7")
+_screenWarp = NodePath("ScreenWarpNode")
+_enemyMovement = NodePath("MultiroleMovement")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8f7q")
+
+[node name="EnemyHealth" parent="." node_paths=PackedStringArray("_enemy") instance=ExtResource("2_foe3x")]
+_enemy = NodePath("..")
+_maxHealth = 5
+_numOfScrapDrop = 2
+_numOfFuelDrop = 2
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("_healthComponent") instance=ExtResource("3_baol2")]
+_healthComponent = NodePath("../EnemyHealth")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
+polygon = PackedVector2Array(-16, 30, 16, 30, 10, -24, -10, -24)
+
+[node name="MultiroleMovement" type="Node2D" parent="." node_paths=PackedStringArray("_enemy")]
+script = ExtResource("4_foe3x")
+_acceleration = 7.0
+_rotateSpeed = 3.0
+_enemy = NodePath("..")
+
+[node name="MultiroleAttack" type="Node2D" parent="."]
+
+[node name="ScreenWarpNode" parent="." instance=ExtResource("6_obbxh")]
