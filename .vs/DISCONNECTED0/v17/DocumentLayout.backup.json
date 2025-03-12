@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "E:\\Projects\\disconnected0\\disconnected0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\bomber\\bombermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\bomber\\bombermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\MultiroleMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Enemies\\Multirole\\MultiroleMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\bomber\\bommerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\bomber\\bommerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\missile\\missilemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\missile\\missilemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\baseenemyscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\baseenemyscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\misc\\screenwarp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\misc\\screenwarp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\bomber\\bomberenemyscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\bomber\\bomberenemyscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\bomber\\bomberranges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\bomber\\bomberranges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BaseEnemyScript.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\BaseEnemyScript.cs",
-              "RelativeDocumentMoniker": "Scripts\\Enemies\\BaseEnemyScript.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\BaseEnemyScript.cs",
-              "RelativeToolTip": "Scripts\\Enemies\\BaseEnemyScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T03:28:49.315Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BomberEnemyScript.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BomberEnemyScript.cs",
-              "RelativeDocumentMoniker": "Scripts\\Enemies\\Bomber\\BomberEnemyScript.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BomberEnemyScript.cs",
-              "RelativeToolTip": "Scripts\\Enemies\\Bomber\\BomberEnemyScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T03:18:46.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BommerAttack.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BommerAttack.cs",
-              "RelativeDocumentMoniker": "Scripts\\Enemies\\Bomber\\BommerAttack.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BommerAttack.cs",
-              "RelativeToolTip": "Scripts\\Enemies\\Bomber\\BommerAttack.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "MissileMovement.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileMovement.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\Missile\\MissileMovement.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\Missile\\MissileMovement.cs",
+              "RelativeToolTip": "Scripts\\Player\\Missile\\MissileMovement.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T03:26:16.153Z",
+              "WhenOpened": "2025-03-11T23:20:01.305Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ScreenWarp.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Misc\\ScreenWarp.cs",
-              "RelativeDocumentMoniker": "Scripts\\Misc\\ScreenWarp.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Misc\\ScreenWarp.cs",
-              "RelativeToolTip": "Scripts\\Misc\\ScreenWarp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA5AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\PlayerMovement.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeToolTip": "Scripts\\Player\\PlayerMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T02:42:08.22Z",
+              "WhenOpened": "2025-03-11T23:17:09.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BomberMovement.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BomberMovement.cs",
-              "RelativeDocumentMoniker": "Scripts\\Enemies\\Bomber\\BomberMovement.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BomberMovement.cs",
-              "RelativeToolTip": "Scripts\\Enemies\\Bomber\\BomberMovement.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACcAAAAFAAAAAAAAAA==",
+              "Title": "MultiroleMovement.cs",
+              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\MultiroleMovement.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Multirole\\MultiroleMovement.cs",
+              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\MultiroleMovement.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Multirole\\MultiroleMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T21:24:13.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BomberRanges.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BomberRanges.cs",
-              "RelativeDocumentMoniker": "Scripts\\Enemies\\Bomber\\BomberRanges.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BomberRanges.cs",
-              "RelativeToolTip": "Scripts\\Enemies\\Bomber\\BomberRanges.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T23:32:25.742Z",
+              "WhenOpened": "2025-03-11T23:15:53.262Z",
               "EditorCaption": ""
             }
           ]
