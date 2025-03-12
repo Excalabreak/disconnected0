@@ -19,6 +19,7 @@ public partial class MissileDetection : Node2D
     [Export] private int[] _mask;
     [Export] private float _degreesBetween = 5f;
     [Export] private int _amountOfRaycasts = 9;
+
     private bool _canDetect = false;
     private bool _lockedOn = false;
 
