@@ -5,7 +5,7 @@ using System.Linq;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/26/2025]
+ * Last Updated: [03/12/2025]
  * [Script for detecting targetting something]
  */
 
@@ -15,20 +15,23 @@ public partial class MissileDetection : Node2D
 	[Export] private MissileMovement _missileMovement;
 
 	private List<RayCast2D> _raycasts;
+    [Export] private float _detectLength = -200f;
+    [Export] private int[] _mask;
+    [Export] private float _degreesBetween = 5f;
+    [Export] private int _amountOfRaycasts = 9;
+
     private bool _canDetect = false;
     private bool _lockedOn = false;
 
     public override void _Ready()
     {
         _raycasts = new List<RayCast2D>();
-        Godot.Collections.Array<Node> nodes = GetChildren();
 
-        foreach (Node node in nodes)
+        CreateRaycast(0);
+        for (int i = 1; i <= _amountOfRaycasts; i++)
         {
-            if (node is RayCast2D)
-            {
-                _raycasts.Add(node as RayCast2D);
-            }
+            CreateRaycast(_degreesBetween * i);
+            CreateRaycast(_degreesBetween * (-i));
         }
     }
 
@@ -57,6 +60,31 @@ public partial class MissileDetection : Node2D
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// creates raycast for detection range
+    /// and adds them to list
+    /// </summary>
+    private void CreateRaycast(float degrees)
+    {
+        Vector2 raycastLength = new Vector2(0, _detectLength);
+
+        RayCast2D ray = new RayCast2D();
+        ray.Enabled = true;
+        ray.ExcludeParent = true;
+        ray.TargetPosition = raycastLength;
+        foreach (int i in _mask)
+        {
+            ray.SetCollisionMaskValue(i, true);
+        }
+        ray.CollideWithAreas = true;
+        ray.CollideWithBodies = false;
+
+        ray.RotationDegrees = degrees;
+
+        AddChild(ray);
+        _raycasts.Add(ray);
     }
 
     /// <summary>

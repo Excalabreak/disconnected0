@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [03/09/2025]
+ * Last Updated: [03/10/2025]
  * [script for bomber movement]
  */
 
@@ -17,10 +17,12 @@ public partial class BomberMovement : BaseEnemyMovement
     [Export] private Timer _deployTimer;
     [Export] private float _deployDirTime;
     private Vector2 _deployDir;
+    private Vector2 _resolution;
 
     public override void _Ready()
     {
         base._Ready();
+        _resolution = GetViewport().GetVisibleRect().Size;
 
         _deployTimer.WaitTime = _deployDirTime;
         _deployTimer.Autostart = false;
@@ -44,7 +46,17 @@ public partial class BomberMovement : BaseEnemyMovement
         }
         else
         {
-            if (GD.RandRange(0, 100) < 5)
+            //if bomber is off screen, return immediatly
+            if (_enemy.GlobalPosition.X < 10 ||
+                _enemy.GlobalPosition.Y < 10 ||
+                _enemy.GlobalPosition.X > _resolution.X - 10 ||
+                _enemy.GlobalPosition.X > _resolution.Y - 10)
+            {
+                _velocity = _enemy.GlobalPosition.DirectionTo(
+                    new Vector2(_resolution.X / 2, _resolution.Y / 2));
+            }
+            //else randomly change direction
+            else if (GD.RandRange(0, 100) < 5)
             {
                 _velocity = _deployDir;
             }
@@ -60,7 +72,13 @@ public partial class BomberMovement : BaseEnemyMovement
     {
         _deployDir = new Vector2(
             (float)GD.RandRange(-1, 1),
-            (float)GD.RandRange(-1, 1)).Normalized();
+            (float)GD.RandRange(-1, 1));
+
+        _deployDir = _deployDir + _enemy.GlobalPosition.DirectionTo(
+            new Vector2(_resolution.X / 2, _resolution.Y / 2));
+
+        _deployDir = _deployDir.Normalized();
+
         _deployTimer.Start();
     }
 }

@@ -17,14 +17,14 @@ public partial class BaseEnemyScript : Node2D
 	{
         float fDelta = (float)delta;
 
-        if (_screenWarp != null)
-        {
-            _screenWarp.CheckScreenWarp(this, _enemyMovement.velocity);
-        }
-
 		if (_enemyMovement != null)
 		{
 			_enemyMovement.Move(fDelta);
 		}
+
+        if (_screenWarp != null)
+        {
+            _screenWarp.CheckScreenWarp(this, _enemyMovement.velocity);
+        }
     }
 }
