@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "E:\\Projects\\disconnected0\\disconnected0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\MultiroleAttack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Enemies\\Multirole\\MultiroleAttack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\bomber\\bommerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\bomber\\bommerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\grunt\\gruntattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +15,8 @@
       "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\bomber\\bommerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\bomber\\bommerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\Multirole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Enemies\\Multirole\\Multirole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\baseenemyscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\baseenemyscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|e:\\projects\\disconnected0\\disconnected0\\scripts\\enemies\\multirole\\multirolemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA965419-1047-49D9-9BC6-6A186A09F259}|Disconnected0.csproj|solutionrelative:scripts\\enemies\\multirole\\multirolemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,24 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Multirole.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\Multirole.cs",
-              "RelativeDocumentMoniker": "Scripts\\Enemies\\Multirole\\Multirole.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\Multirole.cs",
-              "RelativeToolTip": "Scripts\\Enemies\\Multirole\\Multirole.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T20:33:40.428Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "BaseEnemyScript.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\BaseEnemyScript.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemies\\BaseEnemyScript.cs",
@@ -63,8 +38,7 @@
               "RelativeToolTip": "Scripts\\Enemies\\BaseEnemyScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T20:32:57.146Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T20:32:57.146Z"
             },
             {
               "$type": "Document",
@@ -76,33 +50,19 @@
               "RelativeToolTip": "Scripts\\Enemies\\Grunt\\GruntAttack.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T20:32:51.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T20:32:51.577Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "BommerAttack.cs",
               "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BommerAttack.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemies\\Bomber\\BommerAttack.cs",
               "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Bomber\\BommerAttack.cs",
               "RelativeToolTip": "Scripts\\Enemies\\Bomber\\BommerAttack.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T20:32:40.03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MultiroleAttack.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\MultiroleAttack.cs",
-              "RelativeDocumentMoniker": "Scripts\\Enemies\\Multirole\\MultiroleAttack.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\MultiroleAttack.cs",
-              "RelativeToolTip": "Scripts\\Enemies\\Multirole\\MultiroleAttack.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T20:28:10.301Z",
               "EditorCaption": ""
             },
             {
@@ -115,21 +75,7 @@
               "RelativeToolTip": "Scripts\\Player\\PlayerMovement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T23:17:09.986Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MultiroleMovement.cs",
-              "DocumentMoniker": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\MultiroleMovement.cs",
-              "RelativeDocumentMoniker": "Scripts\\Enemies\\Multirole\\MultiroleMovement.cs",
-              "ToolTip": "E:\\Projects\\disconnected0\\disconnected0\\Scripts\\Enemies\\Multirole\\MultiroleMovement.cs",
-              "RelativeToolTip": "Scripts\\Enemies\\Multirole\\MultiroleMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T23:15:53.262Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T23:17:09.986Z"
             }
           ]
         }
