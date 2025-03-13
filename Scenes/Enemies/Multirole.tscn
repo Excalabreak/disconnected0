@@ -49,7 +49,7 @@ _laserTimer = NodePath("LaserTimer")
 _range = 5.0
 _bombs = ExtResource("8_ywh2j")
 _bombTimer = NodePath("BombTimer")
-_deployTime = 6.0
+_deployTime = 5.0
 
 [node name="LaserTimer" type="Timer" parent="MultiroleAttack"]
 one_shot = true
