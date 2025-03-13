@@ -26,6 +26,13 @@ public partial class MultiroleAttack : BaseEnemyAttack
     [Export] private float _range = 20f;
     private bool _laserInCooldown = false;
 
+    //bomb
+    [Export] private PackedScene _bombs;
+    [Export] private float _deployDis = 50f;
+
+    [Export] private Timer _bombTimer;
+    [Export] private float _deployTime = 4f;
+
     public override void _Ready()
     {
         _raycasts = new List<RayCast2D>();
@@ -40,6 +47,12 @@ public partial class MultiroleAttack : BaseEnemyAttack
         _laserTimer.WaitTime = _laserCooldown;
         _laserTimer.OneShot = true;
         _laserTimer.Autostart = false;
+
+        _bombTimer.WaitTime = _deployTime;
+        _bombTimer.OneShot = true;
+        _bombTimer.Autostart = false;
+
+        _bombTimer.Start();
     }
 
     /// <summary>
@@ -79,6 +92,21 @@ public partial class MultiroleAttack : BaseEnemyAttack
     private void OnLaserTimerTimeout()
     {
         _laserInCooldown = false;
+    }
+
+    /// <summary>
+    /// sets down bomb
+    /// </summary>
+    private void OnBombTimerTimeout()
+    {
+        Node2D dropNode = _bombs.Instantiate<Node2D>() as Node2D;
+        Vector2 pos = new Vector2(
+            _MultirolePos.GlobalPosition.X + (float)GD.RandRange(-_deployDis, _deployDis),
+            _MultirolePos.GlobalPosition.Y + (float)GD.RandRange(-_deployDis, _deployDis));
+        dropNode.GlobalPosition = pos;
+        GetTree().Root.AddChild(dropNode);
+
+        _bombTimer.Start();
     }
 
     /// <summary>

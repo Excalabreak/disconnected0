@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnfroiosyc513"]
+[gd_scene load_steps=10 format=3 uid="uid://cnfroiosyc513"]
 
 [ext_resource type="Texture2D" uid="uid://boi5r5amdtgkq" path="res://Sprites/Obstacles/Enemy/multirol.png" id="1_q8f7q"]
 [ext_resource type="Script" uid="uid://dixkypsl28i84" path="res://Scripts/Enemies/Multirole/Multirole.cs" id="1_wt1kq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="6_obbxh"]
 [ext_resource type="Script" uid="uid://bk66amq0hyo4l" path="res://Scripts/Enemies/Multirole/MultiroleAttack.cs" id="6_ywh2j"]
 [ext_resource type="PackedScene" uid="uid://dr6ru6td8ojjo" path="res://Scenes/Enemies/Laser.tscn" id="7_x5v54"]
+[ext_resource type="PackedScene" uid="uid://cme8mi40fidds" path="res://Scenes/Enemies/Bomb.tscn" id="8_ywh2j"]
 
 [node name="Multirole" type="Node2D" node_paths=PackedStringArray("_multiroleAttack", "_screenWarp", "_enemyMovement")]
 script = ExtResource("1_wt1kq")
@@ -39,13 +40,16 @@ _acceleration = 7.0
 _rotateSpeed = 3.0
 _enemy = NodePath("..")
 
-[node name="MultiroleAttack" type="Node2D" parent="." node_paths=PackedStringArray("_MultirolePos", "_laserTimer")]
+[node name="MultiroleAttack" type="Node2D" parent="." node_paths=PackedStringArray("_MultirolePos", "_laserTimer", "_bombTimer")]
 script = ExtResource("6_ywh2j")
 _MultirolePos = NodePath("..")
 _mask = PackedInt32Array(1)
 _laser = ExtResource("7_x5v54")
 _laserTimer = NodePath("LaserTimer")
 _range = 5.0
+_bombs = ExtResource("8_ywh2j")
+_bombTimer = NodePath("BombTimer")
+_deployTime = 6.0
 
 [node name="LaserTimer" type="Timer" parent="MultiroleAttack"]
 one_shot = true
@@ -55,3 +59,4 @@ one_shot = true
 [node name="ScreenWarpNode" parent="." instance=ExtResource("6_obbxh")]
 
 [connection signal="timeout" from="MultiroleAttack/LaserTimer" to="MultiroleAttack" method="OnLaserTimerTimeout"]
+[connection signal="timeout" from="MultiroleAttack/BombTimer" to="MultiroleAttack" method="OnBombTimerTimeout"]
