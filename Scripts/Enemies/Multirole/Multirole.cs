@@ -9,7 +9,7 @@ using System;
 
 public partial class Multirole : BaseEnemyScript
 {
-    [Export] private MultiroleAttack _multiroleAttack;
+    [Export] private BaseEnemyAttack _enemyAttack;
 
     /// <summary>
     /// added to process for multirole
@@ -19,9 +19,9 @@ public partial class Multirole : BaseEnemyScript
     {
         base._Process(delta);
 
-        if (_multiroleAttack != null)
+        if (_enemyAttack != null)
         {
-            _multiroleAttack.Attack();
+            _enemyAttack.Attack();
         }
     }
 }

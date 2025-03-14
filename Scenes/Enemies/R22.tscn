@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://c30lt6851b7yy"]
+
+[ext_resource type="Script" uid="uid://dixkypsl28i84" path="res://Scripts/Enemies/Multirole/Multirole.cs" id="1_v6y38"]
+[ext_resource type="Texture2D" uid="uid://dbxy3d3f5bf2j" path="res://Sprites/Obstacles/Enemy/r22.png" id="2_v6y38"]
+[ext_resource type="PackedScene" uid="uid://bt1fmnkg41y5u" path="res://Scenes/Components/EnemyHealth.tscn" id="3_pde72"]
+[ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="4_3eppc"]
+[ext_resource type="Script" uid="uid://dony6murchubu" path="res://Scripts/Enemies/Multirole/MultiroleMovement.cs" id="5_e8tet"]
+[ext_resource type="Script" uid="uid://c3bt27wqs7ema" path="res://Scripts/Enemies/R22/R22Attack.cs" id="5_fif7s"]
+[ext_resource type="PackedScene" uid="uid://cx1fscb8xn5fd" path="res://Scenes/EnemyBullet.tscn" id="6_fbadk"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="9_xcc5u"]
+
+[node name="R22" type="Node2D" node_paths=PackedStringArray("_enemyAttack", "_screenWarp", "_enemyMovement")]
+script = ExtResource("1_v6y38")
+_enemyAttack = NodePath("R22Attack")
+_screenWarp = NodePath("ScreenWarpNode")
+_enemyMovement = NodePath("MultiroleMovement")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_v6y38")
+
+[node name="EnemyHealth" parent="." node_paths=PackedStringArray("_enemy") instance=ExtResource("3_pde72")]
+_enemy = NodePath("..")
+_maxHealth = 10
+_numOfScrapDrop = 2
+_numOfFuelDrop = 2
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("_healthComponent") instance=ExtResource("4_3eppc")]
+collision_layer = 2
+collision_mask = 9
+_healthComponent = NodePath("../EnemyHealth")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
+polygon = PackedVector2Array(0, -30, 10, -6, 30, 4, 10, 16, 17, 22, 14, 28, 8, 28, 2, 22, -4, 22, -10, 28, -14, 28, -18, 22, -10, 17, -30, 4, -10, -6)
+
+[node name="MultiroleMovement" type="Node2D" parent="." node_paths=PackedStringArray("_enemy")]
+script = ExtResource("5_e8tet")
+_acceleration = 11.0
+_rotateSpeed = 6.0
+_enemy = NodePath("..")
+
+[node name="R22Attack" type="Node2D" parent="." node_paths=PackedStringArray("_r22", "_fireRateTimer", "_reloadTimer")]
+script = ExtResource("5_fif7s")
+_r22 = NodePath("..")
+_mask = PackedInt32Array(1)
+_bullet = ExtResource("6_fbadk")
+_gunsRange = 500.0
+_fireRateTimer = NodePath("FireRateTimer")
+_fireRate = 0.2
+_reloadTimer = NodePath("ReloadTimer")
+_reloadTime = 4.0
+_range = 0.1
+
+[node name="FireRateTimer" type="Timer" parent="R22Attack"]
+wait_time = 0.5
+one_shot = true
+
+[node name="ReloadTimer" type="Timer" parent="R22Attack"]
+wait_time = 5.0
+one_shot = true
+
+[node name="ScreenWarpNode" parent="." instance=ExtResource("9_xcc5u")]
+
+[connection signal="timeout" from="R22Attack/FireRateTimer" to="R22Attack" method="OnBulletTimeout"]
+[connection signal="timeout" from="R22Attack/ReloadTimer" to="R22Attack" method="OnBulletTimeout"]

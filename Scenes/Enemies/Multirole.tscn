@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dr6ru6td8ojjo" path="res://Scenes/Enemies/Laser.tscn" id="7_x5v54"]
 [ext_resource type="PackedScene" uid="uid://cme8mi40fidds" path="res://Scenes/Enemies/Bomb.tscn" id="8_ywh2j"]
 
-[node name="Multirole" type="Node2D" node_paths=PackedStringArray("_multiroleAttack", "_screenWarp", "_enemyMovement")]
+[node name="Multirole" type="Node2D" node_paths=PackedStringArray("_enemyAttack", "_screenWarp", "_enemyMovement")]
 script = ExtResource("1_wt1kq")
-_multiroleAttack = NodePath("MultiroleAttack")
+_enemyAttack = NodePath("MultiroleAttack")
 _screenWarp = NodePath("ScreenWarpNode")
 _enemyMovement = NodePath("MultiroleMovement")
 
@@ -45,18 +45,14 @@ script = ExtResource("6_ywh2j")
 _MultirolePos = NodePath("..")
 _mask = PackedInt32Array(1)
 _laser = ExtResource("7_x5v54")
-_laserTimer = NodePath("LaserTimer")
+_laserTimer = NodePath("FireTimer")
 _range = 5.0
 _bombs = ExtResource("8_ywh2j")
-_bombTimer = NodePath("BombTimer")
+_bombTimer = NodePath("ReloadTimer")
 _deployTime = 5.0
 
-[node name="LaserTimer" type="Timer" parent="MultiroleAttack"]
-one_shot = true
+[node name="FireTimer" type="Timer" parent="MultiroleAttack"]
 
-[node name="BombTimer" type="Timer" parent="MultiroleAttack"]
+[node name="ReloadTimer" type="Timer" parent="MultiroleAttack"]
 
 [node name="ScreenWarpNode" parent="." instance=ExtResource("6_obbxh")]
-
-[connection signal="timeout" from="MultiroleAttack/LaserTimer" to="MultiroleAttack" method="OnLaserTimerTimeout"]
-[connection signal="timeout" from="MultiroleAttack/BombTimer" to="MultiroleAttack" method="OnBombTimerTimeout"]

@@ -75,7 +75,6 @@ public partial class MultiroleAttack : BaseEnemyAttack
                         - laser.GlobalPosition;
 
                     laser.GlobalRotation = (-laser.Transform.Y).AngleTo(dir);
-                    GD.Print(laser.GlobalRotation);
                     GetTree().Root.AddChild(laser);
 
                     _laserInCooldown = true;
