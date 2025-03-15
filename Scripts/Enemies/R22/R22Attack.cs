@@ -4,13 +4,14 @@ using System.Collections.Generic;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [03/14/2025]
+ * Last Updated: [03/15/2025]
  * [attack script for R22]
  */
 
 public partial class R22Attack : BaseEnemyAttack
 {
     [Export] private Node2D _r22;
+    [Export] private MultiroleMovement _movement;
 
     //laser raycasts
     private List<RayCast2D> _raycasts;
@@ -19,7 +20,7 @@ public partial class R22Attack : BaseEnemyAttack
     [Export] private float _degreesBetween = 3f;
     [Export] private int _amountOfRaycasts = 7;
 
-    //shooting laser
+    //shooting guns
     [Export] private PackedScene _bullet;
     [Export] private float _gunsRange = 1000f;
     [Export] private Timer _fireRateTimer;
@@ -29,11 +30,17 @@ public partial class R22Attack : BaseEnemyAttack
     [Export] private float _reloadTime = 5f;
     [Export] private float _range = 1f;
 
-    private bool _canFire = true;
+    private bool _canGun = true;
     private int _currentBullets;
 
+    //missile
+    [Export] private PackedScene _missile;
+    [Export] private Timer _missileTimer;
+    [Export] private float _missileCooldown = 3f;
+    private bool _canMissile = true;
+
     /// <summary>
-    /// sets up detection
+    /// sets up on ready
     /// </summary>
     public override void _Ready()
     {
@@ -54,6 +61,10 @@ public partial class R22Attack : BaseEnemyAttack
         _reloadTimer.WaitTime = _reloadTime;
         _reloadTimer.OneShot = true;
         _reloadTimer.Autostart = false;
+
+        _missileTimer.WaitTime = _missileCooldown;
+        _missileTimer.OneShot = true;
+        _missileTimer.Autostart = false;
     }
 
     public override void Attack()
@@ -64,7 +75,7 @@ public partial class R22Attack : BaseEnemyAttack
             {
                 //in close distance with bullets
                 if (_r22.GlobalPosition.DistanceTo(GameManager.instance.currentPlayer.GlobalPosition) <= _gunsRange &&
-                    _canFire)
+                    _canGun)
                 {
                     //shoot laser
                     Laser laser = _bullet.Instantiate<Laser>() as Laser;
@@ -74,7 +85,7 @@ public partial class R22Attack : BaseEnemyAttack
                     GetTree().Root.AddChild(laser);
                     laser.Position -= laser.Transform.Y * 25;
 
-                    _canFire = false;
+                    _canGun = false;
 
                     _currentBullets--;
                     if (_currentBullets <= 0)
@@ -88,7 +99,18 @@ public partial class R22Attack : BaseEnemyAttack
                     }
                     break;
                 }
-                //add missile
+                else if (_r22.GlobalPosition.DistanceTo(GameManager.instance.currentPlayer.GlobalPosition) > _gunsRange &&
+                    _canMissile)
+                {
+                    Missile missile = _missile.Instantiate<Missile>() as Missile;
+                    missile.GlobalPosition = _r22.GlobalPosition;
+                    missile.GlobalRotation = _r22.GlobalRotation;
+                    missile.missileMovement.SetInitialVelocity(_movement.velocity);
+                    GetTree().Root.AddChild(missile);
+
+                    _canMissile = false;
+                    _missileTimer.Start();
+                }
             }
         }
     }
@@ -105,6 +127,7 @@ public partial class R22Attack : BaseEnemyAttack
         ray.Enabled = true;
         ray.ExcludeParent = true;
         ray.TargetPosition = raycastLength;
+        ray.SetCollisionMaskValue(1, false);
         foreach (int i in _mask)
         {
             ray.SetCollisionMaskValue(i, true);
@@ -120,6 +143,11 @@ public partial class R22Attack : BaseEnemyAttack
 
     private void OnBulletTimeout()
     {
-        _canFire = true;
+        _canGun = true;
+    }
+
+    private void OnMissileTimeout()
+    {
+        _canMissile = true;
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [03/12/2025]
+ * Last Updated: [03/15/2025]
  * [Script for detecting targetting something]
  */
 
@@ -35,11 +35,7 @@ public partial class MissileDetection : Node2D
         }
     }
 
-    /// <summary>
-    /// every frame, check if raycast are hitting
-    /// </summary>
-    /// <param name="delta"></param>
-    public override void _Process(double delta)
+    public void CheckDetection()
     {
         if (_canDetect && !_lockedOn)
         {
@@ -74,6 +70,7 @@ public partial class MissileDetection : Node2D
         ray.Enabled = true;
         ray.ExcludeParent = true;
         ray.TargetPosition = raycastLength;
+        ray.SetCollisionMaskValue(1, false);
         foreach (int i in _mask)
         {
             ray.SetCollisionMaskValue(i, true);

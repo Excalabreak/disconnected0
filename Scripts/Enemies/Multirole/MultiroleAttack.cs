@@ -120,6 +120,7 @@ public partial class MultiroleAttack : BaseEnemyAttack
         ray.Enabled = true;
         ray.ExcludeParent = true;
         ray.TargetPosition = raycastLength;
+        ray.SetCollisionMaskValue(1, false);
         foreach (int i in _mask)
         {
             ray.SetCollisionMaskValue(i, true);

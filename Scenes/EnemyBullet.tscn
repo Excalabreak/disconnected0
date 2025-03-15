@@ -18,7 +18,7 @@ texture = ExtResource("2_7tbfa")
 
 [node name="HurtBox" parent="." node_paths=PackedStringArray("_attack") instance=ExtResource("3_cdnye")]
 collision_layer = 8
-collision_mask = 5
+collision_mask = 8
 _attack = NodePath("..")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]

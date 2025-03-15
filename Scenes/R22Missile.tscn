@@ -1,18 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://crgr68864eahg"]
+[gd_scene load_steps=11 format=3 uid="uid://ctba4mdnvecj3"]
 
-[ext_resource type="Texture2D" uid="uid://chyp8uacd3p0l" path="res://Sprites/Player/Weapons/missile.png" id="1_7oif4"]
-[ext_resource type="Script" uid="uid://cx8l51giw3s1s" path="res://Scripts/Player/Missile/Missile.cs" id="1_xxboq"]
-[ext_resource type="Texture2D" uid="uid://0pnth5p735fr" path="res://Sprites/Player/Weapons/light.png" id="2_i8dbj"]
-[ext_resource type="Script" uid="uid://b0m7vuh0oykhy" path="res://Scripts/Player/Missile/MissileMovement.cs" id="4_tdrsv"]
-[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="5_5w2i6"]
-[ext_resource type="PackedScene" uid="uid://dxbsluyldvjhx" path="res://Scenes/MissileExplosion.tscn" id="6_e2ifk"]
-[ext_resource type="Script" uid="uid://cndisbcuv8upb" path="res://Scripts/Player/Missile/MissileTriggerHitbox.cs" id="6_myfya"]
-[ext_resource type="Script" uid="uid://bkh4jb24ya2d4" path="res://Scripts/Player/Missile/MissileEngage.cs" id="6_tft5k"]
-[ext_resource type="Script" uid="uid://drbcr0xvcho75" path="res://Scripts/Player/Missile/MissileDetection.cs" id="9_0f838"]
-[ext_resource type="Script" uid="uid://ru1ttuvmi766" path="res://Scripts/Player/Missile/MissileExplosion.cs" id="9_tn7qu"]
+[ext_resource type="Script" uid="uid://cx8l51giw3s1s" path="res://Scripts/Player/Missile/Missile.cs" id="1_au2gj"]
+[ext_resource type="Texture2D" uid="uid://chyp8uacd3p0l" path="res://Sprites/Player/Weapons/missile.png" id="2_65cdx"]
+[ext_resource type="Script" uid="uid://b0m7vuh0oykhy" path="res://Scripts/Player/Missile/MissileMovement.cs" id="3_eqmeg"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="4_f7jxe"]
+[ext_resource type="Script" uid="uid://cndisbcuv8upb" path="res://Scripts/Player/Missile/MissileTriggerHitbox.cs" id="5_njpy3"]
+[ext_resource type="Script" uid="uid://bkh4jb24ya2d4" path="res://Scripts/Player/Missile/MissileEngage.cs" id="6_82use"]
+[ext_resource type="Texture2D" uid="uid://0pnth5p735fr" path="res://Sprites/Player/Weapons/light.png" id="7_qb2pw"]
+[ext_resource type="Script" uid="uid://drbcr0xvcho75" path="res://Scripts/Player/Missile/MissileDetection.cs" id="8_x35oe"]
+[ext_resource type="Script" uid="uid://ru1ttuvmi766" path="res://Scripts/Player/Missile/MissileExplosion.cs" id="9_nqdjf"]
+[ext_resource type="PackedScene" uid="uid://dxbsluyldvjhx" path="res://Scenes/MissileExplosion.tscn" id="10_4rn8i"]
 
 [node name="Missile" type="Node2D" node_paths=PackedStringArray("_missileMovement", "_missileDetection", "_screenWarp")]
-script = ExtResource("1_xxboq")
+script = ExtResource("1_au2gj")
 _missileMovement = NodePath("MissileMovement")
 _missileDetection = NodePath("MissileDetection")
 _screenWarp = NodePath("ScreenWarpNode")
@@ -20,21 +20,21 @@ metadata/_edit_group_ = true
 
 [node name="MissileSprite" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_7oif4")
+texture = ExtResource("2_65cdx")
 
 [node name="MissileMovement" type="Node2D" parent="."]
-script = ExtResource("4_tdrsv")
+script = ExtResource("3_eqmeg")
 _rotateSpeed = 10.0
 _acceleration = 13.0
 
-[node name="ScreenWarpNode" parent="." instance=ExtResource("5_5w2i6")]
+[node name="ScreenWarpNode" parent="." instance=ExtResource("4_f7jxe")]
 
 [node name="MissileHitbox" type="Area2D" parent="." node_paths=PackedStringArray("_missileExplosion")]
 collision_layer = 8
-collision_mask = 15
+collision_mask = 11
 monitoring = false
 monitorable = false
-script = ExtResource("6_myfya")
+script = ExtResource("5_njpy3")
 _missileExplosion = NodePath("../MissileExplosion")
 _onHitDamage = 0
 _onHitDamage = 0
@@ -43,7 +43,7 @@ _onHitDamage = 0
 polygon = PackedVector2Array(-2, -22, -4, -20, -4, 20, 4, 20, 4, -20, 2, -22)
 
 [node name="MissleEngage" type="Node2D" parent="." node_paths=PackedStringArray("_missileExplosion", "_armingLightSprite", "_armingTimer", "_selfDestructTimer")]
-script = ExtResource("6_tft5k")
+script = ExtResource("6_82use")
 _missileExplosion = NodePath("../MissileExplosion")
 _armingLightSprite = NodePath("ArmingLightSprite")
 _armingColor = Color(0, 1, 1, 1)
@@ -57,7 +57,7 @@ _selfDestructTimer = NodePath("SelfDestructTimer")
 z_index = 7
 position = Vector2(0, -3)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_i8dbj")
+texture = ExtResource("7_qb2pw")
 
 [node name="ArmingTimer" type="Timer" parent="MissleEngage"]
 one_shot = true
@@ -67,15 +67,15 @@ one_shot = true
 
 [node name="MissileDetection" type="Node2D" parent="." node_paths=PackedStringArray("_missileEngage", "_missileMovement")]
 position = Vector2(0, -20)
-script = ExtResource("9_0f838")
+script = ExtResource("8_x35oe")
 _missileEngage = NodePath("../MissleEngage")
 _missileMovement = NodePath("../MissileMovement")
-_mask = PackedInt32Array(4, 1, 2, 3)
+_mask = PackedInt32Array(4, 1, 2)
 
 [node name="MissileExplosion" type="Node2D" parent="." node_paths=PackedStringArray("_missile")]
-script = ExtResource("9_tn7qu")
+script = ExtResource("9_nqdjf")
 _missile = NodePath("..")
-_explosion = ExtResource("6_e2ifk")
+_explosion = ExtResource("10_4rn8i")
 
 [connection signal="area_entered" from="MissileHitbox" to="MissileHitbox" method="OnAreaEntered"]
 [connection signal="Armed" from="MissleEngage" to="MissileHitbox" method="OnArmed"]

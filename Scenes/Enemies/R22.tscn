@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c30lt6851b7yy"]
+[gd_scene load_steps=10 format=3 uid="uid://c30lt6851b7yy"]
 
 [ext_resource type="Script" uid="uid://dixkypsl28i84" path="res://Scripts/Enemies/Multirole/Multirole.cs" id="1_v6y38"]
 [ext_resource type="Texture2D" uid="uid://dbxy3d3f5bf2j" path="res://Sprites/Obstacles/Enemy/r22.png" id="2_v6y38"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dony6murchubu" path="res://Scripts/Enemies/Multirole/MultiroleMovement.cs" id="5_e8tet"]
 [ext_resource type="Script" uid="uid://c3bt27wqs7ema" path="res://Scripts/Enemies/R22/R22Attack.cs" id="5_fif7s"]
 [ext_resource type="PackedScene" uid="uid://cx1fscb8xn5fd" path="res://Scenes/EnemyBullet.tscn" id="6_fbadk"]
+[ext_resource type="PackedScene" uid="uid://ctba4mdnvecj3" path="res://Scenes/R22Missile.tscn" id="8_v6y38"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="9_xcc5u"]
 
 [node name="R22" type="Node2D" node_paths=PackedStringArray("_enemyAttack", "_screenWarp", "_enemyMovement")]
@@ -39,17 +40,22 @@ _acceleration = 11.0
 _rotateSpeed = 6.0
 _enemy = NodePath("..")
 
-[node name="R22Attack" type="Node2D" parent="." node_paths=PackedStringArray("_r22", "_fireRateTimer", "_reloadTimer")]
+[node name="R22Attack" type="Node2D" parent="." node_paths=PackedStringArray("_r22", "_movement", "_fireRateTimer", "_reloadTimer", "_missileTimer")]
 script = ExtResource("5_fif7s")
 _r22 = NodePath("..")
+_movement = NodePath("../MultiroleMovement")
 _mask = PackedInt32Array(1)
 _bullet = ExtResource("6_fbadk")
-_gunsRange = 500.0
+_gunsRange = 400.0
 _fireRateTimer = NodePath("FireRateTimer")
 _fireRate = 0.2
+_burstAmount = 3
 _reloadTimer = NodePath("ReloadTimer")
 _reloadTime = 4.0
-_range = 0.1
+_range = 0.2
+_missile = ExtResource("8_v6y38")
+_missileTimer = NodePath("MissileTimer")
+_missileCooldown = 5.0
 
 [node name="FireRateTimer" type="Timer" parent="R22Attack"]
 wait_time = 0.5
@@ -59,7 +65,10 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
+[node name="MissileTimer" type="Timer" parent="R22Attack"]
+
 [node name="ScreenWarpNode" parent="." instance=ExtResource("9_xcc5u")]
 
 [connection signal="timeout" from="R22Attack/FireRateTimer" to="R22Attack" method="OnBulletTimeout"]
 [connection signal="timeout" from="R22Attack/ReloadTimer" to="R22Attack" method="OnBulletTimeout"]
+[connection signal="timeout" from="R22Attack/MissileTimer" to="R22Attack" method="OnMissileTimeout"]
