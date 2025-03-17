@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bxml3eq7e1iii" path="res://Scripts/Managers/GameManager.cs" id="1_oq7xs"]
 [ext_resource type="PackedScene" uid="uid://cwvs4l7btjfqj" path="res://Scenes/Asteroid.tscn" id="2_j118a"]
 [ext_resource type="Script" uid="uid://bidc65t5xgf06" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
-[ext_resource type="PackedScene" uid="uid://d2f8hde0kykrs" path="res://Scenes/player.tscn" id="5_3w5xu"]
+[ext_resource type="PackedScene" uid="uid://d2f8hde0kykrs" path="res://Scenes/Player.tscn" id="5_3w5xu"]
 [ext_resource type="PackedScene" uid="uid://c30lt6851b7yy" path="res://Scenes/Enemies/R22.tscn" id="6_i6g32"]
 [ext_resource type="Script" uid="uid://cq1bfhndm8lfw" path="res://Scripts/Managers/UIManager.cs" id="9_3j872"]
 
