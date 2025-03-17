@@ -77,13 +77,14 @@ public partial class R22Attack : BaseEnemyAttack
                 if (_r22.GlobalPosition.DistanceTo(GameManager.instance.currentPlayer.GlobalPosition) <= _gunsRange &&
                     _canGun)
                 {
-                    //shoot laser
+                    //shoot "bullet" (just reusing laser)
                     Laser laser = _bullet.Instantiate<Laser>() as Laser;
                     laser.GlobalPosition = _r22.GlobalPosition;
 
                     laser.GlobalRotation = _r22.GlobalRotation + (float)GD.RandRange(-_range, _range);
-                    GetTree().Root.AddChild(laser);
                     laser.Position -= laser.Transform.Y * 25;
+
+                    GetTree().Root.AddChild(laser);
 
                     _canGun = false;
 

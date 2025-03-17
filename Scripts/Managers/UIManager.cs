@@ -30,7 +30,7 @@ public partial class UIManager : Node
     public void SetResourceLabels(int scrap, float fuel)
     {
         _scrapLabel.Text = "Scrap: " + scrap;
-        _fuelLabel.Text = "Fuel: " + fuel;
+        _fuelLabel.Text = "Fuel: " + fuel.ToString("F1");
     }
 
     public static UIManager instance
