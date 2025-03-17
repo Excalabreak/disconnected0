@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="5_5bktv"]
 [ext_resource type="Script" uid="uid://cpfvl5xhmn2xh" path="res://Scripts/Health/PlayerResources.cs" id="6_ea8gb"]
 [ext_resource type="Script" uid="uid://dq67k65p3xe6b" path="res://Scripts/Player/WeaponDeployment/MissileWeapon.cs" id="7_6n82x"]
-[ext_resource type="PackedScene" uid="uid://crgr68864eahg" path="res://Scenes/Missile.tscn" id="8_3trnf"]
+[ext_resource type="PackedScene" uid="uid://crgr68864eahg" path="res://Scenes/missile.tscn" id="8_3trnf"]
 [ext_resource type="Script" uid="uid://dtfdfb7dkp5q0" path="res://Scripts/Player/Misc/FireEffect.cs" id="9_jv50c"]
 [ext_resource type="Texture2D" uid="uid://bam1mebgm8oy" path="res://Sprites/Player/Satellite/Fire.png" id="10_iwioi"]
 

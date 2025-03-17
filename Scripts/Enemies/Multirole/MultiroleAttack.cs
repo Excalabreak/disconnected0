@@ -75,7 +75,6 @@ public partial class MultiroleAttack : BaseEnemyAttack
                         - laser.GlobalPosition;
 
                     laser.GlobalRotation = (-laser.Transform.Y).AngleTo(dir);
-                    GD.Print(laser.GlobalRotation);
                     GetTree().Root.AddChild(laser);
 
                     _laserInCooldown = true;
@@ -121,6 +120,7 @@ public partial class MultiroleAttack : BaseEnemyAttack
         ray.Enabled = true;
         ray.ExcludeParent = true;
         ray.TargetPosition = raycastLength;
+        ray.SetCollisionMaskValue(1, false);
         foreach (int i in _mask)
         {
             ray.SetCollisionMaskValue(i, true);

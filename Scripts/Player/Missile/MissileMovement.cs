@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/26/2025]
+ * Last Updated: [03/15/2025]
  * [Movement for missile]
  */
 
@@ -42,8 +42,9 @@ public partial class MissileMovement : Node
     /// <param name="delta">nuber of frames since last called</param>
     public void RotateTwoardsTarget(Node2D missile, float delta)
     {
-        if (_target != null)
+        if (IsInstanceValid(_target))
         {
+
             Vector2 dir = _target.GlobalPosition - missile.GlobalPosition;
             float angleTo = missile.Transform.Y.AngleTo(dir);
             missile.Rotate(-(Mathf.Sign(angleTo) * Mathf.Min(delta * _rotateSpeed, Mathf.Abs(angleTo))));

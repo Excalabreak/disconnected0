@@ -10,6 +10,7 @@ using System;
 public partial class Missile : Node2D
 {
     [Export] private MissileMovement _missileMovement;
+    [Export] private MissileDetection _missileDetection;
     [Export] private ScreenWarp _screenWarp;
 
     public override void _Process(double delta)
@@ -21,9 +22,15 @@ public partial class Missile : Node2D
             _missileMovement.AccelerateMissile(this, fDelta);
             _missileMovement.RotateTwoardsTarget(this, fDelta);
         }
+
         if (_screenWarp != null)
         {
             _screenWarp.CheckScreenWarp(this, _missileMovement.velocity);
+        }
+
+        if (_missileDetection != null)
+        {
+            _missileDetection.CheckDetection();
         }
     }
 
