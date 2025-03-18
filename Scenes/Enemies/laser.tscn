@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dr6ru6td8ojjo"]
+[gd_scene load_steps=6 format=3 uid="uid://bniuqof8ea7u7"]
 
 [ext_resource type="Script" uid="uid://b3s8nn2mjiopf" path="res://Scripts/Enemies/Laser.cs" id="1_lg8ik"]
 [ext_resource type="Texture2D" uid="uid://b2efk6xmqobjw" path="res://Sprites/Obstacles/Enemy/Weapons/laser.png" id="2_0hxj4"]

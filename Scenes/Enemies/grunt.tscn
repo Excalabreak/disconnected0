@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cti3olwf1weap"]
+[gd_scene load_steps=9 format=3 uid="uid://dvp6djgk06i0j"]
 
 [ext_resource type="Script" uid="uid://b1n63xweopglt" path="res://Scripts/Enemies/BaseEnemyScript.cs" id="1_hrtf3"]
 [ext_resource type="Texture2D" uid="uid://clh20ldur2ij8" path="res://Sprites/Obstacles/Enemy/grunt.png" id="2_g1esn"]
