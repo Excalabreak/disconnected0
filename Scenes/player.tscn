@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2f8hde0kykrs"]
+[gd_scene load_steps=13 format=3 uid="uid://d2f8hde0kykrs"]
 
 [ext_resource type="Script" uid="uid://ceqbr2rdap121" path="res://Scripts/Player/Player.cs" id="1_e62b1"]
 [ext_resource type="Texture2D" uid="uid://cmgwxciq2etyu" path="res://Sprites/Player/Satellite/satalite.png" id="2_qlb5c"]
@@ -7,14 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="5_5bktv"]
 [ext_resource type="Script" uid="uid://cpfvl5xhmn2xh" path="res://Scripts/Health/PlayerResources.cs" id="6_ea8gb"]
 [ext_resource type="Script" uid="uid://dq67k65p3xe6b" path="res://Scripts/Player/WeaponDeployment/MissileWeapon.cs" id="7_6n82x"]
+[ext_resource type="Script" uid="uid://cwcidr4m1x4ve" path="res://Scripts/Player/WeaponDeployment/GunWeapon.cs" id="7_ksbbd"]
 [ext_resource type="PackedScene" uid="uid://crgr68864eahg" path="res://Scenes/missile.tscn" id="8_3trnf"]
+[ext_resource type="PackedScene" uid="uid://ycdttgnym12e" path="res://Scenes/PlayerBullet.tscn" id="8_glx4g"]
 [ext_resource type="Script" uid="uid://dtfdfb7dkp5q0" path="res://Scripts/Player/Misc/FireEffect.cs" id="9_jv50c"]
 [ext_resource type="Texture2D" uid="uid://bam1mebgm8oy" path="res://Sprites/Player/Satellite/Fire.png" id="10_iwioi"]
 
 [node name="Player" type="Node2D" node_paths=PackedStringArray("_playerMovement", "_weapons", "_screenWarp", "_fireEffect")]
 script = ExtResource("1_e62b1")
 _playerMovement = NodePath("PlayerMovement")
-_weapons = [NodePath("MissileWeapon")]
+_weapons = [NodePath("MissileWeapon"), NodePath("GunWeapon")]
 _screenWarp = NodePath("ScreenWarpNode")
 _fireEffect = NodePath("FireEffect")
 metadata/_edit_group_ = true
@@ -39,8 +41,33 @@ _acceleration = 10.0
 
 [node name="ScreenWarpNode" parent="." instance=ExtResource("5_5bktv")]
 
-[node name="PlayerResources" type="Node2D" parent="."]
+[node name="PlayerResources" type="Node2D" parent="." node_paths=PackedStringArray("_playerMovement", "_fuelTimer")]
 script = ExtResource("6_ea8gb")
+_playerMovement = NodePath("../PlayerMovement")
+_maxScrap = 100
+_maxFuel = 50.0
+_fuelTimer = NodePath("Timer")
+_baseFuelConsumption = 0.005
+_movingFuelConsumption = 0.05
+_baseFuelTime = 0.1
+
+[node name="Timer" type="Timer" parent="PlayerResources"]
+one_shot = true
+
+[node name="GunWeapon" type="Node2D" parent="." node_paths=PackedStringArray("_playerPosition", "_playerMovement", "_playerResources", "_cooldownTimer")]
+script = ExtResource("7_ksbbd")
+_bulletScene = ExtResource("8_glx4g")
+_playerPosition = NodePath("..")
+_playerMovement = NodePath("../PlayerMovement")
+_inputName = "gun"
+_playerResources = NodePath("../PlayerResources")
+_scrapCost = 1
+_fuelCost = 0.1
+_cooldown = 0.2
+_cooldownTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="GunWeapon"]
+one_shot = true
 
 [node name="MissileWeapon" type="Node2D" parent="." node_paths=PackedStringArray("_playerPosition", "_playerMovement", "_playerResources", "_cooldownTimer")]
 script = ExtResource("7_6n82x")
@@ -67,4 +94,6 @@ visible = false
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("10_iwioi")
 
+[connection signal="timeout" from="PlayerResources/Timer" to="PlayerResources" method="OnTimerTimeout"]
+[connection signal="timeout" from="GunWeapon/Timer" to="GunWeapon" method="OnTimerTimeout"]
 [connection signal="timeout" from="MissileWeapon/Timer" to="MissileWeapon" method="OnTimerTimeout"]
