@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://bb85oql4o4p7v"]
+
+[ext_resource type="Script" uid="uid://dg6l57nilqsn" path="res://Scripts/Enemies/Bomber/BomberEnemyScript.cs" id="1_6330s"]
+[ext_resource type="Texture2D" uid="uid://dt3xv4by0ox3u" path="res://Sprites/Obstacles/Enemy/bomber.png" id="2_6330s"]
+[ext_resource type="PackedScene" uid="uid://bt1fmnkg41y5u" path="res://Scenes/Components/EnemyHealth.tscn" id="3_qtoll"]
+[ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="4_hm0de"]
+[ext_resource type="Script" uid="uid://bjl0hj4obi6qw" path="res://Scripts/Enemies/Bomber/BomberMovement.cs" id="5_cmg82"]
+[ext_resource type="Script" uid="uid://b7eo07tp5bmy8" path="res://Scripts/Enemies/Bomber/BommerAttack.cs" id="6_6330s"]
+[ext_resource type="PackedScene" uid="uid://cme8mi40fidds" path="res://Scenes/Enemies/Bomb.tscn" id="7_cmg82"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="8_8xx6x"]
+[ext_resource type="Script" uid="uid://cqg27ylepxaia" path="res://Scripts/Enemies/Bomber/BomberRanges.cs" id="9_cmg82"]
+
+[node name="Bomber" type="Node2D" node_paths=PackedStringArray("_bomberRanges", "_screenWarp", "_enemyMovement")]
+scale = Vector2(4, 4)
+script = ExtResource("1_6330s")
+_bomberRanges = NodePath("BomberRanges")
+_screenWarp = NodePath("ScreenWarpNode")
+_enemyMovement = NodePath("BomberMovement")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6330s")
+
+[node name="EnemyHealth" parent="." node_paths=PackedStringArray("_enemy") instance=ExtResource("3_qtoll")]
+_enemy = NodePath("..")
+_maxHealth = 5
+_numOfScrapDrop = 1
+_numOfFuelDrop = 2
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("_healthComponent") instance=ExtResource("4_hm0de")]
+collision_layer = 2
+collision_mask = 9
+_healthComponent = NodePath("../EnemyHealth")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
+polygon = PackedVector2Array(-3, -10, 3, -10, 7, -7, 10, -3, 10, 2.75, 7, 7, 3, 10, -3, 10, -7, 7, -10, 3, -10, -3, -7, -7)
+
+[node name="BomberMovement" type="Node2D" parent="." node_paths=PackedStringArray("_bomberEnemyScript", "_deployTimer", "_enemy")]
+script = ExtResource("5_cmg82")
+_bomberEnemyScript = NodePath("..")
+_runSpeed = 200.0
+_deploySpeed = 80.0
+_deployTimer = NodePath("Timer")
+_deployDirTime = 2.0
+_enemy = NodePath("..")
+
+[node name="Timer" type="Timer" parent="BomberMovement"]
+one_shot = true
+
+[node name="BommerAttack" type="Node2D" parent="." node_paths=PackedStringArray("_enemy", "_timer")]
+script = ExtResource("6_6330s")
+_enemy = NodePath("..")
+_bombs = ExtResource("7_cmg82")
+_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="BommerAttack"]
+wait_time = 4.0
+one_shot = true
+
+[node name="ScreenWarpNode" parent="." instance=ExtResource("8_8xx6x")]
+
+[node name="BomberRanges" type="Node2D" parent="." node_paths=PackedStringArray("_bomber", "_bomberEnemyScript")]
+script = ExtResource("9_cmg82")
+_bomber = NodePath("..")
+_bomberEnemyScript = NodePath("..")
+_disRunSwitch = 700.0
+_disDeploySwitch = 400.0
+
+[connection signal="timeout" from="BomberMovement/Timer" to="BomberMovement" method="OnTimerTimeout"]
+[connection signal="timeout" from="BommerAttack/Timer" to="BommerAttack" method="OnTimerTimeout"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://cme8mi40fidds"]
+
+[ext_resource type="Texture2D" uid="uid://db1pqgnfsbmhj" path="res://Sprites/Obstacles/Enemy/Weapons/bombr.png" id="1_f17vy"]
+[ext_resource type="Script" uid="uid://bd27cjwc3byvl" path="res://Scenes/Enemies/Bomb.cs" id="1_mlsb2"]
+[ext_resource type="Script" uid="uid://cy58qas4imhf2" path="res://Scripts/Enemies/Bomber/Bomb/BombHitbox.cs" id="2_owqvm"]
+[ext_resource type="PackedScene" uid="uid://cnassmekfchy" path="res://Scenes/Enemies/BombExplosion.tscn" id="4_mlsb2"]
+[ext_resource type="PackedScene" uid="uid://cn0dthiau3kx6" path="res://Scenes/Components/ScreenDespawnComponent.tscn" id="6_57762"]
+[ext_resource type="Script" uid="uid://ru1ttuvmi766" path="res://Scripts/Player/Missile/MissileExplosion.cs" id="9_sufel"]
+
+[node name="Bomb" type="Node2D"]
+script = ExtResource("1_mlsb2")
+metadata/_edit_group_ = true
+
+[node name="BombSprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_f17vy")
+
+[node name="MissileHitbox" type="Area2D" parent="." node_paths=PackedStringArray("_missileExplosion")]
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("2_owqvm")
+_missileExplosion = NodePath("../MissileExplosion")
+_onHitDamage = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MissileHitbox"]
+polygon = PackedVector2Array(-6, -15, 6, -15, 15, -6, 15, 6, 6, 15, -6, 15, -15, 6, -15, -6)
+
+[node name="MissileExplosion" type="Node2D" parent="." node_paths=PackedStringArray("_missile")]
+script = ExtResource("9_sufel")
+_missile = NodePath("..")
+_explosion = ExtResource("4_mlsb2")
+
+[node name="ScreenDespawn" parent="." instance=ExtResource("6_57762")]
+_screenBuffer = -50.0
+
+[connection signal="area_entered" from="MissileHitbox" to="MissileHitbox" method="OnAreaEntered"]

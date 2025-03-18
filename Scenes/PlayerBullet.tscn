@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ycdttgnym12e"]
+
+[ext_resource type="Script" uid="uid://b3s8nn2mjiopf" path="res://Scripts/Enemies/Laser.cs" id="1_ia4yk"]
+[ext_resource type="Texture2D" uid="uid://067jw5f1va6h" path="res://Sprites/Player/Weapons/bullet.png" id="2_dcvqm"]
+[ext_resource type="PackedScene" uid="uid://cv2j1cqb60vqr" path="res://Scenes/Components/HurtBox.tscn" id="3_byfb4"]
+[ext_resource type="Script" uid="uid://cddey2hr23m43" path="res://Scripts/Enemies/LaserMovement.cs" id="4_vhh13"]
+[ext_resource type="PackedScene" uid="uid://cn0dthiau3kx6" path="res://Scenes/Components/ScreenDespawnComponent.tscn" id="5_cj1rd"]
+
+[node name="Bullet2" type="Node2D" node_paths=PackedStringArray("_laserMovement", "_screenDespawn")]
+scale = Vector2(3, 3)
+script = ExtResource("1_ia4yk")
+_laserMovement = NodePath("LaserMovement")
+_screenDespawn = NodePath("ScreenDespawn")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dcvqm")
+
+[node name="HurtBox" parent="." node_paths=PackedStringArray("_attack") instance=ExtResource("3_byfb4")]
+collision_layer = 8
+collision_mask = 14
+_attack = NodePath("..")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]
+polygon = PackedVector2Array(-1, -3, 1, -3, 2, -2, 2, 3, -2, 3, -2, -2)
+
+[node name="LaserMovement" type="Node2D" parent="." node_paths=PackedStringArray("_laser")]
+script = ExtResource("4_vhh13")
+_laser = NodePath("..")
+_speed = 800.0
+
+[node name="ScreenDespawn" parent="." instance=ExtResource("5_cj1rd")]

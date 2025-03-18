@@ -1,34 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcv5e2y61uvn2"]
+[gd_scene load_steps=6 format=3 uid="uid://bha65u7t8cth"]
 
-[ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_xithb"]
-[ext_resource type="Texture2D" uid="uid://cmgwxciq2etyu" path="res://Sprites/Player/Satellite/satalite.png" id="2_mxcvq"]
-[ext_resource type="Texture2D" uid="uid://bck87ot65nmj7" path="res://Sprites/Obstacles/asteroid.png" id="3_2usfj"]
+[ext_resource type="Script" uid="uid://bxml3eq7e1iii" path="res://Scripts/Managers/GameManager.cs" id="1_oq7xs"]
+[ext_resource type="PackedScene" uid="uid://cwvs4l7btjfqj" path="res://Scenes/Asteroid.tscn" id="2_j118a"]
+[ext_resource type="Script" uid="uid://bidc65t5xgf06" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
+[ext_resource type="PackedScene" uid="uid://b3w1jr5dcelx2" path="res://Scenes/Player.tscn" id="5_3w5xu"]
+[ext_resource type="Script" uid="uid://cq1bfhndm8lfw" path="res://Scripts/Managers/UIManager.cs" id="9_3j872"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_currentPlayer")]
+script = ExtResource("1_oq7xs")
+_currentPlayer = NodePath("Player")
 
-[node name="Player" type="Area2D" parent="."]
-position = Vector2(315, 178)
-script = ExtResource("1_xithb")
-metadata/_edit_group_ = true
+[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel")]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 327.0
+offset_bottom = 90.0
+script = ExtResource("9_3j872")
+_scrapLabel = NodePath("ScrapLabel")
+_fuelLabel = NodePath("FuelLable")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(1, 0)
-rotation = 1.5708
-scale = Vector2(2.58723, 2.74654)
-texture = ExtResource("2_mxcvq")
+[node name="ScrapLabel" type="Label" parent="UIManager"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 289.0
+offset_bottom = 56.0
+text = "Scrap:"
+vertical_alignment = 1
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
-rotation = 1.5708
-scale = Vector2(1.19466, 0.818099)
-polygon = PackedVector2Array(-31, -31, 31, -31, 31, 31, -31, 31)
+[node name="FuelLable" type="Label" parent="UIManager"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 289.0
+offset_bottom = 96.0
+text = "Fuel:"
+vertical_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(117, 65)
-metadata/_edit_group_ = true
+[node name="AsteroidPool" type="Node2D" parent="." node_paths=PackedStringArray("_timer")]
+script = ExtResource("2_srqrm")
+_asteroidScene = ExtResource("2_j118a")
+_timer = NodePath("Timer")
+_testSpawn = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-scale = Vector2(1.85279, 1.85279)
-texture = ExtResource("3_2usfj")
+[node name="Timer" type="Timer" parent="AsteroidPool"]
+wait_time = 5.0
+one_shot = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-6, -28, 6, -28, 20, -20, 28, -5, 28, 5, 20, 20, 5, 28, -6, 28, -20, 20, -28, 5, -28, -5, -20, -20)
+[node name="Player" parent="." instance=ExtResource("5_3w5xu")]
+position = Vector2(949, 271)
+
+[connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]

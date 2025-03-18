@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://crgr68864eahg"]
+
+[ext_resource type="Texture2D" uid="uid://chyp8uacd3p0l" path="res://Sprites/Player/Weapons/missile.png" id="1_7oif4"]
+[ext_resource type="Script" uid="uid://cx8l51giw3s1s" path="res://Scripts/Player/Missile/Missile.cs" id="1_xxboq"]
+[ext_resource type="Texture2D" uid="uid://0pnth5p735fr" path="res://Sprites/Player/Weapons/light.png" id="2_i8dbj"]
+[ext_resource type="Script" uid="uid://b0m7vuh0oykhy" path="res://Scripts/Player/Missile/MissileMovement.cs" id="4_tdrsv"]
+[ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="5_5w2i6"]
+[ext_resource type="PackedScene" uid="uid://dxbsluyldvjhx" path="res://Scenes/MissileExplosion.tscn" id="6_e2ifk"]
+[ext_resource type="Script" uid="uid://cndisbcuv8upb" path="res://Scripts/Player/Missile/MissileTriggerHitbox.cs" id="6_myfya"]
+[ext_resource type="Script" uid="uid://bkh4jb24ya2d4" path="res://Scripts/Player/Missile/MissileEngage.cs" id="6_tft5k"]
+[ext_resource type="Script" uid="uid://drbcr0xvcho75" path="res://Scripts/Player/Missile/MissileDetection.cs" id="9_0f838"]
+[ext_resource type="Script" uid="uid://ru1ttuvmi766" path="res://Scripts/Player/Missile/MissileExplosion.cs" id="9_tn7qu"]
+
+[node name="Missile" type="Node2D" node_paths=PackedStringArray("_missileMovement", "_missileDetection", "_screenWarp")]
+script = ExtResource("1_xxboq")
+_missileMovement = NodePath("MissileMovement")
+_missileDetection = NodePath("MissileDetection")
+_screenWarp = NodePath("ScreenWarpNode")
+metadata/_edit_group_ = true
+
+[node name="MissileSprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_7oif4")
+
+[node name="MissileMovement" type="Node2D" parent="."]
+script = ExtResource("4_tdrsv")
+_rotateSpeed = 10.0
+_acceleration = 13.0
+
+[node name="ScreenWarpNode" parent="." instance=ExtResource("5_5w2i6")]
+
+[node name="MissileHitbox" type="Area2D" parent="." node_paths=PackedStringArray("_missileExplosion")]
+collision_layer = 8
+collision_mask = 15
+monitoring = false
+monitorable = false
+script = ExtResource("6_myfya")
+_missileExplosion = NodePath("../MissileExplosion")
+_onHitDamage = 0
+_onHitDamage = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MissileHitbox"]
+polygon = PackedVector2Array(-2, -22, -4, -20, -4, 20, 4, 20, 4, -20, 2, -22)
+
+[node name="MissleEngage" type="Node2D" parent="." node_paths=PackedStringArray("_missileExplosion", "_armingLightSprite", "_armingTimer", "_selfDestructTimer")]
+script = ExtResource("6_tft5k")
+_missileExplosion = NodePath("../MissileExplosion")
+_armingLightSprite = NodePath("ArmingLightSprite")
+_armingColor = Color(0, 1, 1, 1)
+_armedColor = Color(0, 1, 0, 1)
+_lockedOnColor = Color(1, 0, 0, 1)
+_armingTimer = NodePath("ArmingTimer")
+_armingTime = 0.5
+_selfDestructTimer = NodePath("SelfDestructTimer")
+
+[node name="ArmingLightSprite" type="Sprite2D" parent="MissleEngage"]
+z_index = 7
+position = Vector2(0, -3)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_i8dbj")
+
+[node name="ArmingTimer" type="Timer" parent="MissleEngage"]
+one_shot = true
+
+[node name="SelfDestructTimer" type="Timer" parent="MissleEngage"]
+one_shot = true
+
+[node name="MissileDetection" type="Node2D" parent="." node_paths=PackedStringArray("_missileEngage", "_missileMovement")]
+position = Vector2(0, -20)
+script = ExtResource("9_0f838")
+_missileEngage = NodePath("../MissleEngage")
+_missileMovement = NodePath("../MissileMovement")
+_mask = PackedInt32Array(4, 1, 2, 3)
+
+[node name="MissileExplosion" type="Node2D" parent="." node_paths=PackedStringArray("_missile")]
+script = ExtResource("9_tn7qu")
+_missile = NodePath("..")
+_explosion = ExtResource("6_e2ifk")
+
+[connection signal="area_entered" from="MissileHitbox" to="MissileHitbox" method="OnAreaEntered"]
+[connection signal="Armed" from="MissleEngage" to="MissileHitbox" method="OnArmed"]
+[connection signal="Armed" from="MissleEngage" to="MissileDetection" method="OnArmed"]
+[connection signal="timeout" from="MissleEngage/ArmingTimer" to="MissleEngage" method="OnArmingTimerTimeout"]
+[connection signal="timeout" from="MissleEngage/SelfDestructTimer" to="MissleEngage" method="OnSelfDestructTimerTimeout"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkkxnia7l705p"]
+
+[ext_resource type="Script" uid="uid://c5e2pej74t2fe" path="res://Scripts/Misc/ScreenWarp.cs" id="1_dlpry"]
+
+[node name="ScreenWarpNode" type="Node2D"]
+script = ExtResource("1_dlpry")
