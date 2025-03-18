@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2f8hde0kykrs"]
+[gd_scene load_steps=13 format=3 uid="uid://b3w1jr5dcelx2"]
 
 [ext_resource type="Script" uid="uid://ceqbr2rdap121" path="res://Scripts/Player/Player.cs" id="1_e62b1"]
 [ext_resource type="Texture2D" uid="uid://cmgwxciq2etyu" path="res://Sprites/Player/Satellite/satalite.png" id="2_qlb5c"]

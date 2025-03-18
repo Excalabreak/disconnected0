@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cddey2hr23m43" path="res://Scripts/Enemies/LaserMovement.cs" id="4_vhh13"]
 [ext_resource type="PackedScene" uid="uid://cn0dthiau3kx6" path="res://Scenes/Components/ScreenDespawnComponent.tscn" id="5_cj1rd"]
 
-[node name="Bullet" type="Node2D" node_paths=PackedStringArray("_laserMovement", "_screenDespawn")]
+[node name="Bullet2" type="Node2D" node_paths=PackedStringArray("_laserMovement", "_screenDespawn")]
 scale = Vector2(3, 3)
 script = ExtResource("1_ia4yk")
 _laserMovement = NodePath("LaserMovement")
