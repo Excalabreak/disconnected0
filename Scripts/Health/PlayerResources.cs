@@ -9,8 +9,14 @@ using System;
 
 public partial class PlayerResources : BaseHealth
 {
+	[Export] private PlayerMovement _playerMovement;
+
     [Export] private int _maxScrap = 10;
     [Export] private float _maxFuel = 10f;
+    [Export] private Timer _fuelTimer;
+    [Export] private float _baseFuelConsumption = .1f;
+    [Export] private float _movingFuelConsumption = .1f;
+	[Export] private float _baseFuelTime = 1f;
 
     private int _currentScrap;
 	private float _currentFuel;
@@ -22,12 +28,12 @@ public partial class PlayerResources : BaseHealth
 		_currentFuel = _maxFuel;
 		UpdateUI();
 
-    }
+        _fuelTimer.WaitTime = _baseFuelTime;
+        _fuelTimer.OneShot = true;
+        _fuelTimer.Autostart = false;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+		_fuelTimer.Start();
+    }
 
 	/// <summary>
 	/// when the player recieves damage,
@@ -40,10 +46,7 @@ public partial class PlayerResources : BaseHealth
 		_currentFuel -= (float)damage;
         UpdateUI();
 
-        if (_currentScrap < 0 || _currentFuel <= 0)
-        {
-			GameOver();
-        }
+		CheckForGameOver();
     }
 
 	/// <summary>
@@ -126,9 +129,33 @@ public partial class PlayerResources : BaseHealth
 	}
 
 	/// <summary>
-	/// updates UI
+	/// fuel slowly goes down causing players to need to collect fuel
 	/// </summary>
-	private void UpdateUI()
+	private void OnTimerTimeout()
+	{
+		_currentFuel -= _baseFuelConsumption;
+		if (_playerMovement.thrust > 0)
+		{
+            _currentFuel -= _movingFuelConsumption;
+        }
+
+		UpdateUI();
+		CheckForGameOver();
+        _fuelTimer.Start();
+    }
+
+	private void CheckForGameOver()
+	{
+        if (_currentScrap < 0 || _currentFuel <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    /// <summary>
+    /// updates UI
+    /// </summary>
+    private void UpdateUI()
 	{
 		UIManager.instance.SetResourceLabels(_currentScrap, _currentFuel);
 	}

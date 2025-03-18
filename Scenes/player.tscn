@@ -41,10 +41,18 @@ _acceleration = 10.0
 
 [node name="ScreenWarpNode" parent="." instance=ExtResource("5_5bktv")]
 
-[node name="PlayerResources" type="Node2D" parent="."]
+[node name="PlayerResources" type="Node2D" parent="." node_paths=PackedStringArray("_playerMovement", "_fuelTimer")]
 script = ExtResource("6_ea8gb")
+_playerMovement = NodePath("../PlayerMovement")
 _maxScrap = 100
 _maxFuel = 50.0
+_fuelTimer = NodePath("Timer")
+_baseFuelConsumption = 0.005
+_movingFuelConsumption = 0.05
+_baseFuelTime = 0.1
+
+[node name="Timer" type="Timer" parent="PlayerResources"]
+one_shot = true
 
 [node name="GunWeapon" type="Node2D" parent="." node_paths=PackedStringArray("_playerPosition", "_playerMovement", "_playerResources", "_cooldownTimer")]
 script = ExtResource("7_ksbbd")
@@ -86,5 +94,6 @@ visible = false
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("10_iwioi")
 
+[connection signal="timeout" from="PlayerResources/Timer" to="PlayerResources" method="OnTimerTimeout"]
 [connection signal="timeout" from="GunWeapon/Timer" to="GunWeapon" method="OnTimerTimeout"]
 [connection signal="timeout" from="MissileWeapon/Timer" to="MissileWeapon" method="OnTimerTimeout"]

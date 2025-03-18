@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bha65u7t8cth"]
+[gd_scene load_steps=6 format=3 uid="uid://bha65u7t8cth"]
 
 [ext_resource type="Script" uid="uid://bxml3eq7e1iii" path="res://Scripts/Managers/GameManager.cs" id="1_oq7xs"]
 [ext_resource type="PackedScene" uid="uid://cwvs4l7btjfqj" path="res://Scenes/Asteroid.tscn" id="2_j118a"]
 [ext_resource type="Script" uid="uid://bidc65t5xgf06" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
 [ext_resource type="PackedScene" uid="uid://d2f8hde0kykrs" path="res://Scenes/Player.tscn" id="5_3w5xu"]
-[ext_resource type="PackedScene" uid="uid://c30lt6851b7yy" path="res://Scenes/Enemies/R22.tscn" id="6_i6g32"]
 [ext_resource type="Script" uid="uid://cq1bfhndm8lfw" path="res://Scripts/Managers/UIManager.cs" id="9_3j872"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("_currentPlayer")]
@@ -51,8 +50,5 @@ one_shot = true
 
 [node name="Player" parent="." instance=ExtResource("5_3w5xu")]
 position = Vector2(949, 271)
-
-[node name="R22" parent="." instance=ExtResource("6_i6g32")]
-position = Vector2(225, 220)
 
 [connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]
