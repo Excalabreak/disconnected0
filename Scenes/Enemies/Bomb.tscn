@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cme8mi40fidds"]
 
 [ext_resource type="Texture2D" uid="uid://db1pqgnfsbmhj" path="res://Sprites/Obstacles/Enemy/Weapons/bombr.png" id="1_f17vy"]
-[ext_resource type="Script" uid="uid://bd27cjwc3byvl" path="res://Scenes/Enemies/Bomb.cs" id="1_mlsb2"]
+[ext_resource type="Script" uid="uid://bd27cjwc3byvl" path="res://Scripts/Enemies/Bomb.cs" id="1_mlsb2"]
 [ext_resource type="Script" uid="uid://cy58qas4imhf2" path="res://Scripts/Enemies/Bomber/Bomb/BombHitbox.cs" id="2_owqvm"]
 [ext_resource type="PackedScene" uid="uid://cnassmekfchy" path="res://Scenes/Enemies/BombExplosion.tscn" id="4_mlsb2"]
 [ext_resource type="PackedScene" uid="uid://cn0dthiau3kx6" path="res://Scenes/Components/ScreenDespawnComponent.tscn" id="6_57762"]

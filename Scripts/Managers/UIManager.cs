@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/15/2025]
+ * Last Updated: [03/19/2025]
  * [Singleton to manage UI]
  */
 
