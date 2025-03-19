@@ -14,6 +14,9 @@ public partial class UIManager : Node
     [Export] private Label _scrapLabel;
     [Export] private Label _fuelLabel;
 
+    [Export] private Sprite2D _planetImage;
+    [Export] private Texture2D[] _backgroundPlanets;
+
     /// <summary>
     /// sets up singleton
     /// </summary>
@@ -31,6 +34,11 @@ public partial class UIManager : Node
     {
         _scrapLabel.Text = "Scrap: " + scrap;
         _fuelLabel.Text = "Fuel: " + fuel.ToString("F1");
+    }
+
+    public void SetBackgroundPlanet(Planets planet)
+    {
+        _planetImage.Texture = _backgroundPlanets[(int)planet];
     }
 
     public static UIManager instance

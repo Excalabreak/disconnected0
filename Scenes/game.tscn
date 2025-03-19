@@ -1,16 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://bha65u7t8cth"]
+[gd_scene load_steps=14 format=3 uid="uid://bha65u7t8cth"]
 
 [ext_resource type="Script" uid="uid://bxml3eq7e1iii" path="res://Scripts/Managers/GameManager.cs" id="1_oq7xs"]
-[ext_resource type="PackedScene" uid="uid://0yni2kuqbedc" path="res://Scenes/Asteroid.tscn" id="2_j118a"]
+[ext_resource type="PackedScene" uid="uid://0yni2kuqbedc" path="res://Scenes/asteroid.tscn" id="2_j118a"]
 [ext_resource type="Script" uid="uid://bidc65t5xgf06" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
-[ext_resource type="PackedScene" uid="uid://cvsm0nlpo1nmb" path="res://Scenes/Player.tscn" id="5_3w5xu"]
+[ext_resource type="Texture2D" uid="uid://bbrfhfg1uooe7" path="res://Sprites/Background/disconnectedBG.png" id="3_i6g32"]
+[ext_resource type="Texture2D" uid="uid://bvkwb2vpo0sbq" path="res://Sprites/Background/pluto.png" id="3_rfjv2"]
+[ext_resource type="Texture2D" uid="uid://rn1o2u62ii1v" path="res://Sprites/Background/neptune.png" id="4_1phco"]
+[ext_resource type="PackedScene" uid="uid://b3wwnb2uny1ok" path="res://Scenes/Player.tscn" id="5_3w5xu"]
+[ext_resource type="Texture2D" uid="uid://follqqd3xsg1" path="res://Sprites/Background/uranus.png" id="5_nb51f"]
+[ext_resource type="Texture2D" uid="uid://lce73hn0pkqe" path="res://Sprites/Background/saturn.png" id="6_nnt18"]
+[ext_resource type="Texture2D" uid="uid://ojw8r3u6ifl0" path="res://Sprites/Background/jupiter.png" id="7_ewbju"]
+[ext_resource type="Texture2D" uid="uid://dmwsqcb308gd2" path="res://Sprites/Background/mars.png" id="8_85qyi"]
 [ext_resource type="Script" uid="uid://cq1bfhndm8lfw" path="res://Scripts/Managers/UIManager.cs" id="9_3j872"]
+[ext_resource type="Texture2D" uid="uid://cw063mj1v83bc" path="res://Sprites/Background/earth.png" id="9_iivbl"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("_currentPlayer")]
 script = ExtResource("1_oq7xs")
 _currentPlayer = NodePath("Player")
 
-[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel")]
+[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel", "_planetImage")]
 z_index = 10
 layout_mode = 3
 anchors_preset = 0
@@ -19,6 +27,8 @@ offset_bottom = 90.0
 script = ExtResource("9_3j872")
 _scrapLabel = NodePath("ScrapLabel")
 _fuelLabel = NodePath("FuelLable")
+_planetImage = NodePath("Sprite2D")
+_backgroundPlanets = Array[Texture2D]([ExtResource("3_rfjv2"), ExtResource("4_1phco"), ExtResource("5_nb51f"), ExtResource("6_nnt18"), ExtResource("7_ewbju"), ExtResource("8_85qyi"), ExtResource("9_iivbl")])
 
 [node name="ScrapLabel" type="Label" parent="UIManager"]
 layout_mode = 0
@@ -37,6 +47,19 @@ offset_right = 289.0
 offset_bottom = 96.0
 text = "Fuel:"
 vertical_alignment = 1
+
+[node name="Background" type="TextureRect" parent="UIManager"]
+z_index = -10
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_i6g32")
+
+[node name="Sprite2D" type="Sprite2D" parent="UIManager"]
+z_index = -5
+position = Vector2(640, 360)
+scale = Vector2(5, 5)
+texture = ExtResource("3_rfjv2")
 
 [node name="AsteroidPool" type="Node2D" parent="." node_paths=PackedStringArray("_timer")]
 script = ExtResource("2_srqrm")
