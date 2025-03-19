@@ -11,6 +11,7 @@ public partial class EnemyManager : Node
 {
     public static EnemyManager _instance;
 
+    [Export] private LevelResources[] _levels;
 
     /// <summary>
     /// sets up singleton

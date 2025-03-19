@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelResources" load_steps=2 format=3 uid="uid://smaodfh5rymx"]
+
+[ext_resource type="Script" uid="uid://cfoxgu4yhy1xb" path="res://Scripts/Misc/LevelResources.cs" id="1_hkf6l"]
+
+[resource]
+script = ExtResource("1_hkf6l")
+_planet = 5
+_enemies = PackedInt32Array()
+metadata/_custom_type_script = "uid://cfoxgu4yhy1xb"

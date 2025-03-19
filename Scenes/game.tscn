@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bha65u7t8cth"]
+[gd_scene load_steps=22 format=3 uid="uid://bha65u7t8cth"]
 
 [ext_resource type="Script" uid="uid://bxml3eq7e1iii" path="res://Scripts/Managers/GameManager.cs" id="1_oq7xs"]
 [ext_resource type="PackedScene" uid="uid://0yni2kuqbedc" path="res://Scenes/asteroid.tscn" id="2_j118a"]
@@ -13,6 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://dmwsqcb308gd2" path="res://Sprites/Background/mars.png" id="8_85qyi"]
 [ext_resource type="Script" uid="uid://cq1bfhndm8lfw" path="res://Scripts/Managers/UIManager.cs" id="9_3j872"]
 [ext_resource type="Texture2D" uid="uid://cw063mj1v83bc" path="res://Sprites/Background/earth.png" id="9_iivbl"]
+[ext_resource type="Script" uid="uid://bks5prtnw250m" path="res://Scripts/Managers/EnemyManager.cs" id="11_exi56"]
+[ext_resource type="Resource" uid="uid://cddd5m2bggms2" path="res://Resources/LevelResources/PlutoLevel.tres" id="12_7t8sx"]
+[ext_resource type="Resource" uid="uid://b5o1r25s3plfp" path="res://Resources/LevelResources/NeptuneLevel.tres" id="13_mg4q0"]
+[ext_resource type="Resource" uid="uid://couvqk10gkj1k" path="res://Resources/LevelResources/UranusLevel.tres" id="14_vm72l"]
+[ext_resource type="Resource" uid="uid://c8fhph60qrvwi" path="res://Resources/LevelResources/SaturnLevel.tres" id="15_22asu"]
+[ext_resource type="Resource" uid="uid://b2m53l5dfh8ng" path="res://Resources/LevelResources/JupiterLevel.tres" id="16_fkdbe"]
+[ext_resource type="Resource" uid="uid://smaodfh5rymx" path="res://Resources/LevelResources/MarsLevel.tres" id="17_81klo"]
+[ext_resource type="Resource" uid="uid://dff7aghbuof1c" path="res://Resources/LevelResources/EarthLevel.tres" id="18_tgy6u"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("_currentPlayer")]
 script = ExtResource("1_oq7xs")
@@ -60,6 +68,10 @@ z_index = -5
 position = Vector2(640, 360)
 scale = Vector2(5, 5)
 texture = ExtResource("3_rfjv2")
+
+[node name="EnemyManager" type="Node2D" parent="."]
+script = ExtResource("11_exi56")
+_levels = Array[Object]([ExtResource("12_7t8sx"), ExtResource("13_mg4q0"), ExtResource("14_vm72l"), ExtResource("15_22asu"), ExtResource("16_fkdbe"), ExtResource("17_81klo"), ExtResource("18_tgy6u")])
 
 [node name="AsteroidPool" type="Node2D" parent="." node_paths=PackedStringArray("_timer")]
 script = ExtResource("2_srqrm")
