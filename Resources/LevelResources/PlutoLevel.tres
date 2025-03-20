@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_06tua")
-_enemies = PackedInt32Array()
+_planet = 0
+_enemies = PackedInt32Array(3, 0, 0, 0, 0, 0)
 metadata/_custom_type_script = "uid://cfoxgu4yhy1xb"

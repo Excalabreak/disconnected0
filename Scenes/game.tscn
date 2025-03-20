@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bha65u7t8cth"]
+[gd_scene load_steps=28 format=3 uid="uid://bha65u7t8cth"]
 
 [ext_resource type="Script" uid="uid://bxml3eq7e1iii" path="res://Scripts/Managers/GameManager.cs" id="1_oq7xs"]
 [ext_resource type="PackedScene" uid="uid://0yni2kuqbedc" path="res://Scenes/asteroid.tscn" id="2_j118a"]
@@ -21,6 +21,12 @@
 [ext_resource type="Resource" uid="uid://b2m53l5dfh8ng" path="res://Resources/LevelResources/JupiterLevel.tres" id="16_fkdbe"]
 [ext_resource type="Resource" uid="uid://smaodfh5rymx" path="res://Resources/LevelResources/MarsLevel.tres" id="17_81klo"]
 [ext_resource type="Resource" uid="uid://dff7aghbuof1c" path="res://Resources/LevelResources/EarthLevel.tres" id="18_tgy6u"]
+[ext_resource type="PackedScene" uid="uid://dvp6djgk06i0j" path="res://Scenes/Enemies/grunt.tscn" id="19_81klo"]
+[ext_resource type="PackedScene" uid="uid://c6omjltuik3w0" path="res://Scenes/Enemies/scout.tscn" id="20_tgy6u"]
+[ext_resource type="PackedScene" uid="uid://bbmn10hv86upj" path="res://Scenes/Enemies/FighterEscort.tscn" id="21_cwurv"]
+[ext_resource type="PackedScene" uid="uid://bb85oql4o4p7v" path="res://Scenes/Enemies/Bomber.tscn" id="22_mucmn"]
+[ext_resource type="PackedScene" uid="uid://cnfroiosyc513" path="res://Scenes/Enemies/Multirole.tscn" id="23_8m3t6"]
+[ext_resource type="PackedScene" uid="uid://c30lt6851b7yy" path="res://Scenes/Enemies/R22.tscn" id="24_ese38"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("_currentPlayer")]
 script = ExtResource("1_oq7xs")
@@ -72,6 +78,7 @@ texture = ExtResource("3_rfjv2")
 [node name="EnemyManager" type="Node2D" parent="."]
 script = ExtResource("11_exi56")
 _levels = Array[Object]([ExtResource("12_7t8sx"), ExtResource("13_mg4q0"), ExtResource("14_vm72l"), ExtResource("15_22asu"), ExtResource("16_fkdbe"), ExtResource("17_81klo"), ExtResource("18_tgy6u")])
+_enemyScenes = Array[PackedScene]([ExtResource("19_81klo"), ExtResource("20_tgy6u"), ExtResource("21_cwurv"), ExtResource("22_mucmn"), ExtResource("23_8m3t6"), ExtResource("24_ese38")])
 
 [node name="AsteroidPool" type="Node2D" parent="." node_paths=PackedStringArray("_timer")]
 script = ExtResource("2_srqrm")
