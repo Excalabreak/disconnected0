@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 
 /*
  * Author: [Lam, Justin]
@@ -16,6 +17,7 @@ public partial class EnemyManager : Node
     [Export] private PackedScene[] _enemyScenes;
 
     private List<Node2D> _currentEnemies;
+    private Vector2 _resolution;
 
     /// <summary>
     /// sets up singleton
@@ -29,21 +31,38 @@ public partial class EnemyManager : Node
 
         _instance = this;
 
-        _currentEnemies = new List<Node2D>();
+        _resolution = GetViewport().GetVisibleRect().Size;
     }
 
     public void StartLevel(Planets planet)
     {
+        _currentEnemies = new List<Node2D>();
+
         for (int i = 0; i < _levels[(int)planet]._enemies.Length; i++)
         {
             if (_levels[(int)planet]._enemies[i] > 0)
             {
-                for (int j = 0; j < _levels[(int)planet]._enemies[j]; j++)
+                for (int j = 0; j < _levels[(int)planet]._enemies[i]; j++)
                 {
-
+                    Node2D enemy = _enemyScenes[i].Instantiate<Node2D>() as Node2D;
+                    enemy.GlobalPosition = new Vector2(-50, (float)GD.RandRange(0, _resolution.Y));
+                    _currentEnemies.Add(enemy);
+                    GetTree().Root.AddChild(enemy);
                 }
             }
         }
+    }
+
+    public bool CheckLevelComplete()
+    {
+        foreach (Node2D enemy in _currentEnemies)
+        {
+            if (IsInstanceValid(enemy))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     /// <summary>
