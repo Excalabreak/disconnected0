@@ -12,6 +12,7 @@ public partial class GameManager : Node
     private static GameManager _instance;
 
     [Export] private Node2D _currentPlayer;
+    private Planets _currentLevel = Planets.PLUTO;
 
     /// <summary>
     /// sets up singleton
