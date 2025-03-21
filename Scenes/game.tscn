@@ -28,12 +28,13 @@
 [ext_resource type="PackedScene" uid="uid://cnfroiosyc513" path="res://Scenes/Enemies/Multirole.tscn" id="23_8m3t6"]
 [ext_resource type="PackedScene" uid="uid://c30lt6851b7yy" path="res://Scenes/Enemies/R22.tscn" id="24_ese38"]
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("_currentPlayer")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_asteroidPool", "_currentPlayer")]
 script = ExtResource("1_oq7xs")
+_asteroidPool = NodePath("AsteroidPool")
 _currentPlayer = NodePath("Player")
 
 [node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel", "_planetImage")]
-z_index = 10
+z_index = -10
 layout_mode = 3
 anchors_preset = 0
 offset_right = 327.0
@@ -45,6 +46,8 @@ _planetImage = NodePath("Sprite2D")
 _backgroundPlanets = Array[Texture2D]([ExtResource("3_rfjv2"), ExtResource("4_1phco"), ExtResource("5_nb51f"), ExtResource("6_nnt18"), ExtResource("7_ewbju"), ExtResource("8_85qyi"), ExtResource("9_iivbl")])
 
 [node name="ScrapLabel" type="Label" parent="UIManager"]
+z_index = 10
+z_as_relative = false
 layout_mode = 0
 offset_left = 20.0
 offset_top = 10.0
@@ -54,6 +57,8 @@ text = "Scrap:"
 vertical_alignment = 1
 
 [node name="FuelLable" type="Label" parent="UIManager"]
+z_index = 10
+z_as_relative = false
 layout_mode = 0
 offset_left = 20.0
 offset_top = 50.0
@@ -91,6 +96,6 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Player" parent="." instance=ExtResource("5_3w5xu")]
-position = Vector2(949, 271)
+position = Vector2(930, 260)
 
 [connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]

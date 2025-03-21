@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dony6murchubu" path="res://Scripts/Enemies/Multirole/MultiroleMovement.cs" id="4_foe3x"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="6_obbxh"]
 [ext_resource type="Script" uid="uid://bk66amq0hyo4l" path="res://Scripts/Enemies/Multirole/MultiroleAttack.cs" id="6_ywh2j"]
-[ext_resource type="PackedScene" uid="uid://dr6ru6td8ojjo" path="res://Scenes/Enemies/Laser.tscn" id="7_x5v54"]
+[ext_resource type="PackedScene" uid="uid://bniuqof8ea7u7" path="res://Scenes/Enemies/Laser.tscn" id="7_x5v54"]
 [ext_resource type="PackedScene" uid="uid://cme8mi40fidds" path="res://Scenes/Enemies/Bomb.tscn" id="8_ywh2j"]
 
 [node name="Multirole" type="Node2D" node_paths=PackedStringArray("_enemyAttack", "_screenWarp", "_enemyMovement")]
