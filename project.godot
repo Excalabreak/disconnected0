@@ -33,7 +33,9 @@ movie_writer/disable_vsync=true
 [file_customization]
 
 folder_colors={
+"res://Fonts/": "blue",
 "res://Resources/": "green",
+"res://Scenes/": "red",
 "res://Scripts/": "orange",
 "res://Sprites/": "yellow"
 }
