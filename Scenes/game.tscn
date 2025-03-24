@@ -1,9 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://bha65u7t8cth"]
+[gd_scene load_steps=33 format=3 uid="uid://bha65u7t8cth"]
 
 [ext_resource type="Script" uid="uid://bxml3eq7e1iii" path="res://Scripts/Managers/GameManager.cs" id="1_oq7xs"]
+[ext_resource type="Texture2D" uid="uid://ds2jd5hisi00y" path="res://Sprites/UI/UIBox.png" id="2_cwurv"]
 [ext_resource type="PackedScene" uid="uid://0yni2kuqbedc" path="res://Scenes/asteroid.tscn" id="2_j118a"]
 [ext_resource type="Script" uid="uid://bidc65t5xgf06" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
 [ext_resource type="Texture2D" uid="uid://bbrfhfg1uooe7" path="res://Sprites/Background/disconnectedBG.png" id="3_i6g32"]
+[ext_resource type="FontFile" uid="uid://do8p7umbop7ks" path="res://Fonts/MedodicaRegular.otf" id="3_mucmn"]
 [ext_resource type="Texture2D" uid="uid://bvkwb2vpo0sbq" path="res://Sprites/Background/pluto.png" id="3_rfjv2"]
 [ext_resource type="Texture2D" uid="uid://rn1o2u62ii1v" path="res://Sprites/Background/neptune.png" id="4_1phco"]
 [ext_resource type="PackedScene" uid="uid://b3wwnb2uny1ok" path="res://Scenes/Player.tscn" id="5_3w5xu"]
@@ -28,6 +30,15 @@
 [ext_resource type="PackedScene" uid="uid://cnfroiosyc513" path="res://Scenes/Enemies/Multirole.tscn" id="23_8m3t6"]
 [ext_resource type="PackedScene" uid="uid://c30lt6851b7yy" path="res://Scenes/Enemies/R22.tscn" id="24_ese38"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8m3t6"]
+texture = ExtResource("2_cwurv")
+
+[sub_resource type="FontVariation" id="FontVariation_ese38"]
+base_font = ExtResource("3_mucmn")
+
+[sub_resource type="FontVariation" id="FontVariation_oeip8"]
+base_font = ExtResource("3_mucmn")
+
 [node name="Game" type="Node2D" node_paths=PackedStringArray("_asteroidPool", "_currentPlayer")]
 script = ExtResource("1_oq7xs")
 _asteroidPool = NodePath("AsteroidPool")
@@ -37,33 +48,46 @@ _currentPlayer = NodePath("Player")
 z_index = -10
 layout_mode = 3
 anchors_preset = 0
-offset_right = 327.0
-offset_bottom = 90.0
 script = ExtResource("9_3j872")
-_scrapLabel = NodePath("ScrapLabel")
-_fuelLabel = NodePath("FuelLable")
+_scrapLabel = NodePath("ResourcePanel/MarginContainer/VBoxContainer/ScrapLabel")
+_fuelLabel = NodePath("ResourcePanel/MarginContainer/VBoxContainer/FuelLable")
 _planetImage = NodePath("Sprite2D")
 _backgroundPlanets = Array[Texture2D]([ExtResource("3_rfjv2"), ExtResource("4_1phco"), ExtResource("5_nb51f"), ExtResource("6_nnt18"), ExtResource("7_ewbju"), ExtResource("8_85qyi"), ExtResource("9_iivbl")])
 
-[node name="ScrapLabel" type="Label" parent="UIManager"]
+[node name="ResourcePanel" type="PanelContainer" parent="UIManager"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 70.0
+scale = Vector2(1.5, 1.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_8m3t6")
+
+[node name="MarginContainer" type="MarginContainer" parent="UIManager/ResourcePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = -10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/ResourcePanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="ScrapLabel" type="Label" parent="UIManager/ResourcePanel/MarginContainer/VBoxContainer"]
 z_index = 10
 z_as_relative = false
-layout_mode = 0
-offset_left = 20.0
-offset_top = 10.0
-offset_right = 289.0
-offset_bottom = 56.0
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ese38")
 text = "Scrap:"
 vertical_alignment = 1
 
-[node name="FuelLable" type="Label" parent="UIManager"]
+[node name="FuelLable" type="Label" parent="UIManager/ResourcePanel/MarginContainer/VBoxContainer"]
 z_index = 10
 z_as_relative = false
-layout_mode = 0
-offset_left = 20.0
-offset_top = 50.0
-offset_right = 289.0
-offset_bottom = 96.0
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847138, 0.50398, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_oeip8")
 text = "Fuel:"
 vertical_alignment = 1
 
