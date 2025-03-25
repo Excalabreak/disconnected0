@@ -15,6 +15,10 @@ public partial class GameManager : Node
     [Export] private Node2D _currentPlayer;
     private Planets _currentLevel = Planets.PLUTO;
 
+    [Export] private bool _testEnemy = false;
+
+    private bool _isPlaying = false;
+
     /// <summary>
     /// sets up singleton
     /// </summary>
@@ -27,13 +31,19 @@ public partial class GameManager : Node
 
         _instance = this;
 
-        GD.Print("test new game is still here");
-        NewGame();
+        if (_testEnemy)
+        {
+            GD.Print("test new game is still here");
+            NewGame();
+        }
     }
 
     public override void _Process(double delta)
     {
-        EnemyManager.instance.CheckLevelComplete();
+        if (_isPlaying)
+        {
+            EnemyManager.instance.CheckLevelComplete();
+        }
     }
 
     /// <summary>

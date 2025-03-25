@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [03/19/2025]
+ * Last Updated: [03/25/2025]
  * [Singleton to manage UI]
  */
 
@@ -11,6 +11,7 @@ public partial class UIManager : Node
 {
 	private static UIManager _instance;
 
+    [Export] private PanelContainer _resourceContainer;
     [Export] private Label _scrapLabel;
     [Export] private Label _fuelLabel;
 
@@ -28,6 +29,31 @@ public partial class UIManager : Node
         }
 
         _instance = this;
+    }
+
+    /// <summary>
+    /// for when the play button is pressed
+    /// </summary>
+    private void OnPlayPressed()
+    {
+        GD.Print("buh");
+    }
+
+    /// <summary>
+    /// quits out of game when pressed
+    /// </summary>
+    private void OnQuitPressed()
+    {
+        GetTree().Quit();
+    }
+
+    /// <summary>
+    /// toggles between showing and hiding controls
+    /// </summary>
+    /// <param name="toggled_on">state of toggle</param>
+    private void ToggleControls(bool toggled_on)
+    {
+        GD.Print("fuh");
     }
 
     public void SetResourceLabels(int scrap, float fuel)

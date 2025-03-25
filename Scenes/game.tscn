@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bha65u7t8cth"]
+[gd_scene load_steps=34 format=3 uid="uid://bha65u7t8cth"]
 
 [ext_resource type="Script" uid="uid://bxml3eq7e1iii" path="res://Scripts/Managers/GameManager.cs" id="1_oq7xs"]
 [ext_resource type="Texture2D" uid="uid://ds2jd5hisi00y" path="res://Sprites/UI/UIBox.png" id="2_cwurv"]
@@ -30,6 +30,9 @@
 [ext_resource type="PackedScene" uid="uid://cnfroiosyc513" path="res://Scenes/Enemies/Multirole.tscn" id="23_8m3t6"]
 [ext_resource type="PackedScene" uid="uid://c30lt6851b7yy" path="res://Scenes/Enemies/R22.tscn" id="24_ese38"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwurv"]
+texture = ExtResource("2_cwurv")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8m3t6"]
 texture = ExtResource("2_cwurv")
 
@@ -47,14 +50,110 @@ _currentPlayer = NodePath("Player")
 [node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel", "_planetImage")]
 z_index = -10
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("9_3j872")
 _scrapLabel = NodePath("ResourcePanel/MarginContainer/VBoxContainer/ScrapLabel")
 _fuelLabel = NodePath("ResourcePanel/MarginContainer/VBoxContainer/FuelLable")
 _planetImage = NodePath("Sprite2D")
 _backgroundPlanets = Array[Texture2D]([ExtResource("3_rfjv2"), ExtResource("4_1phco"), ExtResource("5_nb51f"), ExtResource("6_nnt18"), ExtResource("7_ewbju"), ExtResource("8_85qyi"), ExtResource("9_iivbl")])
 
+[node name="MenuPanel" type="PanelContainer" parent="UIManager"]
+z_index = 50
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(300, 250)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_cwurv")
+
+[node name="MarginContainer" type="MarginContainer" parent="UIManager/MenuPanel"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/MenuPanel/MarginContainer"]
+z_index = 50
+layout_mode = 2
+
+[node name="TitleContainer" type="MarginContainer" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer/TitleContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_mucmn")
+theme_override_font_sizes/font_size = 90
+text = "DISCONECTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayContainer" type="MarginContainer" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 20
+
+[node name="PlayButton" type="Button" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer/PlayContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mucmn")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="ControlContainer" type="MarginContainer" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 20
+
+[node name="ControlButton" type="CheckButton" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer/ControlContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mucmn")
+theme_override_font_sizes/font_size = 50
+button_pressed = true
+text = "Toggle Controls"
+
+[node name="Quit Container" type="MarginContainer" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 20
+
+[node name="QuitButton" type="Button" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer/Quit Container"]
+z_index = 50
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mucmn")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
 [node name="ResourcePanel" type="PanelContainer" parent="UIManager"]
+z_index = 50
 layout_mode = 1
 offset_left = 10.0
 offset_top = 10.0
@@ -64,6 +163,7 @@ scale = Vector2(1.5, 1.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_8m3t6")
 
 [node name="MarginContainer" type="MarginContainer" parent="UIManager/ResourcePanel"]
+z_index = 50
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = -10
@@ -74,7 +174,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 
 [node name="ScrapLabel" type="Label" parent="UIManager/ResourcePanel/MarginContainer/VBoxContainer"]
-z_index = 10
+z_index = 50
 z_as_relative = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
@@ -83,7 +183,7 @@ text = "Scrap:"
 vertical_alignment = 1
 
 [node name="FuelLable" type="Label" parent="UIManager/ResourcePanel/MarginContainer/VBoxContainer"]
-z_index = 10
+z_index = 50
 z_as_relative = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.847138, 0.50398, 0, 1)
@@ -96,6 +196,7 @@ z_index = -10
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("3_i6g32")
 
 [node name="Sprite2D" type="Sprite2D" parent="UIManager"]
@@ -113,7 +214,6 @@ _enemyScenes = Array[PackedScene]([ExtResource("19_81klo"), ExtResource("20_tgy6
 script = ExtResource("2_srqrm")
 _asteroidScene = ExtResource("2_j118a")
 _timer = NodePath("Timer")
-_testSpawn = true
 
 [node name="Timer" type="Timer" parent="AsteroidPool"]
 wait_time = 5.0
@@ -122,4 +222,7 @@ one_shot = true
 [node name="Player" parent="." instance=ExtResource("5_3w5xu")]
 position = Vector2(930, 260)
 
+[connection signal="pressed" from="UIManager/MenuPanel/MarginContainer/VBoxContainer/PlayContainer/PlayButton" to="UIManager" method="OnPlayPressed"]
+[connection signal="toggled" from="UIManager/MenuPanel/MarginContainer/VBoxContainer/ControlContainer/ControlButton" to="UIManager" method="ToggleControls"]
+[connection signal="pressed" from="UIManager/MenuPanel/MarginContainer/VBoxContainer/Quit Container/QuitButton" to="UIManager" method="OnQuitPressed"]
 [connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]
