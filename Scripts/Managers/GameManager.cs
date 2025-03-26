@@ -36,6 +36,7 @@ public partial class GameManager : Node
             GD.Print("test new game is still here");
             NewGame();
         }
+        //show main menu
     }
 
     public override void _Process(double delta)
@@ -59,6 +60,10 @@ public partial class GameManager : Node
         EnemyManager.instance.ClearCurrentEnemies();
         LoadLevel(_currentLevel);
         _asteroidPool.StartSpawningAsteroids();
+
+        //hide menu
+        //spawn player
+        //add to current player
     }
 
     /// <summary>
