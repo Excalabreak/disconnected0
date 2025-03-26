@@ -11,6 +11,11 @@ public partial class Bomb : Node2D
 {
     [Export] private ScreenDespawn _screenDespawn;
 
+    public override void _Ready()
+    {
+        EnemyManager.instance.AddBomb(this);
+    }
+
     public override void _Process(double delta)
     {
         if (_screenDespawn != null)

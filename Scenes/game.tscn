@@ -1,54 +1,244 @@
-[gd_scene load_steps=6 format=3 uid="uid://bha65u7t8cth"]
+[gd_scene load_steps=33 format=3 uid="uid://bha65u7t8cth"]
 
 [ext_resource type="Script" uid="uid://bxml3eq7e1iii" path="res://Scripts/Managers/GameManager.cs" id="1_oq7xs"]
-[ext_resource type="PackedScene" uid="uid://0yni2kuqbedc" path="res://Scenes/Asteroid.tscn" id="2_j118a"]
+[ext_resource type="Texture2D" uid="uid://ds2jd5hisi00y" path="res://Sprites/UI/UIBox.png" id="2_cwurv"]
+[ext_resource type="PackedScene" uid="uid://0yni2kuqbedc" path="res://Scenes/asteroid.tscn" id="2_j118a"]
 [ext_resource type="Script" uid="uid://bidc65t5xgf06" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
-[ext_resource type="PackedScene" uid="uid://cvsm0nlpo1nmb" path="res://Scenes/Player.tscn" id="5_3w5xu"]
+[ext_resource type="Texture2D" uid="uid://bbrfhfg1uooe7" path="res://Sprites/Background/disconnectedBG.png" id="3_i6g32"]
+[ext_resource type="FontFile" uid="uid://do8p7umbop7ks" path="res://Fonts/MedodicaRegular.otf" id="3_mucmn"]
+[ext_resource type="Texture2D" uid="uid://bvkwb2vpo0sbq" path="res://Sprites/Background/pluto.png" id="3_rfjv2"]
+[ext_resource type="Texture2D" uid="uid://rn1o2u62ii1v" path="res://Sprites/Background/neptune.png" id="4_1phco"]
+[ext_resource type="Texture2D" uid="uid://follqqd3xsg1" path="res://Sprites/Background/uranus.png" id="5_nb51f"]
+[ext_resource type="Texture2D" uid="uid://lce73hn0pkqe" path="res://Sprites/Background/saturn.png" id="6_nnt18"]
+[ext_resource type="Texture2D" uid="uid://ojw8r3u6ifl0" path="res://Sprites/Background/jupiter.png" id="7_ewbju"]
+[ext_resource type="Texture2D" uid="uid://dmwsqcb308gd2" path="res://Sprites/Background/mars.png" id="8_85qyi"]
 [ext_resource type="Script" uid="uid://cq1bfhndm8lfw" path="res://Scripts/Managers/UIManager.cs" id="9_3j872"]
+[ext_resource type="Texture2D" uid="uid://cw063mj1v83bc" path="res://Sprites/Background/earth.png" id="9_iivbl"]
+[ext_resource type="Script" uid="uid://bks5prtnw250m" path="res://Scripts/Managers/EnemyManager.cs" id="11_exi56"]
+[ext_resource type="Resource" uid="uid://cddd5m2bggms2" path="res://Resources/LevelResources/PlutoLevel.tres" id="12_7t8sx"]
+[ext_resource type="Resource" uid="uid://b5o1r25s3plfp" path="res://Resources/LevelResources/NeptuneLevel.tres" id="13_mg4q0"]
+[ext_resource type="Resource" uid="uid://couvqk10gkj1k" path="res://Resources/LevelResources/UranusLevel.tres" id="14_vm72l"]
+[ext_resource type="Resource" uid="uid://c8fhph60qrvwi" path="res://Resources/LevelResources/SaturnLevel.tres" id="15_22asu"]
+[ext_resource type="Resource" uid="uid://b2m53l5dfh8ng" path="res://Resources/LevelResources/JupiterLevel.tres" id="16_fkdbe"]
+[ext_resource type="Resource" uid="uid://smaodfh5rymx" path="res://Resources/LevelResources/MarsLevel.tres" id="17_81klo"]
+[ext_resource type="Resource" uid="uid://dff7aghbuof1c" path="res://Resources/LevelResources/EarthLevel.tres" id="18_tgy6u"]
+[ext_resource type="PackedScene" uid="uid://dvp6djgk06i0j" path="res://Scenes/Enemies/grunt.tscn" id="19_81klo"]
+[ext_resource type="PackedScene" uid="uid://c6omjltuik3w0" path="res://Scenes/Enemies/scout.tscn" id="20_tgy6u"]
+[ext_resource type="PackedScene" uid="uid://bbmn10hv86upj" path="res://Scenes/Enemies/FighterEscort.tscn" id="21_cwurv"]
+[ext_resource type="PackedScene" uid="uid://bb85oql4o4p7v" path="res://Scenes/Enemies/Bomber.tscn" id="22_mucmn"]
+[ext_resource type="PackedScene" uid="uid://cnfroiosyc513" path="res://Scenes/Enemies/Multirole.tscn" id="23_8m3t6"]
+[ext_resource type="PackedScene" uid="uid://c30lt6851b7yy" path="res://Scenes/Enemies/R22.tscn" id="24_ese38"]
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("_currentPlayer")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwurv"]
+texture = ExtResource("2_cwurv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8m3t6"]
+texture = ExtResource("2_cwurv")
+
+[sub_resource type="FontVariation" id="FontVariation_ese38"]
+base_font = ExtResource("3_mucmn")
+
+[sub_resource type="FontVariation" id="FontVariation_oeip8"]
+base_font = ExtResource("3_mucmn")
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_asteroidPool", "_currentPlayer")]
 script = ExtResource("1_oq7xs")
-_currentPlayer = NodePath("Player")
+_asteroidPool = NodePath("AsteroidPool")
+_currentPlayer = NodePath("")
 
-[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel")]
-z_index = 10
+[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel", "_planetImage", "_menuContainer", "_cotrolsLabel")]
+z_index = -10
 layout_mode = 3
-anchors_preset = 0
-offset_right = 327.0
-offset_bottom = 90.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("9_3j872")
-_scrapLabel = NodePath("ScrapLabel")
-_fuelLabel = NodePath("FuelLable")
+_scrapLabel = NodePath("ResourcePanel/MarginContainer/VBoxContainer/ScrapLabel")
+_fuelLabel = NodePath("ResourcePanel/MarginContainer/VBoxContainer/FuelLable")
+_planetImage = NodePath("Sprite2D")
+_backgroundPlanets = Array[Texture2D]([ExtResource("3_rfjv2"), ExtResource("4_1phco"), ExtResource("5_nb51f"), ExtResource("6_nnt18"), ExtResource("7_ewbju"), ExtResource("8_85qyi"), ExtResource("9_iivbl")])
+_menuContainer = NodePath("MenuPanel")
+_cotrolsLabel = NodePath("Controls")
 
-[node name="ScrapLabel" type="Label" parent="UIManager"]
-layout_mode = 0
-offset_left = 20.0
+[node name="MenuPanel" type="PanelContainer" parent="UIManager"]
+z_index = 50
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(300, 250)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_cwurv")
+
+[node name="MarginContainer" type="MarginContainer" parent="UIManager/MenuPanel"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/MenuPanel/MarginContainer"]
+z_index = 50
+layout_mode = 2
+
+[node name="TitleContainer" type="MarginContainer" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer/TitleContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_mucmn")
+theme_override_font_sizes/font_size = 90
+text = "DISCONECTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayContainer" type="MarginContainer" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 20
+
+[node name="PlayButton" type="Button" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer/PlayContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mucmn")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="ControlContainer" type="MarginContainer" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 20
+
+[node name="ControlButton" type="CheckButton" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer/ControlContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mucmn")
+theme_override_font_sizes/font_size = 50
+button_pressed = true
+text = "Toggle Controls"
+
+[node name="Quit Container" type="MarginContainer" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 20
+
+[node name="QuitButton" type="Button" parent="UIManager/MenuPanel/MarginContainer/VBoxContainer/Quit Container"]
+z_index = 50
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mucmn")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="ResourcePanel" type="PanelContainer" parent="UIManager"]
+visible = false
+z_index = 50
+layout_mode = 1
+offset_left = 10.0
 offset_top = 10.0
-offset_right = 289.0
-offset_bottom = 56.0
+offset_right = 110.0
+offset_bottom = 70.0
+scale = Vector2(1.5, 1.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_8m3t6")
+
+[node name="MarginContainer" type="MarginContainer" parent="UIManager/ResourcePanel"]
+z_index = 50
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = -10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/ResourcePanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="ScrapLabel" type="Label" parent="UIManager/ResourcePanel/MarginContainer/VBoxContainer"]
+z_index = 50
+z_as_relative = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ese38")
 text = "Scrap:"
 vertical_alignment = 1
 
-[node name="FuelLable" type="Label" parent="UIManager"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 50.0
-offset_right = 289.0
-offset_bottom = 96.0
+[node name="FuelLable" type="Label" parent="UIManager/ResourcePanel/MarginContainer/VBoxContainer"]
+z_index = 50
+z_as_relative = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847138, 0.50398, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_oeip8")
 text = "Fuel:"
 vertical_alignment = 1
+
+[node name="Background" type="TextureRect" parent="UIManager"]
+z_index = -10
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("3_i6g32")
+
+[node name="Sprite2D" type="Sprite2D" parent="UIManager"]
+z_index = -5
+position = Vector2(640, 360)
+scale = Vector2(5, 5)
+texture = ExtResource("3_rfjv2")
+
+[node name="Controls" type="Label" parent="UIManager"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -123.0
+offset_right = 151.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_mucmn")
+theme_override_font_sizes/font_size = 25
+text = "Accelerate: [W]
+Rotate: [A] [D]
+Gun: [Space]
+Missile: [E]"
+
+[node name="EnemyManager" type="Node2D" parent="."]
+script = ExtResource("11_exi56")
+_levels = Array[Object]([ExtResource("12_7t8sx"), ExtResource("13_mg4q0"), ExtResource("14_vm72l"), ExtResource("15_22asu"), ExtResource("16_fkdbe"), ExtResource("17_81klo"), ExtResource("18_tgy6u")])
+_enemyScenes = Array[PackedScene]([ExtResource("19_81klo"), ExtResource("20_tgy6u"), ExtResource("21_cwurv"), ExtResource("22_mucmn"), ExtResource("23_8m3t6"), ExtResource("24_ese38")])
 
 [node name="AsteroidPool" type="Node2D" parent="." node_paths=PackedStringArray("_timer")]
 script = ExtResource("2_srqrm")
 _asteroidScene = ExtResource("2_j118a")
 _timer = NodePath("Timer")
-_testSpawn = true
 
 [node name="Timer" type="Timer" parent="AsteroidPool"]
 wait_time = 5.0
 one_shot = true
 
-[node name="Player" parent="." instance=ExtResource("5_3w5xu")]
-position = Vector2(949, 271)
-
+[connection signal="pressed" from="UIManager/MenuPanel/MarginContainer/VBoxContainer/PlayContainer/PlayButton" to="UIManager" method="OnPlayPressed"]
+[connection signal="toggled" from="UIManager/MenuPanel/MarginContainer/VBoxContainer/ControlContainer/ControlButton" to="UIManager" method="ToggleControls"]
+[connection signal="pressed" from="UIManager/MenuPanel/MarginContainer/VBoxContainer/Quit Container/QuitButton" to="UIManager" method="OnQuitPressed"]
 [connection signal="timeout" from="AsteroidPool/Timer" to="AsteroidPool" method="OnTimerTimeout"]
