@@ -21,7 +21,6 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
-window/vsync/vsync_mode=0
 
 [dotnet]
 
@@ -40,10 +39,6 @@ folder_colors={
 "res://Scripts/": "orange",
 "res://Sprites/": "yellow"
 }
-
-[gui]
-
-theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 

@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [03/25/2025]
+ * Last Updated: [03/26/2025]
  * [Singleton to manage UI]
  */
 
@@ -17,6 +17,11 @@ public partial class UIManager : Node
 
     [Export] private Sprite2D _planetImage;
     [Export] private Texture2D[] _backgroundPlanets;
+
+    [Export] private PanelContainer _menuContainer;
+    [Export] private Label _cotrolsLabel;
+    [Export] private Label _titleLabel;
+
 
     /// <summary>
     /// sets up singleton
@@ -32,11 +37,25 @@ public partial class UIManager : Node
     }
 
     /// <summary>
+    /// toggle to show the menu
+    /// </summary>
+    /// <param name="showMenu"></param>
+    private void ToggleMenu(bool showMenu)
+    {
+        _menuContainer.Visible = showMenu;
+    }
+
+    private void ToggleResource(bool showResources)
+    {
+        _resourceContainer.Visible = showResources;
+    }
+
+    /// <summary>
     /// for when the play button is pressed
     /// </summary>
     private void OnPlayPressed()
     {
-        GD.Print("buh");
+        ToggleMenu(false);
     }
 
     /// <summary>
@@ -53,7 +72,7 @@ public partial class UIManager : Node
     /// <param name="toggled_on">state of toggle</param>
     private void ToggleControls(bool toggled_on)
     {
-        GD.Print("fuh");
+        _cotrolsLabel.Visible = toggled_on;
     }
 
     public void SetResourceLabels(int scrap, float fuel)

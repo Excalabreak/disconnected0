@@ -47,7 +47,7 @@ script = ExtResource("1_oq7xs")
 _asteroidPool = NodePath("AsteroidPool")
 _currentPlayer = NodePath("Player")
 
-[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel", "_planetImage")]
+[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel", "_planetImage", "_menuContainer", "_cotrolsLabel")]
 z_index = -10
 layout_mode = 3
 anchors_preset = 15
@@ -63,6 +63,8 @@ _scrapLabel = NodePath("ResourcePanel/MarginContainer/VBoxContainer/ScrapLabel")
 _fuelLabel = NodePath("ResourcePanel/MarginContainer/VBoxContainer/FuelLable")
 _planetImage = NodePath("Sprite2D")
 _backgroundPlanets = Array[Texture2D]([ExtResource("3_rfjv2"), ExtResource("4_1phco"), ExtResource("5_nb51f"), ExtResource("6_nnt18"), ExtResource("7_ewbju"), ExtResource("8_85qyi"), ExtResource("9_iivbl")])
+_menuContainer = NodePath("MenuPanel")
+_cotrolsLabel = NodePath("Controls")
 
 [node name="MenuPanel" type="PanelContainer" parent="UIManager"]
 z_index = 50
@@ -204,6 +206,23 @@ z_index = -5
 position = Vector2(640, 360)
 scale = Vector2(5, 5)
 texture = ExtResource("3_rfjv2")
+
+[node name="Controls" type="Label" parent="UIManager"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -123.0
+offset_right = 151.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_mucmn")
+theme_override_font_sizes/font_size = 25
+text = "Accelerate: [W]
+Rotate: [A] [D]
+Gun: [Space]
+Missile: [E]"
 
 [node name="EnemyManager" type="Node2D" parent="."]
 script = ExtResource("11_exi56")
