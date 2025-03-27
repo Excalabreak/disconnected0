@@ -47,7 +47,7 @@ script = ExtResource("1_oq7xs")
 _player = ExtResource("2_mucmn")
 _asteroidPool = NodePath("AsteroidPool")
 
-[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_resourceContainer", "_scrapLabel", "_fuelLabel", "_planetImage", "_menuContainer", "_cotrolsLabel")]
+[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_resourceContainer", "_scrapLabel", "_fuelLabel", "_planetImage", "_menuContainer", "_cotrolsLabel", "_titleLabel", "_playButton")]
 z_index = -10
 layout_mode = 3
 anchors_preset = 15
@@ -66,6 +66,8 @@ _planetImage = NodePath("Sprite2D")
 _backgroundPlanets = Array[Texture2D]([ExtResource("3_rfjv2"), ExtResource("4_1phco"), ExtResource("5_nb51f"), ExtResource("6_nnt18"), ExtResource("7_ewbju"), ExtResource("8_85qyi"), ExtResource("9_iivbl")])
 _menuContainer = NodePath("MenuPanel")
 _cotrolsLabel = NodePath("Controls")
+_titleLabel = NodePath("MenuPanel/MarginContainer/VBoxContainer/TitleContainer/Label")
+_playButton = NodePath("MenuPanel/MarginContainer/VBoxContainer/PlayContainer/PlayButton")
 
 [node name="MenuPanel" type="PanelContainer" parent="UIManager"]
 z_index = 50
@@ -210,6 +212,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("3_rfjv2")
 
 [node name="Controls" type="Label" parent="UIManager"]
+z_index = 100
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
