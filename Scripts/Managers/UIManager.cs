@@ -55,9 +55,9 @@ public partial class UIManager : Node
     /// </summary>
     private void OnPlayPressed()
     {
-
-
+        ToggleControls(true);
         ToggleMenu(false);
+        GameManager.instance.NewGame();
     }
 
     /// <summary>
@@ -66,6 +66,18 @@ public partial class UIManager : Node
     private void OnQuitPressed()
     {
         GetTree().Quit();
+    }
+
+    public void ShowWinUI()
+    {
+        _titleLabel.Text = "RECONNECTING...";
+        ToggleMenu(true);
+    }
+
+    public void ShowGameOverUI()
+    {
+        _titleLabel.Text = "GAME OVER";
+        ToggleMenu(true);
     }
 
     /// <summary>

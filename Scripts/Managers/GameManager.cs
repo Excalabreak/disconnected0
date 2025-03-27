@@ -11,8 +11,10 @@ public partial class GameManager : Node
 {
     private static GameManager _instance;
 
+    [Export] private PackedScene _player;
     [Export] private AsteroidPool _asteroidPool;
-    [Export] private Node2D _currentPlayer;
+
+    private Node2D _currentPlayer;
     private Planets _currentLevel = Planets.PLUTO;
 
     [Export] private bool _testEnemy = false;
@@ -56,14 +58,18 @@ public partial class GameManager : Node
 
         _asteroidPool.StopSpawningAsteroids();
         _asteroidPool.ClearAsteroids();
-        
+
+        if (IsInstanceValid(_currentPlayer))
+        {
+            _currentPlayer.QueueFree();
+        }
+        _currentPlayer = _player.Instantiate<Node2D>() as Node2D;
+        _currentPlayer.GlobalPosition = GetViewport().GetVisibleRect().Size / 2;
+        GetTree().Root.AddChild(_currentPlayer);
+
         EnemyManager.instance.ClearCurrentEnemies();
         LoadLevel(_currentLevel);
         _asteroidPool.StartSpawningAsteroids();
-
-        //hide menu
-        //spawn player
-        //add to current player
     }
 
     /// <summary>
