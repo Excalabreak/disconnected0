@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="4_tkmt1"]
 [ext_resource type="Script" uid="uid://b8u18770mi0a3" path="res://Scripts/Enemies/FighterEscort/EscortMovement.cs" id="5_d2r6y"]
 [ext_resource type="Script" uid="uid://d32bs8tqt4n5r" path="res://Scripts/Enemies/Grunt/GruntAttack.cs" id="6_sirww"]
-[ext_resource type="PackedScene" uid="uid://dr6ru6td8ojjo" path="res://Scenes/Enemies/Laser.tscn" id="7_mh53q"]
+[ext_resource type="PackedScene" uid="uid://bniuqof8ea7u7" path="res://Scenes/Enemies/Laser.tscn" id="7_mh53q"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="8_do0or"]
 
 [node name="FighterEscort" type="Node2D" node_paths=PackedStringArray("_screenWarp", "_enemyMovement")]

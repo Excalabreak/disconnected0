@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cti3olwf1weap"]
+[gd_scene load_steps=9 format=3 uid="uid://dvp6djgk06i0j"]
 
 [ext_resource type="Script" uid="uid://b1n63xweopglt" path="res://Scripts/Enemies/BaseEnemyScript.cs" id="1_hrtf3"]
 [ext_resource type="Texture2D" uid="uid://clh20ldur2ij8" path="res://Sprites/Obstacles/Enemy/grunt.png" id="2_g1esn"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://da52f05qf5sul" path="res://Scenes/Components/HitboxComponent.tscn" id="4_pv7rq"]
 [ext_resource type="Script" uid="uid://j8r8ldmxgngg" path="res://Scripts/Enemies/Grunt/GruntMovement.cs" id="5_cr2mw"]
 [ext_resource type="Script" uid="uid://d32bs8tqt4n5r" path="res://Scripts/Enemies/Grunt/GruntAttack.cs" id="6_xafwa"]
-[ext_resource type="PackedScene" uid="uid://dr6ru6td8ojjo" path="res://Scenes/Enemies/Laser.tscn" id="7_1s67v"]
+[ext_resource type="PackedScene" uid="uid://bniuqof8ea7u7" path="res://Scenes/Enemies/Laser.tscn" id="7_1s67v"]
 [ext_resource type="PackedScene" uid="uid://dkkxnia7l705p" path="res://Scenes/Components/ScreenWarpComponent.tscn" id="8_g1qk1"]
 
 [node name="Grunt" type="Node2D" node_paths=PackedStringArray("_screenWarp", "_enemyMovement")]

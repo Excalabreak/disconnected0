@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [02/10/2025]
+ * Last Updated: [03/21/2025]
  * [spawner and object pool for the asteroid]
  */
 
@@ -63,18 +63,6 @@ public partial class AsteroidPool : Node2D
     }
 
     /// <summary>
-    /// spawns asteroid when timer runs out
-    /// </summary>
-    private void OnTimerTimeout()
-    {
-        if (_isSpawning)
-        {
-            SpawnAsteroid(2);
-            _timer.Start();
-        }
-    }
-
-    /// <summary>
     /// spawns asteroids
     /// </summary>
     /// <param name="amount">amount of asteroids spawn</param>
@@ -116,20 +104,45 @@ public partial class AsteroidPool : Node2D
     /// swiches bool to start spawning asteroids
 	/// also spawns the first asteroids
     /// </summary>
-    private void StartSpawningAsteroids()
+    public void StartSpawningAsteroids()
     {
         _timer.Start();
-        SpawnAsteroid(3);
         _isSpawning = true;
     }
 
     /// <summary>
     /// swiches bool to stop spawning asteroids
     /// </summary>
-    private void StopSpawningAsteroids()
+    public void StopSpawningAsteroids()
     {
         _timer.Stop();
         _isSpawning = false;
+    }
+
+    /// <summary>
+    /// clears all asteroids
+    /// </summary>
+    public void ClearAsteroids()
+    {
+        foreach (Asteroid asteroid in _pooledItems)
+        {
+            if (asteroid.active)
+            {
+                asteroid.ReturnToPool();
+            }
+        }
+    }
+
+    /// <summary>
+    /// spawns asteroid when timer runs out
+    /// </summary>
+    private void OnTimerTimeout()
+    {
+        if (_isSpawning)
+        {
+            SpawnAsteroid(2);
+            _timer.Start();
+        }
     }
 }
 

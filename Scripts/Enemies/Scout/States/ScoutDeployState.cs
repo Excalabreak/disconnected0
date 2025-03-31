@@ -41,6 +41,7 @@ public partial class ScoutDeployState : State
 
         Node2D grunt = _grunt.Instantiate<Node2D>() as Node2D;
         grunt.GlobalPosition = _gruntSpawnLoc;
+        EnemyManager.instance.AddEnemy(grunt);
         GetTree().Root.AddChild(grunt);
 
         _deployTimer.Start();

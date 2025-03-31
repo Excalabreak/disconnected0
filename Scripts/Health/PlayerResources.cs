@@ -125,7 +125,7 @@ public partial class PlayerResources : BaseHealth
 	/// </summary>
     private void GameOver()
 	{
-		GD.Print("Game Over");
+		GameManager.instance.GameOver();
 	}
 
 	/// <summary>
