@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [03/26/2025]
+ * Last Updated: [03/27/2025]
  * [Singleton to manage UI]
  */
 
@@ -21,6 +21,7 @@ public partial class UIManager : Node
     [Export] private PanelContainer _menuContainer;
     [Export] private Label _cotrolsLabel;
     [Export] private Label _titleLabel;
+    [Export] private Button _playButton;
 
 
     /// <summary>
@@ -55,9 +56,10 @@ public partial class UIManager : Node
     /// </summary>
     private void OnPlayPressed()
     {
-
-
+        ToggleResource(true);
+        ToggleControls(true);
         ToggleMenu(false);
+        GameManager.instance.NewGame();
     }
 
     /// <summary>
@@ -66,6 +68,22 @@ public partial class UIManager : Node
     private void OnQuitPressed()
     {
         GetTree().Quit();
+    }
+
+    public void ShowWinUI()
+    {
+        _titleLabel.Text = "RECONNECTING...";
+        _playButton.Text = "Replay";
+        ToggleMenu(true);
+        ToggleResource(false);
+    }
+
+    public void ShowGameOverUI()
+    {
+        _titleLabel.Text = "GAME OVER";
+        _playButton.Text = "Replay";
+        ToggleMenu(true);
+        ToggleResource(false);
     }
 
     /// <summary>

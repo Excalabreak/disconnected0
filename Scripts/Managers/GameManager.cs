@@ -3,7 +3,7 @@ using System;
 
 /*
  * Author: [Lam, Justin]
- * Last Updated: [03/21/2025]
+ * Last Updated: [03/27/2025]
  * [Game manager for game]
  */
 
@@ -11,8 +11,10 @@ public partial class GameManager : Node
 {
     private static GameManager _instance;
 
+    [Export] private PackedScene _player;
     [Export] private AsteroidPool _asteroidPool;
-    [Export] private Node2D _currentPlayer;
+
+    private Node2D _currentPlayer;
     private Planets _currentLevel = Planets.PLUTO;
 
     [Export] private bool _testEnemy = false;
@@ -54,16 +56,15 @@ public partial class GameManager : Node
     {
         _currentLevel = Planets.PLUTO;
 
-        _asteroidPool.StopSpawningAsteroids();
-        _asteroidPool.ClearAsteroids();
-        
-        EnemyManager.instance.ClearCurrentEnemies();
+        ClearEverything();
+
+        _currentPlayer = _player.Instantiate<Node2D>() as Node2D;
+        _currentPlayer.GlobalPosition = GetViewport().GetVisibleRect().Size / 2;
+        GetTree().Root.AddChild(_currentPlayer);
+
         LoadLevel(_currentLevel);
         _asteroidPool.StartSpawningAsteroids();
-
-        //hide menu
-        //spawn player
-        //add to current player
+        _isPlaying = true;
     }
 
     /// <summary>
@@ -77,6 +78,37 @@ public partial class GameManager : Node
             _currentLevel = _currentLevel + 1;
             LoadLevel(_currentLevel);
         }
+        else
+        {
+            _isPlaying = false;
+            ClearEverything();
+            UIManager.instance.ShowWinUI();
+        }
+    }
+
+    /// <summary>
+    /// function to call for game over
+    /// </summary>
+    public void GameOver()
+    {
+        _isPlaying = false;
+        ClearEverything();
+        UIManager.instance.ShowGameOverUI();
+    }
+
+    /// <summary>
+    /// clears game of
+    /// players, enemies, and asteroids
+    /// </summary>
+    public void ClearEverything()
+    {
+        if (IsInstanceValid(_currentPlayer))
+        {
+            _currentPlayer.QueueFree();
+        }
+        _asteroidPool.StopSpawningAsteroids();
+        _asteroidPool.ClearAsteroids();
+        EnemyManager.instance.ClearCurrentEnemies();
     }
 
     /// <summary>

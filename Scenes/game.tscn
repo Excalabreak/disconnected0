@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://bha65u7t8cth"]
+[gd_scene load_steps=34 format=3 uid="uid://bha65u7t8cth"]
 
 [ext_resource type="Script" uid="uid://bxml3eq7e1iii" path="res://Scripts/Managers/GameManager.cs" id="1_oq7xs"]
 [ext_resource type="Texture2D" uid="uid://ds2jd5hisi00y" path="res://Sprites/UI/UIBox.png" id="2_cwurv"]
 [ext_resource type="PackedScene" uid="uid://0yni2kuqbedc" path="res://Scenes/asteroid.tscn" id="2_j118a"]
+[ext_resource type="PackedScene" uid="uid://b3wwnb2uny1ok" path="res://Scenes/player.tscn" id="2_mucmn"]
 [ext_resource type="Script" uid="uid://bidc65t5xgf06" path="res://Scripts/Managers/AsteroidPool.cs" id="2_srqrm"]
 [ext_resource type="Texture2D" uid="uid://bbrfhfg1uooe7" path="res://Sprites/Background/disconnectedBG.png" id="3_i6g32"]
 [ext_resource type="FontFile" uid="uid://do8p7umbop7ks" path="res://Fonts/MedodicaRegular.otf" id="3_mucmn"]
@@ -41,12 +42,12 @@ base_font = ExtResource("3_mucmn")
 [sub_resource type="FontVariation" id="FontVariation_oeip8"]
 base_font = ExtResource("3_mucmn")
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("_asteroidPool", "_currentPlayer")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_asteroidPool")]
 script = ExtResource("1_oq7xs")
+_player = ExtResource("2_mucmn")
 _asteroidPool = NodePath("AsteroidPool")
-_currentPlayer = NodePath("")
 
-[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_scrapLabel", "_fuelLabel", "_planetImage", "_menuContainer", "_cotrolsLabel")]
+[node name="UIManager" type="Control" parent="." node_paths=PackedStringArray("_resourceContainer", "_scrapLabel", "_fuelLabel", "_planetImage", "_menuContainer", "_cotrolsLabel", "_titleLabel", "_playButton")]
 z_index = -10
 layout_mode = 3
 anchors_preset = 15
@@ -58,12 +59,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("9_3j872")
+_resourceContainer = NodePath("ResourcePanel")
 _scrapLabel = NodePath("ResourcePanel/MarginContainer/VBoxContainer/ScrapLabel")
 _fuelLabel = NodePath("ResourcePanel/MarginContainer/VBoxContainer/FuelLable")
 _planetImage = NodePath("Sprite2D")
 _backgroundPlanets = Array[Texture2D]([ExtResource("3_rfjv2"), ExtResource("4_1phco"), ExtResource("5_nb51f"), ExtResource("6_nnt18"), ExtResource("7_ewbju"), ExtResource("8_85qyi"), ExtResource("9_iivbl")])
 _menuContainer = NodePath("MenuPanel")
 _cotrolsLabel = NodePath("Controls")
+_titleLabel = NodePath("MenuPanel/MarginContainer/VBoxContainer/TitleContainer/Label")
+_playButton = NodePath("MenuPanel/MarginContainer/VBoxContainer/PlayContainer/PlayButton")
 
 [node name="MenuPanel" type="PanelContainer" parent="UIManager"]
 z_index = 50
@@ -208,6 +212,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("3_rfjv2")
 
 [node name="Controls" type="Label" parent="UIManager"]
+z_index = 100
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
